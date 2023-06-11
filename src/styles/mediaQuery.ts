@@ -16,16 +16,12 @@ type BreakPoint = keyof typeof mq;
  * @param breakPoint xxs: 360px, xs: 480px, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px, xlst: 1920px
  */
 export function mqMax(breakPoint: BreakPoint) {
-  return mq[breakPoint]
-    ? `@media screen and (max-width: ${mq[breakPoint] - 0.02}px)`
-    : '';
+  return `@media screen and (max-width: ${mq[breakPoint] - 0.02}px)`;
 }
 
 /**
  * @param breakPoint xss: 320 ss: 360px, xs: 480px, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px, xlst: 1920px
  */
 export function mqMin(breakPoint: BreakPoint) {
-  return mq[breakPoint]
-    ? `@media screen and (min-width: ${mq[breakPoint]}px)`
-    : '';
+  return `@media screen and (min-width: ${mq[breakPoint]}px)`;
 }

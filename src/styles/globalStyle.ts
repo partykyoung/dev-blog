@@ -3,8 +3,7 @@ import { css } from '@emotion/react';
 function globalStyle() {
   return css`
     html,
-    body,
-    #root {
+    body {
       height: 100%;
     }
 
@@ -16,6 +15,11 @@ function globalStyle() {
       word-wrap: break-word;
       -webkit-text-size-adjust: none;
       -webkit-overflow-scrolling: touch;
+    }
+
+    #___gatsby {
+      min-width: 280px;
+      width: 100%;
     }
 
     h1,
@@ -141,7 +145,6 @@ function globalStyle() {
       font-style: normal;
     }
 
-    /* form */
     input,
     select,
     label,
@@ -179,9 +182,9 @@ function globalStyle() {
       --primary-color: hsla(var(--palette-blue-100), 100%);
       --secondary-color: hsla(var(--palette-blue-10), 100%);
 
-      --danger-color: var(--base-danger), 33%;
-      --warning-color: var(--base-warning), 33%;
-      --success-color: var(--base-success), 38%;
+      --danger-color: hsla(var(--base-danger), 55%);
+      --warning-color: hsla(var(--base-warning), 71%);
+      --success-color: hsla(var(--base-success), 38%);
 
       --header-height: 64px;
     }
