@@ -159,14 +159,31 @@ function globalStyle() {
     }
 
     :root {
-      --header-height: 50px;
-      --header-zindex: 9;
-    }
+      --base-blue: 202, 100%;
+      --base-gray: 211, 19%;
+      --base-danger: 358, 67%;
+      --base-warning: 1, 100%;
+      --base-success: 168, 100%;
 
-    /* plugin */
-    /* react-alert */
-    #__react-alert__ div:first-of-type {
-      top: 50px !important;
+      --palette-blue-10: var(--base-blue), 92%;
+      --palette-blue-50: var(--base-blue), 59%;
+      --palette-blue-100: var(--base-blue), 27%;
+
+      --palette-gray-10: var(--base-gray), 91%;
+      --palette-gray-20: var(--base-gray), 84%;
+      --palette-gray-40: var(--base-gray), 76%;
+      --palette-gray-60: var(--base-gray), 68%;
+      --palette-gray-80: var(--base-gray), 53%;
+      --palette-gray-100: var(--base-gray), 33%;
+
+      --primary-color: hsla(var(--palette-blue-100), 100%);
+      --secondary-color: hsla(var(--palette-blue-10), 100%);
+
+      --danger-color: var(--base-danger), 33%;
+      --warning-color: var(--base-warning), 33%;
+      --success-color: var(--base-success), 38%;
+
+      --header-height: 64px;
     }
   `;
 }
