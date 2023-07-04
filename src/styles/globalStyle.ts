@@ -64,7 +64,6 @@ function globalStyle() {
     }
 
     a {
-      color: #fff;
       cursor: pointer;
       text-decoration: none;
       outline: none;

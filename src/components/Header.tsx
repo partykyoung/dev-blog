@@ -10,7 +10,6 @@ import posts from '../images/posts.svg';
 import tags from '../images/tags.svg';
 
 const cssProps = {
-<<<<<<< HEAD
   root: css({
     display: 'flex',
     width: '100%',
@@ -84,43 +83,29 @@ const cssProps = {
       },
     }
   })
-=======
-  root: css`
-    width: 100%;
-    height: var(--header-height);
-  `
->>>>>>> 5d2a438 (wip: header)
 }
 
 function Header() {
-<<<<<<< HEAD
-  return <header css={cssProps.root}>
-<<<<<<< HEAD
-    <StaticImage alt="A dinosaur" src="../images/logo.png" width={254} height={45} />
-=======
-    <StaticImage alt="A dinosaur" src="../images/logo.png" width={275} height={49} />
->>>>>>> 5d2a438 (wip: header)
-  </header>
-=======
-  return (<header css={cssProps.root}>
-    <Link to="/">
-      <StaticImage src="../images/logo.png" width={237} height={42} alt="logo" />
-    </Link>
-    <nav css={cssProps.navigation}>
-      <ul css={cssProps.pages}>
-        <li>
-          <Link to="/posts"><span css={[cssProps.page, cssProps.posts]} /></Link>
-        </li>
-        <li>
-          <Link to="/posts"><span css={[cssProps.page, cssProps.tags]} /></Link>
-        </li>
-        <li>
-          <Link to="/posts" rel="noopener" target="_blank"><span css={[cssProps.page, cssProps.about]} /></Link>
-        </li>
-      </ul>
-    </nav>
-  </header>)
->>>>>>> f269900 (wip: header)
+  return (
+    <header css={cssProps.root}>
+      <Link to="/">
+        <StaticImage src="../images/logo.png" width={194} height={36} alt="logo" />
+      </Link>
+      <nav css={cssProps.navigation}>
+        <ul css={cssProps.pages}>
+          <li>
+            <Link to="/posts"><span css={[cssProps.page, cssProps.posts]} /></Link>
+          </li>
+          <li>
+            <Link to="/posts"><span css={[cssProps.page, cssProps.tags]} /></Link>
+          </li>
+          <li>
+            <Link to="/posts" rel="noopener" target="_blank"><span css={[cssProps.page, cssProps.about]} /></Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  )
 };
 
 export default Header;
