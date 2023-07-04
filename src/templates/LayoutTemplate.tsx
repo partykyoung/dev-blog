@@ -11,7 +11,7 @@ type Props = {
   children: ReactNode;
 }
 
-function DefaultTemplate({ children }: Props) {
+function LayoutTemplate({ children }: Props) {
   return (
     <>
       <Global styles={globalStyle()} />
@@ -32,4 +32,4 @@ const cssProps = {
   })
 }
 
-export default DefaultTemplate;
+export default LayoutTemplate;
