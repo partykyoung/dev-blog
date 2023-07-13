@@ -178,7 +178,7 @@ function globalStyle() {
       --palette-gray-80: var(--base-gray), 53%;
       --palette-gray-100: var(--base-gray), 33%;
 
-      --primary-color: hsla(var(--palette-blue-100), 100%);
+      --primary-color: hsla(var(--palette-blue-50), 100%);
       --secondary-color: hsla(var(--palette-blue-10), 100%);
 
       --danger-color: hsla(var(--base-danger), 55%);
