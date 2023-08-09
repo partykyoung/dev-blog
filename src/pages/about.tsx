@@ -8,9 +8,14 @@ function About() {
       <div css={cssProps.root}>
         <h1 css={cssProps.title}>
           안녕하세요<br />
-          프론트엔드 개발자 <strong>박유경</strong> 입니다!
+          웹 프론트엔드 개발자 <strong>박유경</strong> 입니다!
         </h1>
-        {/* <p css={cssProps.additionalExplanation}>익숙한 것에 만족하지 않고 흥미로운 내용이 있으면 바로 실험한 후  입니다</p> */}
+        <p css={cssProps.introduce}>
+          웹 프론트엔드 개발자답게 UI/UX에 관심이 많습니다
+          끊임없이 진화하는 기술 트렌드에 적극적으로 대응하며, 새로운 기술 습득에 거부감이 없습니다
+          편안한 환경에 안주하기보다는 새로운 기술이나 해법을 적극적으로 탐구하고 실험함으로써 더 나은 결과를 추구하며,
+          지식으로 흡수하고 습득하는 것에 힘쓰고 있습니다.
+        </p>
         <h2 css={cssProps.subTitle}>Work Experience</h2>
         <h3 css={cssProps.companyName}>메타버스월드 ~ 넷마블에프엔씨</h3>
         <span css={cssProps.period}>2022.03 ~ 재직 중</span>
@@ -68,6 +73,11 @@ const cssProps = {
     marginBottom: 24,
     fontSize: 32,
   }),
+  introduce: css({
+    margin: '26px 0 66px',
+    fontSize: 18,
+    lineHeight: '1.5'
+  }),
   subTitle: css({
     marginBottom: 16,
     fontSize: 28
@@ -97,11 +107,7 @@ const cssProps = {
       marginBottom: '4px',
       lineHeight: 1.5
     }
-  }),
-  // additionalExplanation: css({
-  //   paddingLeft: 16,
-  //   marginBottom: 8
-  // })
+  })
 };
 
 export default About;
