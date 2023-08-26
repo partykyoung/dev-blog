@@ -5,18 +5,17 @@ title: 'My first blog post'
 draft: false
 ---
 
-회사생활이 바쁘니, 번아웃이 왔니 등의 핑계를 대며 한동안 블로그를 방치하고 있다가 초심을 되찾기 위해 다시 블로그를 가꾸기로 했다. 기존 블로그를 그대로 사용할 생각이었는데 설정을 조금 바꿀 게 있어서 Gatsby 공식 문서에 들어가보니 v5가 출시되었길래 이참에 블로그를 Gatsby v5 버전으로 리팩토링하기로 마음먹었다.
+회사생활이 바쁘니, 번아웃이 왔니 등의 핑계를 대며 한동안 개발 블로그를 방치하고 있다가 초심을 되찾기 위해 다시 블로그를 가꾸기로 했다. 기존 블로그를 그대로 사용할 생각이었는데 설정을 조금 바꿀 게 있어서 Gatsby 공식 문서에 들어가 보니 5버전대가 릴리즈 되었길래 이참에 블로그를 Gatsby v5 버전으로 리팩토링하기로 마음먹었다.
 
-블로그를 리팩토링하면서 그 과정을 한번 기록해보고자 한다.
+블로그를 리팩토링하면서 그 과정을 한번 기록해 보고자 한다.
 
-<!--
-## Gatsby?
+## 정적 웹 페이지로 블로그를 만든 이유
 
-먼저 Gatsby가 뭔지 알아보자. Gatsby는 React 기반 정적 페이지 생성 오픈소스 프레임워크 이다.
+정적 웹 페이지는 사용자의 요청이나 입력에 따라 동적으로 변경되지 않는 웹 페이지를 의미한다. HTML, CSS 및 JavaScript로 웹 페이지의 내용을 사전에 정의한 후 데이터베이스 조회나 복잡한 계산 없이 웹 페이지를 빠르게 제공한다.
 
-## Jamstack?
+### Jamstack
 
-JAMstack은 웹을 더 빠르고, 더 안전하고, 더 쉽게 확장할 수 있도록 설계된 아키텍처이다. JAMstack은 JAM은 JavaScript, API, Markup을 나타낸다.
+JAMstack은 웹을 더 빠르고, 더 안전하고, 더 쉽게 확장할 수 있도록 설계된 아키텍처이다. JAMstack에서 JAM은 JavaScript, API, Markup을 나타낸다.
 
 - JavaScript
   - 동적 기능은 JavaScript에 의해 처리된다. 사용해야 하는 JavaScript 프레임워크나 라이브러리에는 제한이 없다.
@@ -29,79 +28,14 @@ JAMstack은 웹 애플리케이션의 Markup과 콘텐츠를 정적 페이지로
 
 JAMstack은 정적 사이트 생성기를 사용해서 구현한다. 정석 사이트 생성기로 프로젝트를 빌드하여 정적 페이지들을 만든 후 이 정적 페이지들을 CDN을 통해 전송하게 된다. 별도로 추상화된 함수나 서비스들을 사용하여 api를 요청하게 된다.
 
-## Gatsby 프로젝트 생성
+### Gatsby를 선택한 이유
 
-Gatsby 역시 React나 Next처럼 프로젝트를 쉽게 생성할 수 있도록 cli를 제공해준다. 굳이 cli로 생성 안하고 입맛에 맞게 프로젝트를 구축해도 되지만 나는 귀찮으니 그냥 cli로 프로젝트를 생성할 것이다.
-gatsby cli가 안깔려 있다면 아래의 명령어를 사용하여 gatsby cli를 먼저 설치해주자.
+맨처음 정적 페이지로 블로그를 만들었을 때는 ![jekyll](https://jekyllrb-ko.github.io/)을 사용해서 만들었다. 꼬꼬마 개발자 시절이라 gem이니 루비니 마크다운이니 모든게 다 너무 낮설어서 구축부터 너무 어려웠고 커스터마이징도 힘들었다. 자연스럽게 방치하게 되었다.
 
-```
-# npm
-npm install -g gatsby-cli
+조금 연차가 쌓인 후 개발 블로그를 만들어보자 하고 마음 먹었을 때 ![hexo](https://hexo.io/index.html)를 알게되었다. Node.js 기반이라는 점이 마음에 들어 선택했는데 여전히 커스터마이징이 힘들었다. 테마 스토어에 있는 테마들 중 제일 인기있는 테마를 골라서 설치 했는데 커스터마이징이 어려워 내 입맛대로 바꾸는게 힘든 점이 여전히 불만이었다.
 
-# yarn
-yarn global add gatsby-cli
-```
+마지막으로 알게된 것이 Gatsby이다. Gatsby는 React 기반 정적 페이지 생성 오픈소스 프레임워크이다. 개인적으로 정적 페이지를 만드는데 React를 사용하는건 배보다 배꼽이 크다고 생각해서 선호하지 않는 편이었는데 React로 컴포넌트를 만든 후 이 컴포넌트를 사용해서 정적 웹 페이지를 생성한다는 점이 너무 매력적으로 느껴져서 선택했다. 플러그인도 다양하고 내 입맛대로 블로그를 커스터마이징 할 수 있는게 너무 좋았다. 결국 Gatsby로 정착하기로 마음 먹었다.
 
-설치를 마쳤다면 gatsby new 명령어로 프로젝트를 생성할 수 있다.
-
-```
-gatsby new
-```
-
-![gatsby new](../images/blog-refactoring-with-gatsby-1.png)
-
-명령어를 실행하면 입맛에 맞게 옵션을 선택하여 프로젝트를 생성할 수 있다. 엄청 예전에 Gatsby로 블로그를 생성할 땐 저렇게 옵션을 선택할 수 있는 항목이 없어서 일일히 직접 설정했던 걸로 기억하는데 Gatsby도 엄청 많이 좋아졌다.
-
-만약 기존에 존재하는 [Gatsby template](https://www.gatsbyjs.com/starters)으로 Gatsby 프로젝트를 생성하고 싶다면 Gatsby new command 옆에 블로그명과 template 경로를 같이 적어서 실행하면 된다.
-
-```
-gatsby new 블로그명 테마경로
-
-# example
-gatsby new new-blog https://github.com/LekoArts/gatsby-starter-minimal-blog
-```
-
-## pnpm
-
-## 배포
-
-블로그 프로젝트를 생성했으니 배포도 한번 해보자. Vercel, Netilfy, Gatsby Gloud 등 원하는 배포 플랫폼을 골라서 사용할 수 있지만 굳이 블로그를 배포하는데 플랫폼을 추가로 쓰고 싶지는 않아서 기존처럼 Github Page에다 배포하기로 했다.
-
-Github Page는 정적 페이지를 호스팅해주는 서비스이다. Github Page로 배포하려면 먼저 빌드 결과물이 업로드될 Repository가 있어야 하는데 이때 Repository의 이름은 꼭 `유저명.github.io`로 되어 있어야 한다.
-
-Repository가 있으면 블로그 프로젝트에 gh-pages를 설치해준다.
-
-```
-# npm
-npm install gh-pages
-
-# yarn
-yarn add gh-pages
-
-```
-
-설치가 완료되었다면 package.json의 scripts에 아래와 같은 명령어를 추가해준다.
-
-```json{7}
-"scripts": {
-  "develop": "gatsby develop",
-  "start": "gatsby develop",
-  "build": "gatsby build",
-  "serve": "gatsby serve",
-  "clean": "gatsby clean",
-  "deploy": "gatsby clean & gatsby build & gh-pages -d public -b master",
-  "typecheck": "tsc --noEmit"
-},
-```
-
-이제 npm run deploy나 yarn deploy 명령어를 때리면 깃허브 페이지로 블로그 프로젝트를 배포할 수 있다.
+## 글쓰기 너무 어렵다
 
 ## 마무리
-
-오랜만에 블로그 글을 쓰려니까 넘모 힘들다 :(
-
-## Reference
-
-[Part 1: Create and Deploy Your First Gatsby Site](https://www.gatsbyjs.com/docs/tutorial/part-1/)
-[What is Jamstack?](https://jamstack.org/what-is-jamstack/)
-[JAM Stack 개념 정리하기](https://pks2974.medium.com/jam-stack-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0-17dd5c34edf7) -->

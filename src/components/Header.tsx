@@ -100,7 +100,7 @@ function Header() {
             <Link to="/tags"><span css={[cssProps.page, cssProps.tags]} /></Link>
           </li>
           <li>
-            <Link to="/about" rel="noopener" target="_blank"><span css={[cssProps.page, cssProps.about]} /></Link>
+            <a href="/about" rel="noopener" target="_blank"><span css={[cssProps.page, cssProps.about]} /></a>
           </li>
         </ul>
       </nav>
