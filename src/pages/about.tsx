@@ -11,10 +11,11 @@ function About() {
           웹 프론트엔드 개발자 <strong>박유경</strong> 입니다!
         </h1>
         <p css={cssProps.introduce}>
-          웹 프론트엔드 개발자답게 UI/UX에 관심이 많습니다
-          끊임없이 진화하는 기술 트렌드에 적극적으로 대응하며, 새로운 기술 습득에 거부감이 없습니다
-          편안한 환경에 안주하기보다는 새로운 기술이나 해법을 적극적으로 탐구하고 실험함으로써 더 나은 결과를 추구하며,
-          지식으로 흡수하고 습득하는 것에 힘쓰고 있습니다.
+          웹 프론트엔드 개발자답게 UI/UX에 관심이 많습니다.<br /><br />
+          끊임없이 진화하는 기술 트렌드에 적극적으로 대응하며, 새로운 기술 습득에
+          거부감이 없습니다.<br /><br />
+          편안한 환경에 안주하기보다는 새로운 기술이나 해법을 적극적으로 탐구하고 실험함으로써<br />
+          더 나은 결과를 추구하며, 지식으로 흡수하고 습득하는 것에 힘쓰고 있습니다.
         </p>
         <h2 css={cssProps.subTitle}>Work Experience</h2>
         <h3 css={cssProps.companyName}>메타버스월드 ~ 넷마블에프엔씨</h3>
@@ -67,15 +68,15 @@ const cssProps = {
     width: '100%',
     maxWidth: 662,
     margin: '0 auto',
-    padding: '76px 16px'
+    padding: '76px 16px',
   }),
   title: css({
     marginBottom: 24,
     fontSize: 32,
   }),
   introduce: css({
-    margin: '26px 0 66px',
-    fontSize: 18,
+    margin: '36px 0 66px',
+    fontSize: 17,
     lineHeight: '1.5'
   }),
   subTitle: css({
@@ -83,13 +84,13 @@ const cssProps = {
     fontSize: 28
   }),
   companyName: css({
-    fontSize: 18,
+    fontSize: 20,
     marginBottom: 4,
     paddingLeft: 6,
     lineHeight: 1.4,
     borderLeft: '6px solid hsla(var(--palette-blue-100), 100%)',
     ["&:not(first-of-type)"]: {
-      marginTop: 32
+      marginTop: 36
     },
   }),
   period: css({
@@ -98,13 +99,13 @@ const cssProps = {
     fontSize: 14,
   }),
   description: css({
-    marginLeft: '24px',
-    marginTop: '6px',
-    marginBottom: '6px',
+    marginLeft: 24,
+    marginTop: 10,
+    marginBottom: 6,
     listStylePosition: 'outside',
     listStyleType: 'disc',
     'li': {
-      marginBottom: '4px',
+      marginBottom: 4,
       lineHeight: 1.5
     }
   })
