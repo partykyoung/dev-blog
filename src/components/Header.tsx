@@ -6,7 +6,6 @@ import { css } from "@emotion/react";
 import { mqMin } from "../styles/mediaQuery";
 
 import about from '../images/about.svg';
-import posts from '../images/posts.svg';
 import tags from '../images/tags.svg';
 
 const cssProps = {
@@ -31,7 +30,7 @@ const cssProps = {
   }),
   pages: css({
     display: 'flex',
-    gap: '18px',
+    gap: '12px',
 
     [mqMin('sm')]: {
       gap: '32px',
@@ -56,15 +55,6 @@ const cssProps = {
       backgroundImage: 'none',
       backgroundColor: 'transparent',
       fontSize: '20px'
-    }
-  }),
-  posts: css({
-    backgroundImage: `url(${posts})`,
-
-    [mqMin('sm')]: {
-      '&:after': {
-        content: '"Posts"'
-      },
     }
   }),
   tags: css({
@@ -93,9 +83,6 @@ function Header() {
       </Link>
       <nav css={cssProps.navigation}>
         <ul css={cssProps.pages}>
-          <li>
-            <Link to="/posts"><span css={[cssProps.page, cssProps.posts]} /></Link>
-          </li>
           <li>
             <Link to="/tags"><span css={[cssProps.page, cssProps.tags]} /></Link>
           </li>
