@@ -1,7 +1,7 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 
-import LayoutTemplate from '../templates/LayoutTemplate';
+import LayoutTemplate from '../commons/templates/LayoutTemplate';
 
 const pageStyles = {
   color: "#232129",

@@ -5,8 +5,8 @@ import { css } from "@emotion/react";
 
 import { mqMin } from "../styles/mediaQuery";
 
-import about from '../images/about.svg';
-import tags from '../images/tags.svg';
+import about from '../../assets/images/about.svg';
+import tags from '../../assets/images/tags.svg';
 
 const cssProps = {
   root: css({

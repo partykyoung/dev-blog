@@ -3,8 +3,8 @@ import { css } from '@emotion/react';
 
 import type { HeadFC, PageProps } from 'gatsby';
 
-import LayoutTemplate from '../templates/LayoutTemplate';
-import { mqMin } from '../styles/mediaQuery';
+import LayoutTemplate from '../commons/templates/LayoutTemplate';
+import { mqMin } from '../commons/styles/mediaQuery';
 
 const styles = {
   postContainer: css({
