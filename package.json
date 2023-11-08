@@ -12,7 +12,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gh-pages -d public -b main -r https://github.com/partyKyoung/partykyoung.github.io",
+    "deploy": "gh-pages -d public -b main -r https://github.com/partykyoung/partykyoung.github.io",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "@mdx-js/react": "^2.3.0",
     "gatsby": "^5.9.1",
     "gatsby-omni-font-loader": "^2.0.2",
+    "gatsby-plugin-cname": "^1.0.0",
     "gatsby-plugin-emotion": "^8.10.0",
     "gatsby-plugin-image": "^3.10.0",
     "gatsby-plugin-manifest": "^5.10.0",
