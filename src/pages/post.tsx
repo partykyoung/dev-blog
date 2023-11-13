@@ -5,6 +5,7 @@ import type { HeadFC, PageProps } from 'gatsby';
 
 import LayoutTemplate from '../commons/templates/LayoutTemplate';
 import { mqMin } from '../commons/styles/mediaQuery';
+import Tags from '../commons/components/Tags';
 
 const styles = {
   postContainer: css({
@@ -109,21 +110,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <div css={styles.postContainer}>
         <h1 css={styles.postTitle}>글제목</h1>
         <p css={styles.postDate}>2023.08.26</p>
-        <ul css={styles.postTags}>
-          <li css={styles.postTag}>
-            <a>태그 1</a>
-          </li>
-          <li css={styles.postTag}>
-            <a>태그 2</a>
-          </li>
-          <li css={styles.postTag}>
-            <a>태그 3</a>
-          </li>
-          <li css={styles.postTag}>
-            <a>혹시모르니까아주기다란태그</a>
-          </li>
-
-        </ul>
+        <Tags tags={['태그 1', '태그 2', '태그 3', '혹시모르니까아주기다란태그']} />
         <div css={styles.postContent}>
           <h2>제목2</h2>
           <h3>제목3</h3>

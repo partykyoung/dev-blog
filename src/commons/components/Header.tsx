@@ -1,12 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react";
 
 import { mqMin } from "../styles/mediaQuery";
-
-import about from '../../assets/images/about.svg';
-import tags from '../../assets/images/tags.svg';
 
 const cssProps = {
   root: css({
@@ -20,6 +16,10 @@ const cssProps = {
     [mqMin('xs')]: {
       padding: '0 24px',
     }
+  }),
+  logo: css({
+    maxWidth:194,
+     height: 'auto' 
   }),
   navigation: css({
     paddingLeft: '28px',
@@ -58,7 +58,7 @@ const cssProps = {
     }
   }),
   tags: css({
-    backgroundImage: `url(${tags})`,
+    backgroundImage: `url("/images/tags.svg")`,
     [mqMin('sm')]: {
       '&:after': {
         content: '"Tags"'
@@ -66,7 +66,7 @@ const cssProps = {
     }
   }),
   about: css({
-    backgroundImage: `url(${about})`,
+    backgroundImage: `url("/images/about.svg")`,
     [mqMin('sm')]: {
       '&:after': {
         content: '"About"'
@@ -79,7 +79,12 @@ function Header() {
   return (
     <header css={cssProps.root}>
       <Link to="/">
-        <StaticImage src="../images/logo.png" width={194} height={36} alt="logo" />
+        <img 
+          src="/images/logo.png" 
+          srcSet={`/images/logo-small.png 200w, /images/logo.png 300w`} 
+          sizes="(max-width: 360px) 200px, 300px" 
+          alt="dev.kyoungah.me"
+          css={cssProps.logo} />
       </Link>
       <nav css={cssProps.navigation}>
         <ul css={cssProps.pages}>
