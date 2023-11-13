@@ -15,7 +15,7 @@ function globalStyle() {
       word-wrap: break-word;
       -webkit-text-size-adjust: none;
       -webkit-overflow-scrolling: touch;
-      font-family: 'Noto Sans KR', Arial, Helvetica, sans-serif;
+      font-family: 'Nanum Gothic', Arial, Helvetica, sans-serif;
     }
 
     #___gatsby {
@@ -35,7 +35,6 @@ function globalStyle() {
 
     ul,
     ol {
-      list-style: none;
       margin: 0;
       padding: 0;
     }

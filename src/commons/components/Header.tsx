@@ -31,6 +31,7 @@ const cssProps = {
   pages: css({
     display: 'flex',
     gap: '12px',
+    listStyleType: 'none',
 
     [mqMin('sm')]: {
       gap: '32px',

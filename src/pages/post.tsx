@@ -32,7 +32,6 @@ const styles = {
   }),
   postTitle: {
     marginBottom: 38,
-    fontFamily: 'Noto Sans KR',
     fontSize: 38,
     fontWeight: 800,
     lineHeight: 1.5
@@ -58,35 +57,35 @@ const styles = {
   postContent: {
     h2: {
       marginTop: 38,
-      marginBottom: 12,
+      marginBottom: 28,
       fontSize: 32,
       fontWeight: 700,
       lineHeight: 1.5
     },
     h3: {
       marginTop: 28,
-      marginBottom: 16,
+      marginBottom: 28,
       fontSize: 28,
       fontWeight: 700,
       lineHeight: 1.5
     },
     h4: {
       marginTop: 28,
-      marginBottom: 16,
+      marginBottom: 28,
       fontSize: 24,
       fontWeight: 700,
       lineHeight: 1.5
     },
     h5: {
       marginTop: 28,
-      marginBottom: 14,
+      marginBottom: 28,
       fontSize: 22,
       fontWeight: 700,
       lineHeight: 1.5
     },
     h6: {
       marginTop: 28,
-      marginBottom: 14,
+      marginBottom: 28,
       fontSize: 20,
       fontWeight: 600,
       lineHeight: 1.5
@@ -100,6 +99,38 @@ const styles = {
       ['&:not(last-of-type)']: {
         marginBottom: 36
       }
+    },
+    ['ul, ol']: css({
+      marginTop: 36,
+      marginBottom: 36,
+      paddingLeft: 40,
+      fontSize: 18,
+      lineHeight: 1.7,
+      fontWeight: 400,
+      wordBreak: 'keep-all',
+      overflowWrap: 'break-word',
+
+      ['li']: {
+        marginBottom: 6
+      },
+
+      ['ul, ol']: {
+        marginTop: 12,
+        marginBottom: 12
+      },
+    }),
+    a: {
+      position: 'relative',
+      color: 'hsla(var(--base-blue), 39%)',
+      paddingBottom: `1px`,
+
+      ['&:hover']: {
+        borderBottom: `1px solid hsla(var(--base-blue), 39%)`
+      }
+    },
+    pre: {
+      marginTop: 36, 
+      marginBottom: 36
     }
   },
 };
@@ -121,9 +152,34 @@ const IndexPage: React.FC<PageProps> = () => {
           <ul>
             <li>일을 위한 준비 (출근 준비) - 약 30분</li>
             <li>일을 하러 가는 시간 (출퇴근 시간) - 약 1시간</li>
-            <li>식사 - 약 2시간</li>
+            <li>식사 - 약 2시간
+              <ul>
+                <li>으아아악</li>
+                <li>으아아악2</li>
+              </ul>
+            </li>
             <li>…</li>
           </ul>
+          <pre className="language-javascript"><code className="language-javascript">
+            {`
+            // isWellFormed()를 지원하지 않는 구형 브라우저를 위한 간단한 폴리필입니다.
+            // encodeURIComponent()는 론 서로게이트에 대해 오류를 던지지만 본질적으로 동일합니다.
+            function isWellFormed(str) {
+  if (typeof(str.isWellFormed)!="undefined") {
+    // 새로운 isWellFormed() 기능을 사용합니다.
+    return str.isWellFormed();
+  } else {
+    // 오래된 encodeURIComponent()를 사용합니다.
+    try {
+      encodeURIComponent(str);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+}
+            `}
+            </code></pre>          
           <p>일을 위한 것들이죠. 이미 4시간이나 사라졌어요. 아마 우리가 맞추고자 했던 ‘균형’이 이런 모습은 아니었을 것 같아요. 여기에 일정이 다가오는 업무로 인한 야근, 자기 개발을 위한 시간, 간혹 누리는 달콤한 늦잠, 체력을 위한 운동 까지 포함한다면 어떨까요? 우리가 지키고자 했던 ‘삶’을 위한 시간은 더 적어집니다.</p>
           <p>삶을 위한 시간이 점점 적어지면서 불만이 쌓여갑니다. 그러면서 수면을 포기하게 되는 현상이 발생합니다. 수면을 포기하니 삶의 질이 낮아지고 일에서의 퍼포먼스가 낮아집니다. 이로 인한 스트레스는 쌓이고 자야할 시간엔 이 스트레스를 해소하기 위한 무언가의 활동을 합니다. 다시 수면의 시간은 짧아지고 악순환이 시작됩니다.</p>
           <p>서로 명확히 분리하다보면 끊임없이 영역을 확보하기 위한 싸움을 하게 됩니다.</p>

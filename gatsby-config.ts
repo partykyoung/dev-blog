@@ -3,7 +3,7 @@ import type { GatsbyConfig } from 'gatsby';
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `dev-blog`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://dev.kyoungah.me`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -47,12 +47,23 @@ const config: GatsbyConfig = {
         ],
         web: [
           {
-            name: `Noto Sans KR`,
+            name: `Nanum Gothic`,
             file: `https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap`,
           },
         ],
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [{
+          resolve: `gatsby-remark-prismjs`,
+          options: {
+            classPrefix: "language-",
+          }
+        }]
+      }
+    }
   ],
 };
 
