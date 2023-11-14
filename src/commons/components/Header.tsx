@@ -1,13 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react";
 
 import { mqMin } from "../styles/mediaQuery";
-
-import about from '../images/about.svg';
-import posts from '../images/posts.svg';
-import tags from '../images/tags.svg';
 
 const cssProps = {
   root: css({
@@ -22,6 +17,10 @@ const cssProps = {
       padding: '0 24px',
     }
   }),
+  logo: css({
+    maxWidth:194,
+     height: 'auto' 
+  }),
   navigation: css({
     paddingLeft: '28px',
 
@@ -31,7 +30,8 @@ const cssProps = {
   }),
   pages: css({
     display: 'flex',
-    gap: '18px',
+    gap: '12px',
+    listStyleType: 'none',
 
     [mqMin('sm')]: {
       gap: '32px',
@@ -58,17 +58,8 @@ const cssProps = {
       fontSize: '20px'
     }
   }),
-  posts: css({
-    backgroundImage: `url(${posts})`,
-
-    [mqMin('sm')]: {
-      '&:after': {
-        content: '"Posts"'
-      },
-    }
-  }),
   tags: css({
-    backgroundImage: `url(${tags})`,
+    backgroundImage: `url("/images/tags.svg")`,
     [mqMin('sm')]: {
       '&:after': {
         content: '"Tags"'
@@ -76,7 +67,7 @@ const cssProps = {
     }
   }),
   about: css({
-    backgroundImage: `url(${about})`,
+    backgroundImage: `url("/images/about.svg")`,
     [mqMin('sm')]: {
       '&:after': {
         content: '"About"'
@@ -89,13 +80,15 @@ function Header() {
   return (
     <header css={cssProps.root}>
       <Link to="/">
-        <StaticImage src="../images/logo.png" width={194} height={36} alt="logo" />
+        <img 
+          src="/images/logo.png" 
+          srcSet={`/images/logo-small.png 200w, /images/logo.png 300w`} 
+          sizes="(max-width: 360px) 200px, 300px" 
+          alt="dev.kyoungah.me"
+          css={cssProps.logo} />
       </Link>
       <nav css={cssProps.navigation}>
         <ul css={cssProps.pages}>
-          <li>
-            <Link to="/posts"><span css={[cssProps.page, cssProps.posts]} /></Link>
-          </li>
           <li>
             <Link to="/tags"><span css={[cssProps.page, cssProps.tags]} /></Link>
           </li>

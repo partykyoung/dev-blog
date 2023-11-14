@@ -1,8 +1,8 @@
 {
-  "name": "dev-blog",
-  "version": "1.0.0",
+  "name": "kyoungah-dev-blog",
+  "version": "0.1.0",
   "private": true,
-  "description": "dev-blog",
+  "description": "kyoungah-dev-blog",
   "author": "partykyoung",
   "keywords": [
     "gatsby"
@@ -12,7 +12,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gh-pages -d public -b main -r https://github.com/partyKyoung/partykyoung.github.io",
+    "deploy": "gh-pages -d public -b main -r https://github.com/partykyoung/partykyoung.github.io",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -20,15 +20,22 @@
     "@emotion/styled": "^11.11.0",
     "@mdx-js/react": "^2.3.0",
     "gatsby": "^5.9.1",
+    "gatsby-omni-font-loader": "^2.0.2",
+    "gatsby-plugin-cname": "^1.0.0",
     "gatsby-plugin-emotion": "^8.10.0",
     "gatsby-plugin-image": "^3.10.0",
     "gatsby-plugin-manifest": "^5.10.0",
-    "gatsby-plugin-mdx": "^5.10.0",
-    "gatsby-plugin-sharp": "^5.10.0",
+    "gatsby-plugin-sharp": "^5.12.3",
+    "gatsby-remark-autolink-headers": "^6.12.3",
+    "gatsby-remark-images": "^7.12.3",
+    "gatsby-remark-prismjs": "^7.12.0",
     "gatsby-source-filesystem": "^5.10.0",
+    "gatsby-transformer-remark": "^6.12.3",
     "gatsby-transformer-sharp": "^5.10.0",
+    "prismjs": "^1.29.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "@types/node": "^18.16.5",

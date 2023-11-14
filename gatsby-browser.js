@@ -1,0 +1,1 @@
+require("./static/styles/prism-one-dark.css")

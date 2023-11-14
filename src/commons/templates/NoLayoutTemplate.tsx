@@ -1,9 +1,6 @@
 import React from 'react';
 import { Global, css } from "@emotion/react";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-
 import type { ReactNode } from "react";
 import globalStyle from '../styles/globalStyle';
 
