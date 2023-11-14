@@ -12,30 +12,48 @@ const config: GatsbyConfig = {
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'static/images/icon.png',
       },
     },
-    'gatsby-plugin-mdx',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              showCaptions: true
+            },
+          }, 
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {          
+              classPrefix: "language-",
+            }
+          }
+        ],
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: './static/images/',
+        path: `${__dirname}/static/images/`,
       },
       __key: 'images',
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'pages',
-        path: './src/pages/',
+        name: 'posts',
+        path: `${__dirname}/posts/`,
       },
-      __key: 'pages',
+      __key: 'posts',
     },
     {
       resolve: 'gatsby-omni-font-loader',
@@ -50,19 +68,12 @@ const config: GatsbyConfig = {
             name: `Nanum Gothic`,
             file: `https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap`,
           },
+          {
+            name: 'Fira Code',
+            file: 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap'
+          }
         ],
       },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [{
-          resolve: `gatsby-remark-prismjs`,
-          options: {
-            classPrefix: "language-",
-          }
-        }]
-      }
     }
   ],
 };
