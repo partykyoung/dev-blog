@@ -17,7 +17,7 @@ function Container({children, ...props}: Props) {
 const cssProps = {
     root: css({
       width: '100%',
-      padding: '76px 16px',
+      padding: '115px 16px 76px',
   
       [mqMin('sm')]: {
         paddingLeft: 20,

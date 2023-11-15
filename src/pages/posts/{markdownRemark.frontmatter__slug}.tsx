@@ -8,6 +8,20 @@ import LayoutTemplate from '../../commons/templates/LayoutTemplate';
 
 import type { HeadFC, PageProps } from 'gatsby';
 
+function Post({ data }: PageProps) {
+  return (
+    <LayoutTemplate>
+      <Container>
+        <h1 css={cssProps.postTitle}>{data.markdownRemark.frontmatter.title}</h1>
+        <span css={cssProps.postDate}>{data.markdownRemark.frontmatter.date}</span>
+        <Tags css={cssProps.postTags} tags={data.markdownRemark.frontmatter.tags} />        
+        <div css={cssProps.postContent} dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}/>
+      </Container>
+    </LayoutTemplate>
+  );
+};
+
+
 const cssProps = {
   postTitle: css({
     marginBottom: 38,
@@ -110,20 +124,6 @@ const cssProps = {
     }
   }),
 };
-
-function Post({ data }: PageProps) {
-  return (
-    <LayoutTemplate>
-      <Container>
-        <h1 css={cssProps.postTitle}>{data.markdownRemark.frontmatter.title}</h1>
-        <span css={cssProps.postDate}>{data.markdownRemark.frontmatter.date}</span>
-        <Tags css={cssProps.postTags} tags={data.markdownRemark.frontmatter.tags} />        
-        <div css={cssProps.postContent} dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}/>
-      </Container>
-    </LayoutTemplate>
-  );
-};
-
 
 export const query = graphql`
   query ($id: String) {

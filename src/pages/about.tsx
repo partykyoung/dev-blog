@@ -349,6 +349,8 @@ function About() {
 
 const cssProps = {
   root: css({
+    paddingTop: 76, 
+    
     [mqMin('lg')]: {
       width: 662,
     },
