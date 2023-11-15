@@ -2,35 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby'
 import { css } from '@emotion/react';
 
+import Container from '../../commons/components/Container';
+import Tags from '../../commons/components/Tags';
+import LayoutTemplate from '../../commons/templates/LayoutTemplate';
+
 import type { HeadFC, PageProps } from 'gatsby';
 
-import LayoutTemplate from '../../commons/templates/LayoutTemplate';
-import { mqMin } from '../../commons/styles/mediaQuery';
-import Tags from '../../commons/components/Tags';
-
-const styles = {
-  postContainer: css({
-    width: '100%',
-    paddingTop: 76,
-    paddingRight: 20,
-    paddingBottom: 76,
-    paddingLeft: 20,
-
-    [mqMin('sm')]: {
-      paddingLeft: 36,
-      paddingRight: 36
-    },
-
-    [mqMin('lg')]: {
-      width: 768,
-      marginLeft: 'auto',
-      marginRight: 'auto',
-      paddingLeft: 16,
-      paddingRight: 16
-
-    },
-
-  }),
+const cssProps = {
   postTitle: css({
     marginBottom: 38,
     fontSize: 38,
@@ -136,12 +114,12 @@ const styles = {
 function Post({ data }: PageProps) {
   return (
     <LayoutTemplate>
-      <div css={styles.postContainer}>
-        <h1 css={styles.postTitle}>{data.markdownRemark.frontmatter.title}</h1>
-        <span css={styles.postDate}>{data.markdownRemark.frontmatter.date}</span>
-        <Tags css={styles.postTags} tags={data.markdownRemark.frontmatter.tags} />        
-        <div css={styles.postContent} dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}/>
-      </div>
+      <Container>
+        <h1 css={cssProps.postTitle}>{data.markdownRemark.frontmatter.title}</h1>
+        <span css={cssProps.postDate}>{data.markdownRemark.frontmatter.date}</span>
+        <Tags css={cssProps.postTags} tags={data.markdownRemark.frontmatter.tags} />        
+        <div css={cssProps.postContent} dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}/>
+      </Container>
     </LayoutTemplate>
   );
 };

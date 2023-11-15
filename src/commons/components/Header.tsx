@@ -55,7 +55,7 @@ const cssProps = {
       height: 'auto',
       backgroundImage: 'none',
       backgroundColor: 'transparent',
-      fontSize: '20px'
+      fontSize: 18
     }
   }),
   tags: css({

@@ -1,12 +1,15 @@
 import { css } from '@emotion/react';
 
+import { mqMin } from '../commons/styles/mediaQuery';
+
+import Container from '../commons/components/Container';
 import Tags from '../commons/components/Tags';
 import NoLayoutTemplate from '../commons/templates/NoLayoutTemplate';
 
 function About() {
   return (
     <NoLayoutTemplate>
-      <div css={cssProps.root}>
+      <Container css={cssProps.root}>
         <h1 css={cssProps.title}>
           안녕하세요
           <br />웹 프론트엔드 개발자 <strong>박유경</strong> 입니다!
@@ -339,17 +342,16 @@ function About() {
             </ul>
           </div>
         </div>
-      </div>
+      </Container>
     </NoLayoutTemplate>
   );
 }
 
 const cssProps = {
   root: css({
-    width: '100%',
-    maxWidth: 662,
-    margin: '0 auto',
-    padding: '76px 16px',
+    [mqMin('lg')]: {
+      width: 662,
+    },
   }),
   title: css({
     marginBottom: 40,
