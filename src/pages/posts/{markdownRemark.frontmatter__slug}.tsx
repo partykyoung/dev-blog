@@ -14,7 +14,11 @@ function Post({ data }: PageProps) {
       <Container>
         <h1 css={cssProps.postTitle}>{data.markdownRemark.frontmatter.title}</h1>
         <span css={cssProps.postDate}>{data.markdownRemark.frontmatter.date}</span>
-        <Tags css={cssProps.postTags} tags={data.markdownRemark.frontmatter.tags} />        
+        {
+          data.markdownRemark.frontmatter.tags && (
+            <Tags css={cssProps.postTags} tags={data.markdownRemark.frontmatter.tags} /> 
+          )
+        }       
         <div css={cssProps.postContent} dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}/>
       </Container>
     </LayoutTemplate>
@@ -35,9 +39,10 @@ const cssProps = {
   }),
   postTags: css({
     marginTop: 16,
-    marginBottom: 56,
+
   }),
   postContent: css({
+    paddingTop: 56,
     paddingBottom: 28,
 
     ['h2']: {

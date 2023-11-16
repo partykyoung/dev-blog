@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import { graphql } from 'gatsby'
+import { useInfiniteQuery } from '@tanstack/react-query';
+
 import type { HeadFC, PageProps } from "gatsby"
 
 import Container from '../commons/components/Container';
 import LayoutTemplate from '../commons/templates/LayoutTemplate';
 
-const IndexPage: React.FC<PageProps> = () => {
+async function fetchPosts({ pageParam }: {pageParam: number}) {
+  fetch("./jsons/page1.json")//json파일 읽어오기
+  .then((response) => response.json())
+  .then((json) => console.log(json));//읽어온 데이터를 json으로 변환
+}
+
+function Index() {
+  const { data } = useInfiniteQuery({ 
+    queryKey: ['posts'],
+    queryFn: fetchPosts,
+    initialPageParam: 1,
+    getNextPageParam: (lastPage) => lastPage.nextCursor,
+  })
+
   return (
     <LayoutTemplate>
       <Container>
-      
+      :)
       </Container>
     </LayoutTemplate>
   )
@@ -18,13 +33,12 @@ const IndexPage: React.FC<PageProps> = () => {
 export const query = graphql`
   query {
     allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 1000
+      sort: {frontmatter: {date: DESC}}, limit: 100
     ) {
       edges {
         node {
           frontmatter {
-            path
+            slug
           }
         }
       }
@@ -32,8 +46,6 @@ export const query = graphql`
   }
 `
 
-
-
 export const Head: HeadFC = () => <title>Home Page</title>
 
-export default IndexPage
+export default Index
