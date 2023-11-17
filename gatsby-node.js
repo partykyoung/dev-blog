@@ -27,10 +27,12 @@ exports.createPages = ({ graphql }) => {
           node {
             id,
             excerpt(truncate: true, pruneLength: 200),
+            fields {
+              slug
+            },
             frontmatter {
               tags,
-              title,
-              slug
+              title
             }
           }
         }
@@ -45,7 +47,7 @@ exports.createPages = ({ graphql }) => {
 
     const posts = edges.map(({ node }) => ({
       id: node.id,
-      slug: node.frontmatter.slug,
+      slug: node.fields.slug,
       excerpt: node.excerpt,
       title: node.frontmatter.title,
       date: node.frontmatter.date,
@@ -73,3 +75,17 @@ exports.createPages = ({ graphql }) => {
     }
   });
 };
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === 'MarkdownRemark') {
+    const slug = createFilePath({ node, getNode, basePath: 'posts' })
+
+    createNodeField({
+      node,
+      name: 'slug',
+      value: slug,
+    })
+  }
+}

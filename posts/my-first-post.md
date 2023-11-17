@@ -1,7 +1,6 @@
 ---
 title: "My First Post"
 date: "2021-07-23"
-slug: "my-first-post"
 tags: ["animals", "Chicago", "zoos"]
 ---
 
