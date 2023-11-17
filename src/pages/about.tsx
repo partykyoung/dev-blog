@@ -1,12 +1,15 @@
 import { css } from '@emotion/react';
 
+import { mqMin } from '../commons/styles/mediaQuery';
+
+import Container from '../commons/components/Container';
 import Tags from '../commons/components/Tags';
 import NoLayoutTemplate from '../commons/templates/NoLayoutTemplate';
 
 function About() {
   return (
     <NoLayoutTemplate>
-      <div css={cssProps.root}>
+      <Container css={cssProps.root}>
         <h1 css={cssProps.title}>
           안녕하세요
           <br />웹 프론트엔드 개발자 <strong>박유경</strong> 입니다!
@@ -48,7 +51,12 @@ function About() {
             <span css={cssProps.workExperienceDetailPeriod}>
               2023.06 ~ 2023.11
             </span>
-            <Tags css={cssProps.workExperienceTackStacks} tags={['TypeScript', 'React Native', 'Redux', 'Protobuf']} />
+            <Tags css={cssProps.workExperienceTackStacks}>
+              <Tags.Tag tag="TypeScript" />
+              <Tags.Tag tag="React Native" />
+              <Tags.Tag tag="Redux Toolkit" />
+              <Tags.Tag tag="Protobuf" />
+            </Tags>             
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>WebSocket과 Protobuf를 사용하여 채팅 기능 개발</li>
               <li>WebRTC를 사용하여 음성채팅, 화상채팅 기능 구현</li>
@@ -62,7 +70,12 @@ function About() {
             <span css={cssProps.workExperienceDetailPeriod}>
               2023.05 ~ 2023.06
             </span>
-            <Tags css={cssProps.workExperienceTackStacks} tags={['TypeScript', 'React', 'Recoil', 'styled-components']} />
+            <Tags css={cssProps.workExperienceTackStacks}>
+              <Tags.Tag tag="TypeScript" />
+              <Tags.Tag tag="React" />
+              <Tags.Tag tag="Recoil" />
+              <Tags.Tag tag="styled-components" />
+            </Tags>              
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>
                 수기로 지출 품의서 및 지출 결의서를 작성하는 재무팀을 위해 지출
@@ -98,7 +111,13 @@ function About() {
             <span css={cssProps.workExperienceDetailPeriod}>
               2022.03 ~ 2023.04
             </span>
-            <Tags css={cssProps.workExperienceTackStacks} tags={['TypeScript', 'Next.js', 'Recoil', 'emotion', 'Turborepo']} />
+            <Tags css={cssProps.workExperienceTackStacks}>
+              <Tags.Tag tag="TypeScript" />
+              <Tags.Tag tag="Next.js" />
+              <Tags.Tag tag="Recoil" />
+              <Tags.Tag tag="emotion" />
+              <Tags.Tag tag="Turborepo" />
+            </Tags>                
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>
                 코인 스테이킹, 브릿지, NFT 에어드롭 및 구매, 판매를 제공하는
@@ -122,7 +141,12 @@ function About() {
             <span css={cssProps.workExperienceDetailPeriod}>
               2023.04 ~ 2023.04
             </span>
-            <Tags css={cssProps.workExperienceTackStacks} tags={['TypeScript', 'React', 'emotion', 'Turborepo']} />
+            <Tags css={cssProps.workExperienceTackStacks}>
+              <Tags.Tag tag="TypeScript" />
+              <Tags.Tag tag="React" />
+              <Tags.Tag tag="emotion" />
+              <Tags.Tag tag="Turborepo" />
+            </Tags>             
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>모바일 게임 공지사항, 패치내역, 이벤트 게시판을 게임 앱 내 웹뷰 페이지로 개발</li>
               <li>
@@ -156,7 +180,12 @@ function About() {
             <span css={cssProps.workExperienceDetailPeriod}>
               2019.05 ~ 2022.03
             </span>
-            <Tags css={cssProps.workExperienceTackStacks} tags={['TypeScript', 'React', 'Redux', 'styled-components']} />
+            <Tags css={cssProps.workExperienceTackStacks}>
+              <Tags.Tag tag="TypeScript" />
+              <Tags.Tag tag="React" />
+              <Tags.Tag tag="Redux" />
+              <Tags.Tag tag="styled-components" />
+            </Tags>                 
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>중고거래 서비스 번개장터 PC웹, 모바일웹 담당</li>
               <li>모바일웹 판매등록 페이지 리팩토링</li>
@@ -174,7 +203,11 @@ function About() {
             <span css={cssProps.workExperienceDetailPeriod}>
               2020.04 ~ 2022.03
             </span>
-            <Tags css={cssProps.workExperienceTackStacks} tags={['TypeScript', 'React', 'styled-components']} />
+            <Tags css={cssProps.workExperienceTackStacks}>
+              <Tags.Tag tag="TypeScript" />
+              <Tags.Tag tag="React" />
+              <Tags.Tag tag="styled-components" />
+            </Tags>               
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>중고폰 시세 조회 판매 서비스</li>
               <li>
@@ -193,7 +226,12 @@ function About() {
             <span css={cssProps.workExperienceDetailPeriod}>
               2020.11 ~ 2022.03
             </span>
-            <Tags css={cssProps.workExperienceTackStacks} tags={['TypeScript', 'React', 'Redux', 'styled-components']} />            
+            <Tags css={cssProps.workExperienceTackStacks}>
+              <Tags.Tag tag="TypeScript" />
+              <Tags.Tag tag="React" />
+              <Tags.Tag tag="Redux" />
+              <Tags.Tag tag="styled-components" />
+            </Tags>               
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>번개장터 이벤트 및 프로모션을 반응형 웹, 네이티브 앱 내 웹뷰 페이지로 개발</li>
               <li>
@@ -208,7 +246,12 @@ function About() {
             <span css={cssProps.workExperienceDetailPeriod}>
               2021.11 ~ 2021.12
             </span>
-            <Tags css={cssProps.workExperienceTackStacks} tags={['TypeScript', 'React', 'Mobx', 'styled-components']} />
+            <Tags css={cssProps.workExperienceTackStacks}>
+              <Tags.Tag tag="TypeScript" />
+              <Tags.Tag tag="React" />
+              <Tags.Tag tag="Mobx" />
+              <Tags.Tag tag="styled-components" />
+            </Tags>                          
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>
                 문 앞에서 판매자의 물품을 픽업해 포장 및 배송을 해주는 서비스
@@ -223,7 +266,12 @@ function About() {
             <span css={cssProps.workExperienceDetailPeriod}>
               2019.10 ~ 2019.11
             </span>
-            <Tags css={cssProps.workExperienceTackStacks} tags={['TypeScript', 'React', 'Mobx', 'styled-components']} />
+            <Tags css={cssProps.workExperienceTackStacks}>
+              <Tags.Tag tag="TypeScript" />
+              <Tags.Tag tag="React" />
+              <Tags.Tag tag="Mobx" />
+              <Tags.Tag tag="styled-components" />
+            </Tags>                  
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>중고폰 파손보험 가입 서비스</li>
               <li>서비스 주요 페이지 및 기능들을 네이티브 앱 내 웹뷰 페이지로 개발</li>
@@ -257,7 +305,13 @@ function About() {
             <span css={cssProps.workExperienceDetailPeriod}>
               2018.04 ~ 2019.05
             </span>
-            <Tags css={cssProps.workExperienceTackStacks} tags={['React', 'Redux', 'Redux-Form', 'jQuery', 'Node.js']} />
+            <Tags css={cssProps.workExperienceTackStacks}>
+              <Tags.Tag tag="React" />
+              <Tags.Tag tag="Redux" />
+              <Tags.Tag tag="Redux-Form" />
+              <Tags.Tag tag="jQuery" />
+              <Tags.Tag tag="Node.js" />
+            </Tags>                
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>
                 소비자가 판매상품을 발굴하고 판매상품이 판매 목록에 등록되면
@@ -277,7 +331,13 @@ function About() {
             <span css={cssProps.workExperienceDetailPeriod}>
               2017.08 ~ 2018.03
             </span>
-            <Tags css={cssProps.workExperienceTackStacks} tags={['React', 'Redux', 'Redux-Form', 'jQuery', 'Node.js']} />
+            <Tags css={cssProps.workExperienceTackStacks}>
+              <Tags.Tag tag="React" />
+              <Tags.Tag tag="Redux" />
+              <Tags.Tag tag="Redux-Form" />
+              <Tags.Tag tag="jQuery" />
+              <Tags.Tag tag="Node.js" />
+            </Tags>            
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>
                 임플란트 시술 방법 및 과정을 등록하고 다른 사용자가 해당 정보를
@@ -313,7 +373,12 @@ function About() {
             <span css={cssProps.workExperienceDetailPeriod}>
               2016.07 ~ 2017.08
             </span>
-            <Tags css={cssProps.workExperienceTackStacks} tags={['React', 'Reflux', 'jQuery', 'Node.js']} />
+            <Tags css={cssProps.workExperienceTackStacks}>
+              <Tags.Tag tag="React" />
+              <Tags.Tag tag="Reflux" />
+              <Tags.Tag tag="jQuery" />
+              <Tags.Tag tag="Node.js" />
+            </Tags>
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>
                 호텔 가격 비교, 예약, 결제를 한번에 제공하는 메타부킹 서비스
@@ -331,7 +396,12 @@ function About() {
             <span css={cssProps.workExperienceDetailPeriod}>
               2016.07 ~ 2017.08
             </span>
-            <Tags css={cssProps.workExperienceTackStacks} tags={['React', 'Reflux', 'jQuery', 'Node.js']} />
+            <Tags css={cssProps.workExperienceTackStacks}>
+              <Tags.Tag tag="React" />
+              <Tags.Tag tag="Reflux" />
+              <Tags.Tag tag="jQuery" />
+              <Tags.Tag tag="Node.js" />
+            </Tags>               
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>협력사와 내부직원에게 제공하는 운영 어드민</li>
               <li>호텔 카테고리 신규 기능 개발 및 유지보수</li>
@@ -339,17 +409,18 @@ function About() {
             </ul>
           </div>
         </div>
-      </div>
+      </Container>
     </NoLayoutTemplate>
   );
 }
 
 const cssProps = {
   root: css({
-    width: '100%',
-    maxWidth: 662,
-    margin: '0 auto',
-    padding: '76px 16px',
+    paddingTop: 76, 
+    
+    [mqMin('lg')]: {
+      width: 662,
+    },
   }),
   title: css({
     marginBottom: 40,
