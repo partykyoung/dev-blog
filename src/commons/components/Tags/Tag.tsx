@@ -1,12 +1,14 @@
 import { css } from '@emotion/react';
 
+import type { HTMLAttributes } from 'react';
+
 type Props = {
     tag: string;
-}
+} & HTMLAttributes<HTMLSpanElement>
 
-function Tag({tag}: Props) {
+function Tag({tag, ...props}: Props) {
     return (
-        <span css={cssProps.root}>{tag}</span>
+        <span css={cssProps.root} {...props}>{tag}</span>
     )
 }
 

@@ -16,7 +16,11 @@ function Post({ data }: PageProps) {
         <span css={cssProps.postDate}>{data.markdownRemark.frontmatter.date}</span>
         {
           data.markdownRemark.frontmatter.tags && (
-            <Tags css={cssProps.postTags} tags={data.markdownRemark.frontmatter.tags} /> 
+            <Tags css={cssProps.postTags}>
+              {data.markdownRemark.frontmatter.tags.map((tag) => (
+                <Tags.LinkTag key={tag} tag={tag} />
+              ))}
+            </Tags> 
           )
         }       
         <div css={cssProps.postContent} dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}/>
