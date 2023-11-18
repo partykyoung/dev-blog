@@ -1,4 +1,4 @@
-import { css } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 
 import type { ReactNode } from 'react';
 
@@ -8,15 +8,21 @@ type Props = {
 
 function PostsRoot({children}: Props) {
     return (
-        <ul css={cssProps.root}>
+        <div css={cssProps.root}>
             {children}     
-        </ul>
+        </div>
     )
 }
+
+const show = keyframes({
+    from: {opacity: 0},
+    to: {opacity: 1}
+})
 
 const cssProps = {
     root: css({
         width: '100%',
+        animation: `0.6s ${show}`,
     })
 }
 

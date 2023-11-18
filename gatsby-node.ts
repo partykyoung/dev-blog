@@ -1,7 +1,9 @@
-const path = require(`path`);
-const fs = require('fs');
+import path from 'path';
+import fs from 'fs';
 
-const { createFilePath } = require('gatsby-source-filesystem');
+import { createFilePath} from 'gatsby-source-filesystem';
+
+import Post from './src/commons/templates/PostTemplate';
 
 // 페이징에 필요한 폴더 및 json 파일을 만든다.
 function createJSON(pageData) {
@@ -17,7 +19,9 @@ function createJSON(pageData) {
   fs.writeFile(filePath, dataToSave, () => {});
 }
 
-exports.createPages = ({ graphql }) => {
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
+
   return graphql(`
     {
       allMarkdownRemark(
@@ -32,7 +36,8 @@ exports.createPages = ({ graphql }) => {
             },
             frontmatter {
               tags,
-              title
+              title,
+              publish
             }
           }
         }
@@ -44,14 +49,27 @@ exports.createPages = ({ graphql }) => {
     }
 
     const { edges } = result.data.allMarkdownRemark;
+    const posts = [];
 
-    const posts = edges.map(({ node }) => ({
-      id: node.id,
-      slug: node.fields.slug,
-      excerpt: node.excerpt,
-      title: node.frontmatter.title,
-      date: node.frontmatter.date,
-    }));
+    edges.forEach(({node}) => {
+      createPage({
+        path: node.fields.slug,
+        component: Post,
+        context: {
+          slug: node.fields.slug
+        }, // additional data can be passed via context
+      });
+
+      if (node.frontmatter.publish) {
+        posts.push({
+          id: node.id,
+          slug: node.fields.slug,
+          excerpt: node.excerpt,
+          title: node.frontmatter.title,
+          date: node.frontmatter.date
+        })
+      }
+    })
 
     const postsPerPage = 10;
     const numPages = Math.ceil(edges.length / postsPerPage);

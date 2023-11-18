@@ -7,7 +7,7 @@ type Props = {
     title: string;
 }
 
-function Post({
+function PostListItem({
     link,
     title,
     excerpt
@@ -57,4 +57,4 @@ const cssProps = {
     })
 }
 
-export default Post;
+export default PostListItem;

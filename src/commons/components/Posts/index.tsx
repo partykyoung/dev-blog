@@ -1,8 +1,15 @@
 import PostsRoot from "./PostsRoot";
-import Post from './Post';
+
+import EmptyPost from "./EmptyPost";
+import FetchPostLoader from './FetchPostLoader';
+import PostList from "./PostList";
+import PostListItem from "./PostListItem";
 
 const Posts = Object.assign(PostsRoot, {
-    Post,
+    EmptyPost,
+    FetchPostLoader,
+    PostList,
+    PostListItem
 });
 
 export default Posts;

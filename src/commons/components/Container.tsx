@@ -18,6 +18,7 @@ const cssProps = {
     root: css({
       width: '100%',
       padding: '115px 16px 76px',
+      minHeight: 'calc(100vh - var(--header-height) - var(--footer-height))',
   
       [mqMin('sm')]: {
         paddingLeft: 20,

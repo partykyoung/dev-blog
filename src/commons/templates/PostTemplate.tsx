@@ -1,10 +1,9 @@
-import React from 'react';
 import { graphql } from 'gatsby'
 import { css } from '@emotion/react';
 
-import Container from '../../commons/components/Container';
-import Tags from '../../commons/components/Tags';
-import LayoutTemplate from '../../commons/templates/LayoutTemplate';
+import Container from '../components/Container';
+import Tags from '../components/Tags';
+import LayoutTemplate from './LayoutTemplate';
 
 import type { HeadFC, PageProps } from 'gatsby';
 

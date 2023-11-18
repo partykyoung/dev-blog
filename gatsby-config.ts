@@ -1,4 +1,17 @@
+import fs from 'fs';
+
 import type { GatsbyConfig } from 'gatsby';
+
+// 페이징에 필요한 폴더 및 json 파일을 만든다.
+function createJsonsDir() {
+  const dir = `${__dirname}/static/jsons`;
+
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
+}
+
+createJsonsDir();
 
 const config: GatsbyConfig = {
   siteMetadata: {
