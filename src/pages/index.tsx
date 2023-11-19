@@ -23,19 +23,17 @@ function Index() {
     getNextPageParam: (lastPage) => lastPage.nextCursor,
   });
 
-  console.log(data?.pages);
-
   return (
     <LayoutTemplate>
       <Container css={cssProps.root}>
-        {!isFetched && <Posts.FetchPostLoader />}
+        {!isFetched && <Posts.FetchPostLoader css={cssProps.center} />}
         {data && (
           <>
             {data.pages && (
               <Posts>
                 {data.pages.map((page, pageIndex) => {
                   if (page.currentPage === 1 && page.posts <= 0) {
-                    return <Posts.EmptyPost />;
+                    return <Posts.EmptyPost css={cssProps.center} />;
                   }
 
                   return (
@@ -64,6 +62,12 @@ const cssProps = {
   root: css({
     position: 'relative',
   }),
+  center: css({
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+  })
 };
 
 export const Head: HeadFC = () => <title>Home Page</title>;

@@ -1,8 +1,10 @@
 import { css, keyframes } from '@emotion/react';
 
-const Loading = () => {
+import type { HTMLAttributes } from 'react';
+
+function FetchPostLoader ({...props}: HTMLAttributes<HTMLDivElement>) {
   return (
-    <div css={cssProps.root}>
+    <div {...props} css={cssProps.root}>
         <span />
         <span />
         <span />
@@ -42,4 +44,4 @@ const cssProps = {
     })
 }
 
-export default Loading;
+export default FetchPostLoader;

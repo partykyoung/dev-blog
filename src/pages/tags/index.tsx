@@ -1,4 +1,5 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
+import { css } from '@emotion/react';
 
 import type { HeadFC } from "gatsby"
 
@@ -23,13 +24,27 @@ function Tags() {
 
   return (
     <LayoutTemplate>
-      <Container>
-        {/**TODO: 태그 들어갈 영역 */}
-        TODO 
+      <Container css={cssProps.root}>
+        <Posts>
+          <Posts.EmptyPost css={cssProps.center} />
+        </Posts>
       </Container>
     </LayoutTemplate>
   )
 }
+
+const cssProps = {
+  root: css({
+    position: 'relative',
+  }),
+  center: css({
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+  })
+};
+
 
 export const Head: HeadFC = () => <title>Home Page</title>
 
