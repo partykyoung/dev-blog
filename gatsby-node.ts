@@ -3,7 +3,8 @@ import fs from 'fs';
 
 import { createFilePath} from 'gatsby-source-filesystem';
 
-import Post from './src/commons/templates/PostTemplate';
+import PostTemplate from './src/commons/templates/PostTemplate';
+import TagTemplate from './src/commons/templates/TagTemplate';
 
 // 페이징에 필요한 폴더 및 json 파일을 만든다.
 function createJSON(pageData) {
@@ -19,10 +20,10 @@ function createJSON(pageData) {
   fs.writeFile(filePath, dataToSave, () => {});
 }
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
-  return graphql(`
+  const postsResult = await graphql(`
     {
       allMarkdownRemark(
         sort: {frontmatter: {date: DESC}}, limit: 1000
@@ -43,18 +44,24 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then((result) => {
+  `);
+
+  if (postsResult.error) {
+
+  }
+  .then((result) => {
     if (result.errors) {
-      return Promise.reject(result.errors);
+      reporter.panicOnBuild(`Error while running GraphQL query.`)
+    
+      return
     }
 
-    const { edges } = result.data.allMarkdownRemark;
-    const posts = [];
+    const { edges } = postsResult.data.allMarkdownRemark;
 
     edges.forEach(({node}) => {
       createPage({
         path: node.fields.slug,
-        component: Post,
+        component: PostTemplate,
         context: {
           slug: node.fields.slug
         }, // additional data can be passed via context

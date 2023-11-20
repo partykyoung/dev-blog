@@ -1,4 +1,5 @@
-import { useInfiniteQuery } from '@tanstack/react-query';
+import { graphql } from 'gatsby';
+import {  useInfiniteQuery } from '@tanstack/react-query';
 import { css } from '@emotion/react';
 
 import type { HeadFC } from "gatsby"
@@ -14,7 +15,15 @@ async function fetchPosts({ pageParam }: {pageParam: number}) {
   return page;
 }
 
-function Tags() {
+function Tags({
+  data: {
+    allMarkdownRemark: { group },
+    site: {
+      siteMetadata: { title },
+    },
+  },
+}) {
+  console.log(group)
   // const { data } = useInfiniteQuery({ 
   //   queryKey: ['posts'],
   //   queryFn: fetchPosts,
@@ -26,7 +35,20 @@ function Tags() {
     <LayoutTemplate>
       <Container css={cssProps.root}>
         <Posts>
-          <Posts.EmptyPost css={cssProps.center} />
+          {
+            group.length <= 0 && <Posts.EmptyPost css={cssProps.center} />
+          }
+          {
+            group.length > 0 && (
+              <ul>
+                {group.map((tag) => (
+                  <li>
+                      {tag.fieldValue} ({tag.totalCount})
+                  </li>
+                ))}
+              </ul>
+            )
+          }
         </Posts>
       </Container>
     </LayoutTemplate>
@@ -45,6 +67,26 @@ const cssProps = {
   })
 };
 
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(
+      filter: {
+        frontmatter: {
+            publish: {eq: true }
+        }
+    }) {
+      group(field: { frontmatter: { tags: SELECT }}) {
+        fieldValue
+        totalCount
+      }
+    }
+  }
+`
 
 export const Head: HeadFC = () => <title>Home Page</title>
 
