@@ -6,7 +6,7 @@ import Container from '../commons/components/Container';
 import Tags from '../commons/components/Tags';
 import NoLayoutTemplate from '../commons/templates/NoLayoutTemplate';
 
-function About() {
+function AboutPage() {
   return (
     <NoLayoutTemplate>
       <Container css={cssProps.root}>
@@ -38,7 +38,9 @@ function About() {
             <tr>
               <th>position</th>
               <td>
-                <span>R&D실</span><span>&nbsp;서버팀&nbsp;</span><span>FE파트</span>
+                <span>R&D실</span>
+                <span>&nbsp;서버팀&nbsp;</span>
+                <span>FE파트</span>
                 <span css={cssProps.slash}>/</span>
                 <span>Front-End Developer</span>
               </td>
@@ -56,7 +58,7 @@ function About() {
               <Tags.Tag tag="React Native" />
               <Tags.Tag tag="Redux Toolkit" />
               <Tags.Tag tag="Protobuf" />
-            </Tags>             
+            </Tags>
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>WebSocket과 Protobuf를 사용하여 채팅 기능 개발</li>
               <li>WebRTC를 사용하여 음성채팅, 화상채팅 기능 구현</li>
@@ -75,7 +77,7 @@ function About() {
               <Tags.Tag tag="React" />
               <Tags.Tag tag="Recoil" />
               <Tags.Tag tag="styled-components" />
-            </Tags>              
+            </Tags>
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>
                 수기로 지출 품의서 및 지출 결의서를 작성하는 재무팀을 위해 지출
@@ -117,20 +119,21 @@ function About() {
               <Tags.Tag tag="Recoil" />
               <Tags.Tag tag="emotion" />
               <Tags.Tag tag="Turborepo" />
-            </Tags>                
+            </Tags>
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>
                 코인 스테이킹, 브릿지, NFT 에어드롭 및 구매, 판매를 제공하는
                 서비스
               </li>
               <li>
-                Single Pool 및 Event Pool 스테이킹 서비스, NFT 상품 상세, 이벤트 페이지를  반응형 웹 및 런처 내 웹뷰 페이지로 개발
+                Single Pool 및 Event Pool 스테이킹 서비스, NFT 상품 상세, 이벤트
+                페이지를 반응형 웹 및 런처 내 웹뷰 페이지로 개발
               </li>
               <li>web3.js를 사용하여 스마트 컨트랙트 연동</li>
               <li>
                 모노레포를 사용하여 웹서비스 및 웹뷰에서 공통 UI 컴포넌트, 공통
                 비즈니스 로직 개발
-              </li>              
+              </li>
               <li>버그 수정 및 피드백 반영</li>
             </ul>
           </div>
@@ -146,9 +149,12 @@ function About() {
               <Tags.Tag tag="React" />
               <Tags.Tag tag="emotion" />
               <Tags.Tag tag="Turborepo" />
-            </Tags>             
+            </Tags>
             <ul css={cssProps.workExperienceDetailDescription}>
-              <li>모바일 게임 공지사항, 패치내역, 이벤트 게시판을 게임 앱 내 웹뷰 페이지로 개발</li>
+              <li>
+                모바일 게임 공지사항, 패치내역, 이벤트 게시판을 게임 앱 내 웹뷰
+                페이지로 개발
+              </li>
               <li>
                 여러 모바일 게임에 간단하게 이식할 수 있도록 모노레포를 사용하여
                 공통 UI, 공통 비즈니스 로직 개발
@@ -185,7 +191,7 @@ function About() {
               <Tags.Tag tag="React" />
               <Tags.Tag tag="Redux" />
               <Tags.Tag tag="styled-components" />
-            </Tags>                 
+            </Tags>
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>중고거래 서비스 번개장터 PC웹, 모바일웹 담당</li>
               <li>모바일웹 판매등록 페이지 리팩토링</li>
@@ -207,7 +213,7 @@ function About() {
               <Tags.Tag tag="TypeScript" />
               <Tags.Tag tag="React" />
               <Tags.Tag tag="styled-components" />
-            </Tags>               
+            </Tags>
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>중고폰 시세 조회 판매 서비스</li>
               <li>
@@ -231,11 +237,16 @@ function About() {
               <Tags.Tag tag="React" />
               <Tags.Tag tag="Redux" />
               <Tags.Tag tag="styled-components" />
-            </Tags>               
+            </Tags>
             <ul css={cssProps.workExperienceDetailDescription}>
-              <li>번개장터 이벤트 및 프로모션을 반응형 웹, 네이티브 앱 내 웹뷰 페이지로 개발</li>
               <li>
-                마케팅팀이 엑셀 시트에 이벤트 데이터를 입력하면 자동으로 해당 정보를 반영한 이벤트 페이지가 생성될 수 있도록 전용 컴포넌트 및 페이지 개발
+                번개장터 이벤트 및 프로모션을 반응형 웹, 네이티브 앱 내 웹뷰
+                페이지로 개발
+              </li>
+              <li>
+                마케팅팀이 엑셀 시트에 이벤트 데이터를 입력하면 자동으로 해당
+                정보를 반영한 이벤트 페이지가 생성될 수 있도록 전용 컴포넌트 및
+                페이지 개발
               </li>
             </ul>
           </div>
@@ -251,12 +262,15 @@ function About() {
               <Tags.Tag tag="React" />
               <Tags.Tag tag="Mobx" />
               <Tags.Tag tag="styled-components" />
-            </Tags>                          
+            </Tags>
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>
                 문 앞에서 판매자의 물품을 픽업해 포장 및 배송을 해주는 서비스
               </li>
-              <li>택배 신청 페이지, 배송 현황 페이지를 네이티브 앱 내 웹뷰 페이지로 개발</li>
+              <li>
+                택배 신청 페이지, 배송 현황 페이지를 네이티브 앱 내 웹뷰
+                페이지로 개발
+              </li>
             </ul>
           </div>
           <div css={cssProps.workExperienceDetails}>
@@ -271,12 +285,15 @@ function About() {
               <Tags.Tag tag="React" />
               <Tags.Tag tag="Mobx" />
               <Tags.Tag tag="styled-components" />
-            </Tags>                  
+            </Tags>
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>중고폰 파손보험 가입 서비스</li>
-              <li>서비스 주요 페이지 및 기능들을 네이티브 앱 내 웹뷰 페이지로 개발</li>
               <li>
-                팀 내에서 사용되는 프로젝트 구조를 간추려 보일러 플레이트 작성 및 유지보수
+                서비스 주요 페이지 및 기능들을 네이티브 앱 내 웹뷰 페이지로 개발
+              </li>
+              <li>
+                팀 내에서 사용되는 프로젝트 구조를 간추려 보일러 플레이트 작성
+                및 유지보수
               </li>
               <li>공통 Eslint Rule 및 Prettier Rule 적용</li>
             </ul>
@@ -311,7 +328,7 @@ function About() {
               <Tags.Tag tag="Redux-Form" />
               <Tags.Tag tag="jQuery" />
               <Tags.Tag tag="Node.js" />
-            </Tags>                
+            </Tags>
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>
                 소비자가 판매상품을 발굴하고 판매상품이 판매 목록에 등록되면
@@ -321,7 +338,6 @@ function About() {
               <li>프론트 개발 환경 구성 및 프로젝트 아키텍처 설계</li>
               <li>코드 스플리팅 적용</li>
               <li>Server Side Rendering 적용</li>
-
             </ul>
           </div>
           <div css={cssProps.workExperienceDetails}>
@@ -337,7 +353,7 @@ function About() {
               <Tags.Tag tag="Redux-Form" />
               <Tags.Tag tag="jQuery" />
               <Tags.Tag tag="Node.js" />
-            </Tags>            
+            </Tags>
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>
                 임플란트 시술 방법 및 과정을 등록하고 다른 사용자가 해당 정보를
@@ -401,7 +417,7 @@ function About() {
               <Tags.Tag tag="Reflux" />
               <Tags.Tag tag="jQuery" />
               <Tags.Tag tag="Node.js" />
-            </Tags>               
+            </Tags>
             <ul css={cssProps.workExperienceDetailDescription}>
               <li>협력사와 내부직원에게 제공하는 운영 어드민</li>
               <li>호텔 카테고리 신규 기능 개발 및 유지보수</li>
@@ -416,8 +432,8 @@ function About() {
 
 const cssProps = {
   root: css({
-    paddingTop: 76, 
-    
+    paddingTop: 76,
+
     [mqMin('lg')]: {
       width: 662,
     },
@@ -480,7 +496,7 @@ const cssProps = {
 
     'td span': {
       display: 'inline-block',
-      lineHeight: 1.25
+      lineHeight: 1.25,
     },
   }),
   slash: {
@@ -522,4 +538,4 @@ const cssProps = {
   }),
 };
 
-export default About;
+export default AboutPage;

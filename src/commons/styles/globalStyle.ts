@@ -5,6 +5,8 @@ function globalStyle() {
     html,
     body {
       height: 100%;
+      margin: 0;
+      padding: 0;
     }
 
     body {
@@ -186,6 +188,7 @@ function globalStyle() {
       --success-color: hsla(var(--base-success), 38%);
 
       --header-height: 64px;
+      --footer-height: 106px;
     }
   `;
 }

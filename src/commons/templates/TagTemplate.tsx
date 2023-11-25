@@ -4,21 +4,21 @@ import { css } from '@emotion/react';
 
 import type { HeadFC } from 'gatsby';
 
-import Container from '../commons/components/Container';
-import Posts from '../commons/components/Posts';
-import LayoutTemplate from '../commons/templates/LayoutTemplate';
+import Container from '../../commons/components/Container';
+import Posts from '../../commons/components/Posts';
+import LayoutTemplate from '../../commons/templates/LayoutTemplate';
 
-async function fetchPosts({ pageParam }: { pageParam: number }) {
-  const response = await fetch(`./jsons/page${pageParam}.json`);
+async function fetchPostsOfTag(tag: string, pageParam: number) {
+  const response = await fetch(`./jsons/${tag}${pageParam}.json`);
   const page = await response.json();
 
   return page;
 }
 
-function IndexPage() {
+function TagTemplate({ pageContext: { tag } }) {
   const { data, isFetched } = useInfiniteQuery({
-    queryKey: ['posts'],
-    queryFn: fetchPosts,
+    queryKey: ['tags', tag],
+    queryFn: ({ pageParam = 1 }) => fetchPostsOfTag(tag, pageParam),
     initialPageParam: 1,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
   });
@@ -72,4 +72,4 @@ const cssProps = {
 
 export const Head: HeadFC = () => <title>Home Page</title>;
 
-export default IndexPage;
+export default TagTemplate;
