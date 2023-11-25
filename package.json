@@ -13,7 +13,9 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "deploy": "gh-pages -d public -b main -r https://github.com/partykyoung/partykyoung.github.io",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky install",
+    "prepare2": "husky add .husky/pre-commit 'npm run format'"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",
@@ -42,6 +44,7 @@
     "@types/react": "^18.2.5",
     "@types/react-dom": "^18.2.4",
     "gh-pages": "^5.0.0",
+    "husky": "^8.0.3",
     "typescript": "^5.0.4"
   }
 }
