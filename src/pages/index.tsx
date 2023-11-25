@@ -15,7 +15,7 @@ async function fetchPosts({ pageParam }: { pageParam: number }) {
   return page;
 }
 
-function Index() {
+function IndexPage() {
   const { data, isFetched } = useInfiniteQuery({
     queryKey: ['posts'],
     queryFn: fetchPosts,
@@ -67,9 +67,9 @@ const cssProps = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-  })
+  }),
 };
 
 export const Head: HeadFC = () => <title>Home Page</title>;
 
-export default Index;
+export default IndexPage;

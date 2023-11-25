@@ -1,21 +1,22 @@
 import { graphql } from 'gatsby';
-import {  useInfiniteQuery } from '@tanstack/react-query';
+import { useInfiniteQuery } from '@tanstack/react-query';
 import { css } from '@emotion/react';
 
-import type { HeadFC } from "gatsby"
+import type { HeadFC } from 'gatsby';
 
-import Container from '../../commons/components/Container';
-import Posts from '../../commons/components/Posts';
-import LayoutTemplate from '../../commons/templates/LayoutTemplate';
+import Container from '../commons/components/Container';
+import Tags from '../commons/components/Tags';
+import Posts from '../commons/components/Posts';
+import LayoutTemplate from '../commons/templates/LayoutTemplate';
 
-async function fetchPosts({ pageParam }: {pageParam: number}) {
+async function fetchPosts({ pageParam }: { pageParam: number }) {
   const response = await fetch(`../jsons/page${pageParam}.json`);
   const page = await response.json();
 
   return page;
 }
 
-function Tags({
+function TagsPage({
   data: {
     allMarkdownRemark: { group },
     site: {
@@ -23,8 +24,9 @@ function Tags({
     },
   },
 }) {
-  console.log(group)
-  // const { data } = useInfiniteQuery({ 
+  console.log(group, '나와라요');
+
+  // const { data } = useInfiniteQuery({
   //   queryKey: ['posts'],
   //   queryFn: fetchPosts,
   //   initialPageParam: 1,
@@ -35,24 +37,23 @@ function Tags({
     <LayoutTemplate>
       <Container css={cssProps.root}>
         <Posts>
-          {
-            group.length <= 0 && <Posts.EmptyPost css={cssProps.center} />
-          }
-          {
-            group.length > 0 && (
-              <ul>
-                {group.map((tag) => (
-                  <li>
-                      {tag.fieldValue} ({tag.totalCount})
-                  </li>
-                ))}
-              </ul>
-            )
-          }
+          {group.length <= 0 && <Posts.EmptyPost css={cssProps.center} />}
+          {group.length > 0 && (
+            <Tags>
+              {group.map((tag) => (
+                <Tags.LinkTag
+                  key={tag.fieldValue}
+                  css={cssProps.tag}
+                  link={`/tags/${tag.fieldValue}`}
+                  tag={`${tag.fieldValue} (${tag.totalCount})`}
+                />
+              ))}
+            </Tags>
+          )}
         </Posts>
       </Container>
     </LayoutTemplate>
-  )
+  );
 }
 
 const cssProps = {
@@ -64,7 +65,11 @@ const cssProps = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-  })
+  }),
+  tag: css({
+    fontSize: 16,
+    padding: '8px 16px',
+  }),
 };
 
 export const query = graphql`
@@ -74,20 +79,15 @@ export const query = graphql`
         title
       }
     }
-    allMarkdownRemark(
-      filter: {
-        frontmatter: {
-            publish: {eq: true }
-        }
-    }) {
-      group(field: { frontmatter: { tags: SELECT }}) {
+    allMarkdownRemark(filter: { frontmatter: { publish: { eq: true } } }) {
+      group(field: { frontmatter: { tags: SELECT } }) {
         fieldValue
         totalCount
       }
     }
   }
-`
+`;
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => <title>Home Page</title>;
 
-export default Tags;
+export default TagsPage;

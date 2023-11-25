@@ -1,12 +1,11 @@
-import { navigate } from 'gatsby'
+import { navigate } from 'gatsby';
 
+function PostsPage() {
+  if (typeof window === 'undefined') {
+    return null;
+  }
 
-function Posts() {
-    if (typeof window === 'undefined') {
-        return null;
-    }
-    
-    return navigate('/');
+  return navigate('/');
 }
 
-export default Posts;
+export default PostsPage;
