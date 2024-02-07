@@ -9,7 +9,11 @@ const pageStyles = {
 const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
+<<<<<<< HEAD
 
+=======
+  maxWidth: 320,
+>>>>>>> ce459de (Initial commit from gatsby)
 }
 
 const paragraphStyles = {
