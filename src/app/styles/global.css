@@ -1,0 +1,91 @@
+:root {
+  --base-blue: 202, 100%;
+  --base-gray: 211, 19%;
+  --base-danger: 358, 67%;
+  --base-warning: 1, 100%;
+  --base-success: 168, 100%;
+
+  --palette-blue-10: var(--base-blue), 92%;
+  --palette-blue-50: var(--base-blue), 59%;
+  --palette-blue-100: var(--base-blue), 27%;
+
+  --palette-gray-10: var(--base-gray), 91%;
+  --palette-gray-20: var(--base-gray), 84%;
+  --palette-gray-40: var(--base-gray), 76%;
+  --palette-gray-60: var(--base-gray), 68%;
+  --palette-gray-80: var(--base-gray), 53%;
+  --palette-gray-100: var(--base-gray), 33%;
+
+  --primary-color: hsla(var(--palette-blue-50), 100%);
+  --secondary-color: hsla(var(--palette-blue-10), 100%);
+
+  --danger-color: hsla(var(--base-danger), 55%);
+  --warning-color: hsla(var(--base-warning), 71%);
+  --success-color: hsla(var(--base-success), 38%);
+
+  --header-height: 64px;
+  --footer-height: 106px;
+
+  /* break points */
+  --breakpoint-sss: 320px;
+  --breakpoint-xxs: 360px;
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1600px;
+  --breakpoint-xlst: 1920px;
+}
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+*{
+  margin: 0; 
+  padding: 0; 
+}
+
+ul[role='list'], ol[role='list']{
+  list-style: none; 
+}
+
+html:focus-within{
+  scroll-behavior: smooth;
+}
+
+a:not([class]){
+  text-decoration-skip-ink: auto; 
+}
+
+img, picture, svg, video, canvas{
+  max-width: 100%; 
+  height: auto; 
+  vertical-align: middle; 
+  font-style: italic; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+
+input, button, textarea, select{
+  font: inherit; 
+}
+
+@media (prefers-reduced-motion: reduce){
+  html:focus-within {
+      scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+      transition: none;
+  }
+}
+
+body, html{
+  height: 100%; 
+  scroll-behavior: smooth; 
+}
