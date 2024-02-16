@@ -1,0 +1,18 @@
+.footer-root {
+  display: flex;
+  width: 100%;
+  height: var(--footer-height);
+  align-items: center;
+  gap: 2;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 14px;
+  color: hsla(var(--palette-gray-60), 100%);
+  line-height: 1.5;
+
+
+  a {
+    color: hsla(var(--palette-gray-60), 100%);
+  }
+}
