@@ -56,18 +56,18 @@
     left: 0;
     right: 0;
     bottom: 0;
-    content: "";
+    content: '';
   }
 
   &.tags {
     &:after {
-      mask-image: url("/images/tag.svg");
+      mask-image: url('/images/tag.svg');
     }
   }
 
   &.about {
     &:after {
-      mask-image: url("/images/person.svg");
+      mask-image: url('/images/person.svg');
     }
   }
 }
@@ -107,14 +107,14 @@
     &.tags {
       &:after {
         width: auto;
-        content: "Tags";
+        content: 'Tags';
         mask-image: none;
       }
     }
 
     &.about {
       &:after {
-        content: "About";
+        content: 'About';
         mask-image: none;
       }
     }

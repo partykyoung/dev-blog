@@ -1,5 +1,5 @@
-import { Link } from "gatsby";
-import { clsx } from "clsx";
+import { Link } from 'gatsby';
+import { clsx } from 'clsx';
 
 import {
   about,
@@ -10,7 +10,7 @@ import {
   headerNavigationItem,
   headerNavigationItemLink,
   tags,
-} from "./header.module.css";
+} from './header.module.css';
 
 function Header() {
   return (

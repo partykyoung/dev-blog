@@ -1,11 +1,11 @@
-const autoPrefixer = require("autoprefixer");
-const postcssNested = require("postcss-nested");
-const postcssMixins = require("postcss-mixins");
-const postcssSimpleVars = require("postcss-simple-vars");
-const postcssPresetEnv = require("postcss-preset-env");
+const autoPrefixer = require('autoprefixer');
+const postcssNested = require('postcss-nested');
+const postcssMixins = require('postcss-mixins');
+const postcssSimpleVars = require('postcss-simple-vars');
+const postcssPresetEnv = require('postcss-preset-env');
 
-const mixins = require("./config/postcss/mixin");
-const variables = require("./config/postcss/variables");
+const mixins = require('./config/postcss/mixin');
+const variables = require('./config/postcss/variables');
 
 module.exports = () => ({
   plugins: [
@@ -19,7 +19,7 @@ module.exports = () => ({
     postcssNested,
     postcssPresetEnv({
       features: {
-        "nesting-rules": true,
+        'nesting-rules': true,
       },
     }),
   ],
