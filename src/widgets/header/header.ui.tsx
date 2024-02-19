@@ -4,26 +4,26 @@ import styles from "./header.module.css";
 
 function Header() {
   return (
-    <header className={styles["header-root"]}>
+    <header className={styles.headerRoot}>
       <Link to="/">
         <img
           src="/images/logo.png"
           srcSet={`/images/logo-small.png 200w, /images/logo.png 300w`}
           sizes="(max-width: 360px) 200px, 300px"
           alt="dev.kyoungah.me"
-          css={cssProps.logo}
+          className={styles["header-logo"]}
         />
       </Link>
-      <nav css={cssProps.navigation}>
-        <ul css={cssProps.pages}>
+      <nav className={styles["header-navigation"]}>
+        <ul className={styles["header-navigation-item"]}>
           <li>
             <Link to="/tags">
-              <span css={[cssProps.page, cssProps.tags]} />
+              {/* <span className={[cssProps.page, cssProps.tags]} /> */}
             </Link>
           </li>
           <li>
             <a href="/about" rel="noopener" target="_blank">
-              <span css={[cssProps.page, cssProps.about]} />
+              {/* <span className={[cssProps.page, cssProps.about]} /> */}
             </a>
           </li>
         </ul>

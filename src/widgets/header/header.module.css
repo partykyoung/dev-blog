@@ -1,3 +1,5 @@
+@import "../../shared/styles/media-query.css";
+
 .header-root {
   display: flex;
   width: 100%;
@@ -11,4 +13,33 @@
   a {
     color: 'hsla(var(--palette-gray-60), 100%)';
   }
+}
+
+.header-logo {
+  max-width: 194px;
+  height: auto;
+}
+
+.header-navigation {
+  padding-left: 28px;
+}
+
+.header-navigation-list {
+  display: flex;
+  column-gap: 12px;
+  list-style: none;
+}
+
+.header-navigation-item {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: hsla(var(--palette-gray-80), 100%);
 }
