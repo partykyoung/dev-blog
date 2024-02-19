@@ -149,7 +149,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: `${__dirname}/static/images/icon.png`,
       },
 >>>>>>> b6708e4 (chore: 설정 변경)
     },
