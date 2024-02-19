@@ -2,7 +2,7 @@ import styles from "./footer.module.css";
 
 function Footer() {
   return (
-    <footer className={styles["footer-root"]}>
+    <footer className={styles.footerRoot}>
       <span>Powered by Gatsby, Hosted by GitHub Pages.</span>
       <span>
         ©
