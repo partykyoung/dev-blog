@@ -26,7 +26,6 @@ import fs from "fs";
 >>>>>>> b6708e4 (chore: 설정 변경)
 import type { GatsbyConfig } from "gatsby";
 
-// 페이징에 필요한 폴더 및 json 파일을 만든다.
 function createFolder(folderName: string) {
   const dir = `${__dirname}/static/${folderName}`;
 
@@ -143,7 +142,7 @@ const config: GatsbyConfig = {
 =======
   plugins: [
     "gatsby-plugin-postcss",
-    // "gatsby-plugin-google-gtag",
+    // "gatsby-plugin-google-gtag", FIXME: 리팩토링 끝나고 나서 애널리틱스 계정 생성 후 연동 필요
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     {
