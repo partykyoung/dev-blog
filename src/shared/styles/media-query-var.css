@@ -1,7 +1,7 @@
 :root {
   --base-compact-device: 320;
-  --base-extra-extra-small-device: 360;
-  --base-extra-small-device: 480;
+  --base-xx-small-device: 360;
+  --base-x-small-device: 480;
   --base-small-device: 576;
   --base-medium-device: 768;
   --base-large-device: 992;
