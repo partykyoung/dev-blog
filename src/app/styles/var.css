@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 @import '../../shared/styles/color-var.css';
 @import '../../shared/styles/layout-var.css';
 @import '../../shared/styles/responsive-device-var.css';
+=======
+@import "../../shared/styles/media-query-var.css";
+>>>>>>> eb5b876 (feat: media query base 작성)
