@@ -1,5 +1,0 @@
-@define-mixin breakpoint-fold {
-  @media (max-width: 280px) {
-    @mixin-content;
-  }
-}
