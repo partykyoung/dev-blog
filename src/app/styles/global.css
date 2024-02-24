@@ -9,6 +9,7 @@
   padding: 0;
 }
 
+<<<<<<< HEAD
 body {
   font-family: 'Nanum Gothic', Arial, Helvetica, sans-serif;
 }
@@ -18,10 +19,18 @@ ol[role='list'] {
   list-style: none;
 }
 
+=======
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+>>>>>>> cf5b257 (feat: global css 적용)
 html:focus-within {
   scroll-behavior: smooth;
 }
 
+<<<<<<< HEAD
 a {
   cursor: pointer;
   text-decoration: none;
@@ -32,6 +41,10 @@ a {
   &:not([class]) {
     text-decoration-skip-ink: auto;
   }
+=======
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+>>>>>>> cf5b257 (feat: global css 적용)
 }
 
 img,
@@ -54,16 +67,22 @@ select {
   font: inherit;
 }
 
+<<<<<<< HEAD
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
+=======
+>>>>>>> cf5b257 (feat: global css 적용)
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> cf5b257 (feat: global css 적용)
   *,
   *::before,
   *::after {

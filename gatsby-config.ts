@@ -1,4 +1,21 @@
+<<<<<<< HEAD
 import type { GatsbyConfig } from 'gatsby';
+=======
+import fs from "fs";
+
+import type { GatsbyConfig } from "gatsby";
+
+function createFolder(folderName: string) {
+  const dir = `${__dirname}/static/${folderName}`;
+
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
+}
+
+createFolder("jsons");
+createFolder("posts");
+>>>>>>> cf5b257 (feat: global css 적용)
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -10,10 +27,17 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
+<<<<<<< HEAD
     'gatsby-plugin-postcss',
     // "gatsby-plugin-google-gtag", FIXME: 리팩토링 끝나고 나서 애널리틱스 계정 생성 후 연동 필요
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
+=======
+    "gatsby-plugin-postcss",
+    // "gatsby-plugin-google-gtag", FIXME: 리팩토링 끝나고 나서 애널리틱스 계정 생성 후 연동 필요
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+>>>>>>> cf5b257 (feat: global css 적용)
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
