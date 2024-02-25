@@ -1,0 +1,7 @@
+:root {
+  --base-header-height: 64;
+  --base-footer-height: 106;
+
+  --header-height: calc(var(--base-header-height) * 1px);
+  --footer-height: calc(var(--base-footer-height) * 1px);
+}
