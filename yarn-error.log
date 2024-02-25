@@ -1,5 +1,9 @@
 Arguments: 
+<<<<<<< HEAD
   /Users/yookyoung.park/.nvm/versions/node/v18.18.2/bin/node /Users/yookyoung.park/.nvm/versions/node/v18.18.2/bin/yarn add react-helme
+=======
+  /Users/yookyoung.park/.nvm/versions/node/v18.18.2/bin/node /Users/yookyoung.park/.nvm/versions/node/v18.18.2/bin/yarn add postcss-imports
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
 
 PATH: 
   /Users/yookyoung.park/.nvm/versions/node/v18.18.2/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/yookyoung.park/.nvm/versions/node/v18.18.2/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home/bin:/Users/yookyoung.park/Library/Android/sdk/emulator:/Users/yookyoung.park/Library/Android/sdk/platform-tools:/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home/bin:/Users/yookyoung.park/Library/Android/sdk/emulator:/Users/yookyoung.park/Library/Android/sdk/platform-tools
@@ -14,7 +18,11 @@ Platform:
   darwin arm64
 
 Trace: 
+<<<<<<< HEAD
   Error: https://registry.yarnpkg.com/react-helme: Not found
+=======
+  Error: https://registry.yarnpkg.com/postcss-imports: Not found
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
       at params.callback [as _callback] (/Users/yookyoung.park/.nvm/versions/node/v18.18.2/lib/node_modules/yarn/lib/cli.js:66145:18)
       at self.callback (/Users/yookyoung.park/.nvm/versions/node/v18.18.2/lib/node_modules/yarn/lib/cli.js:140890:22)
       at Request.emit (node:events:517:28)
@@ -43,6 +51,7 @@ npm manifest:
       "serve": "gatsby serve",
       "clean": "gatsby clean",
       "typecheck": "tsc --noEmit",
+<<<<<<< HEAD
       "test": "NODE_ENV=test jest",
       "create-new-post": "node ./scripts/create-new-post.mjs"
     },
@@ -54,6 +63,14 @@ npm manifest:
       "autoprefixer": "^10.4.17",
       "clsx": "^2.1.0",
       "dayjs": "^1.11.10",
+=======
+      "test": "jest"
+    },
+    "dependencies": {
+      "@mdx-js/react": "^3.0.0",
+      "autoprefixer": "^10.4.17",
+      "clsx": "^2.1.0",
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
       "gatsby": "^5.13.2",
       "gatsby-omni-font-loader": "^2.0.2",
       "gatsby-plugin-google-gtag": "^5.13.1",
@@ -74,9 +91,12 @@ npm manifest:
       "react-dom": "^18.2.0"
     },
     "devDependencies": {
+<<<<<<< HEAD
       "@babel/plugin-transform-modules-commonjs": "^7.23.3",
       "@babel/preset-env": "^7.23.9",
       "@inquirer/input": "^2.0.0",
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
       "@testing-library/react": "^14.2.1",
       "@types/jest": "^29.5.12",
       "@types/node": "^20.11.5",
@@ -84,7 +104,10 @@ npm manifest:
       "@types/react-dom": "^18.2.18",
       "@typescript-eslint/eslint-plugin": "^7.0.1",
       "@typescript-eslint/parser": "^7.0.1",
+<<<<<<< HEAD
       "babel-jest": "^29.7.0",
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
       "babel-preset-gatsby": "^3.13.1",
       "eslint": "^8.56.0",
       "eslint-config-prettier": "^9.1.0",
@@ -93,7 +116,10 @@ npm manifest:
       "eslint-plugin-jsx-a11y": "^6.8.0",
       "eslint-plugin-react": "^7.33.2",
       "eslint-plugin-react-hooks": "^4.6.0",
+<<<<<<< HEAD
       "gray-matter": "^4.0.3",
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
       "jest": "^29.7.0",
       "jest-environment-jsdom": "^29.7.0",
       "ts-jest": "^29.1.2",
@@ -1087,7 +1113,11 @@ Lockfile:
       "@babel/helper-create-regexp-features-plugin" "^7.22.15"
       "@babel/helper-plugin-utils" "^7.22.5"
   
+<<<<<<< HEAD
   "@babel/preset-env@^7.20.2", "@babel/preset-env@^7.23.9":
+=======
+  "@babel/preset-env@^7.20.2":
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
     version "7.23.9"
     resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.23.9.tgz#beace3b7994560ed6bf78e4ae2073dff45387669"
     integrity sha512-3kBGTNBBk9DQiPoXYS0g0BYlwTQYUTifqgKTjxUwEUkduRT2QOa0FPGBJ+NROQhGyYO5BuTJwGvBnqKDykac6A==
@@ -1819,6 +1849,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-2.0.2.tgz#d9fae00a2d5cb40f92cfe64b47ad749fbc38f917"
     integrity sha512-6EwiSjwWYP7pTckG6I5eyFANjPhmPjUX9JRLUSfNPC7FX7zK9gyZAfUEaECL6ALTpGX5AjnBq3C9XmVWPitNpw==
   
+<<<<<<< HEAD
   "@inquirer/checkbox@^2.1.0":
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/@inquirer/checkbox/-/checkbox-2.1.0.tgz#ccbcef021b2f9e6c2bee3c46a6040f694b567ba6"
@@ -1934,6 +1965,8 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@inquirer/type/-/type-1.2.0.tgz#a569613628a881c2104289ca868a7def54e5c49d"
     integrity sha512-/vvkUkYhrjbm+RolU7V1aUFDydZVKNKqKHR5TsE+j5DXgXFwrsOPcoGUJ02K0O7q7O53CU2DOTMYCHeGZ25WHA==
   
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
   "@istanbuljs/load-nyc-config@^1.0.0":
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -2863,6 +2896,7 @@ Lockfile:
     dependencies:
       defer-to-connect "^2.0.1"
   
+<<<<<<< HEAD
   "@tanstack/query-core@5.24.1":
     version "5.24.1"
     resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.24.1.tgz#d40928dec22b47df97fb2648e8c499772e8d7eb2"
@@ -2875,6 +2909,8 @@ Lockfile:
     dependencies:
       "@tanstack/query-core" "5.24.1"
   
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
   "@testing-library/dom@^9.0.0":
     version "9.3.4"
     resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-9.3.4.tgz#50696ec28376926fec0a1bf87d9dbac5e27f60ce"
@@ -3189,6 +3225,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.34.tgz#10964ba0dee6ac4cd462e2795b6bebd407303433"
     integrity sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==
   
+<<<<<<< HEAD
   "@types/mute-stream@^0.0.4":
     version "0.0.4"
     resolved "https://registry.yarnpkg.com/@types/mute-stream/-/mute-stream-0.0.4.tgz#77208e56a08767af6c5e1237be8888e2f255c478"
@@ -3196,6 +3233,8 @@ Lockfile:
     dependencies:
       "@types/node" "*"
   
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
   "@types/node-fetch@2":
     version "2.6.11"
     resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.6.11.tgz#9b39b78665dae0e82a08f02f4967d62c66f95d24"
@@ -3216,6 +3255,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.45.tgz#2c0fafd78705e7a18b7906b5201a522719dc5190"
     integrity sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==
   
+<<<<<<< HEAD
   "@types/node@^20.11.16":
     version "20.11.21"
     resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.21.tgz#ad67e65652f7be15686e2df87a38076a81c5e9c5"
@@ -3223,6 +3263,8 @@ Lockfile:
     dependencies:
       undici-types "~5.26.4"
   
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
   "@types/node@^8.5.7":
     version "8.10.66"
     resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.66.tgz#dd035d409df322acc83dff62a602f12a5783bbb3"
@@ -3313,11 +3355,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.10.tgz#04ffa7f406ab628f7f7e97ca23e290cd8ab15efc"
     integrity sha512-IfYcSBWE3hLpBg8+X2SEa8LVkJdJEkT2Ese2aaLs3ptGdVtABxndrMaxuFlQ1qdFf9Q5rDvDpxI3WwgvKFAsQA==
   
+<<<<<<< HEAD
   "@types/wrap-ansi@^3.0.0":
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/@types/wrap-ansi/-/wrap-ansi-3.0.0.tgz#18b97a972f94f60a679fd5c796d96421b9abb9fd"
     integrity sha512-ltIpx+kM7g/MLRZfkbL7EsCEjfzCcScLpkg37eXEtx5kmrAKBkTJwd1GIAjDSL8wTpM6Hzn5YO4pSb91BEwu1g==
   
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
   "@types/yargs-parser@*":
     version "21.0.3"
     resolved "https://registry.yarnpkg.com/@types/yargs-parser/-/yargs-parser-21.0.3.tgz#815e30b786d2e8f0dcd85fd5bcf5e1a04d008f15"
@@ -4712,21 +4757,27 @@ Lockfile:
     dependencies:
       restore-cursor "^3.1.0"
   
+<<<<<<< HEAD
   cli-spinners@^2.9.2:
     version "2.9.2"
     resolved "https://registry.yarnpkg.com/cli-spinners/-/cli-spinners-2.9.2.tgz#1773a8f4b9c4d6ac31563df53b3fc1d79462fe41"
     integrity sha512-ywqV+5MmyL4E7ybXgKys4DugZbX0FC6LnwrhjuykIjnK9k8OQacQ7axGKnjDXWNhns0xot3bZI5h55H8yo9cJg==
   
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
   cli-width@^3.0.0:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-3.0.0.tgz#a2f48437a2caa9a22436e794bf071ec9e61cedf6"
     integrity sha512-FxqpkPPwu1HjuN93Omfm4h8uIanXofW0RxVEW3k5RKx+mJJYSthzNhp32Kzxxy3YAEZ/Dc/EWN1vZRY0+kOhbw==
   
+<<<<<<< HEAD
   cli-width@^4.1.0:
     version "4.1.0"
     resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-4.1.0.tgz#42daac41d3c254ef38ad8ac037672130173691c5"
     integrity sha512-ouuZd4/dm2Sw5Gmqy6bGyNNNe1qt9RpmxveLSO7KcgsTnU7RXfsw+/bukWGo1abgBiMAic068rclZsO4IWmmxQ==
   
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
   clipboardy@^4.0.0:
     version "4.0.0"
     resolved "https://registry.yarnpkg.com/clipboardy/-/clipboardy-4.0.0.tgz#e73ced93a76d19dd379ebf1f297565426dffdca1"
@@ -5304,11 +5355,14 @@ Lockfile:
     dependencies:
       "@babel/runtime" "^7.21.0"
   
+<<<<<<< HEAD
   dayjs@^1.11.10:
     version "1.11.10"
     resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.10.tgz#68acea85317a6e164457d6d6947564029a6a16a0"
     integrity sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==
   
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
   debug@2, debug@2.6.9, debug@^2.6.0:
     version "2.6.9"
     resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -6464,7 +6518,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
     integrity sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==
   
+<<<<<<< HEAD
   external-editor@^3.0.3, external-editor@^3.1.0:
+=======
+  external-editor@^3.0.3:
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
     version "3.1.0"
     resolved "https://registry.yarnpkg.com/external-editor/-/external-editor-3.1.0.tgz#cb03f740befae03ea4d283caed2741a83f335495"
     integrity sha512-hMQ4CX1p1izmuLYyZqLMO/qGNw10wSv9QDCPfzXfyFrOaCSSoRfqE1Kf1s5an66J5JZC62NewG+mK49jOCtQew==
@@ -6541,7 +6599,11 @@ Lockfile:
       setimmediate "^1.0.5"
       ua-parser-js "^1.0.35"
   
+<<<<<<< HEAD
   figures@^3.0.0, figures@^3.2.0:
+=======
+  figures@^3.0.0:
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
     version "3.2.0"
     resolved "https://registry.yarnpkg.com/figures/-/figures-3.2.0.tgz#625c18bd293c604dc4a8ddb2febf0c88341746af"
     integrity sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==
@@ -10038,11 +10100,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.8.tgz#1630c42b2251ff81e2a283de96a5497ea92e5e0d"
     integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
   
+<<<<<<< HEAD
   mute-stream@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-1.0.0.tgz#e31bd9fe62f0aed23520aa4324ea6671531e013e"
     integrity sha512-avsJQhyd+680gKXyG/sQc0nXaC6rBkPOfyHYcFb9+hdkqQkR9bdnkJ0AMZhke0oesPqIO+mFFJ+IdBc7mst4IA==
   
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
   nanoid@^3.3.7:
     version "3.3.7"
     resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.7.tgz#d0c301a691bc8d54efa0a2226ccf3fe2fd656bd8"
@@ -11885,11 +11950,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.4.1.tgz#8440eccf99ea3e70bd409d49aab88e10c189a455"
     integrity sha512-tvVnVv01b8c1RrA6Ep7JkStj85Guv/YrMcwqYQnwjsAS2cTmmPGBBjAjpCW7RrSodNSoE2/qg9O4bceNvUuDgQ==
   
+<<<<<<< HEAD
   run-async@^3.0.0:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/run-async/-/run-async-3.0.0.tgz#42a432f6d76c689522058984384df28be379daad"
     integrity sha512-540WwVDOMxA6dN6We19EcT9sc3hkXPw5mzRNGM3FkdN/vtE9NFvj5lFAPNwUDmJjXidm3v7TC1cTE7t17Ulm1Q==
   
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
   run-parallel@^1.1.9:
     version "1.2.0"
     resolved "https://registry.yarnpkg.com/run-parallel/-/run-parallel-1.2.0.tgz#66d1368da7bdf921eb9d95bd1a9229e7f21a43ee"

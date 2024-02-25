@@ -4363,13 +4363,19 @@ camel-case@^4.1.2:
     tslib "^2.0.3"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
 camelcase-css@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/camelcase-css/-/camelcase-css-2.0.1.tgz#ee978f6947914cc30c6b44741b6ed1df7f043fd5"
   integrity sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==
 
+<<<<<<< HEAD
 =======
 >>>>>>> 1a4d6f7 (feat: jest 환경 설정, media query 변수 가지고오는 유틸 함수 및 테스트코드 작성)
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
 camelcase@^5.0.0, camelcase@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"

@@ -48,7 +48,10 @@
     "postcss-nested": "^6.0.1",
     "postcss-preset-env": "^9.3.0",
     "postcss-simple-vars": "^7.0.1",
+<<<<<<< HEAD
     "prismjs": "^1.29.0",
+=======
+>>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
