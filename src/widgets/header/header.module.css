@@ -1,4 +1,3 @@
-
 .header-root {
   display: flex;
   width: 100%;
@@ -7,7 +6,6 @@
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 0px 8px hsla(var(--palette-gray-20), 100%);
-  background: #000000;
 
   a {
     color: hsla(var(--palette-gray-60), 100%);
@@ -41,4 +39,10 @@
   background-repeat: no-repeat;
   background-position: center;
   color: hsla(var(--palette-gray-80), 100%);
+}
+
+@mixin max-width $compactDevice {
+  .header-root {
+    background: #000000;
+  }
 }
