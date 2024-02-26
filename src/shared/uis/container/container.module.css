@@ -1,17 +1,17 @@
 .container-root {
   width: 100%;
-  padding: 115px 16px 76px;
+  padding: 0 16px;
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
 
-@mixin min-width $small {
+@mixin min-width $smallDevice {
   .container-root {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
 
-@mixin min-width $large {
+@mixin min-width $largeDevice {
   .container-root {
     width: 768px;
     margin-left: auto;

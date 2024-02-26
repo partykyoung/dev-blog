@@ -16,4 +16,5 @@ function Tag({ className, text, ...props }: Props) {
   );
 }
 
+export type { Props as TagProps };
 export { Tag };

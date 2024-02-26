@@ -1,0 +1,19 @@
+.work-expereince-history {
+  width: 100%;
+
+  th,
+  td {
+    padding: 12px 8px;
+    border-top: 1px solid hsla(var(--palette-gray-20), 100%);
+
+    &:last-of-type {
+      border-bottom: 1px solid hsla(var(--palette-gray-20), 100%);
+    }
+  }
+}
+
+.work-expereince-history-th {
+  width: 100px;
+  text-align: right;
+  font-weight: 600;
+}
