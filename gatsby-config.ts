@@ -68,6 +68,26 @@ const config: GatsbyConfig = {
       },
       __key: "jsons",
     },
+    {
+      resolve: "gatsby-omni-font-loader",
+      options: {
+        enableListener: "",
+        preconnect: [
+          `https://fonts.googleapis.com`,
+          `https://fonts.gstatic.com`,
+        ],
+        web: [
+          {
+            name: `Nanum Gothic`,
+            file: `https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap`,
+          },
+          {
+            name: "Fira Code",
+            file: "https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap",
+          },
+        ],
+      },
+    },
   ],
 };
 
