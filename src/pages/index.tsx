@@ -1,15 +1,9 @@
 import type { HeadFC, PageProps } from "gatsby";
 
-import { Header } from "../widgets/header";
-import { Footer } from "../widgets/footer";
+import { DefaultLayout } from "../widgets/default-layout";
 
 const IndexPage: React.FC<PageProps> = () => {
-  return (
-    <>
-      <Header />
-      <Footer />
-    </>
-  );
+  return <DefaultLayout>블로그에용</DefaultLayout>;
 };
 
 export default IndexPage;
