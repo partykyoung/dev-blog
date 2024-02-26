@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { Link } from 'gatsby';
 import { clsx } from 'clsx';
+=======
+import { Link } from "gatsby";
+import { clsx } from "clsx";
+>>>>>>> 4704d73 (refactor: fsd 아키텍처 구조에 맞게 레이아웃 재작업)
 
 import {
   about,
@@ -10,7 +15,11 @@ import {
   headerNavigationItem,
   headerNavigationItemLink,
   tags,
+<<<<<<< HEAD
 } from './header.module.css';
+=======
+} from "./header.module.css";
+>>>>>>> 4704d73 (refactor: fsd 아키텍처 구조에 맞게 레이아웃 재작업)
 
 function Header() {
   return (
