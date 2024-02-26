@@ -10,6 +10,7 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 body {
   font-family: 'Nanum Gothic', Arial, Helvetica, sans-serif;
 }
@@ -20,6 +21,12 @@ ol[role='list'] {
 }
 
 =======
+=======
+body {
+  font-family: "Nanum Gothic", Arial, Helvetica, sans-serif;
+}
+
+>>>>>>> e23180d (refactor: about 페이지 fsd 아키텍처에 맞춰 리팩토링)
 ul[role="list"],
 ol[role="list"] {
   list-style: none;
@@ -68,13 +75,19 @@ select {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e23180d (refactor: about 페이지 fsd 아키텍처에 맞춰 리팩토링)
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> cf5b257 (feat: global css 적용)
+=======
+>>>>>>> e23180d (refactor: about 페이지 fsd 아키텍처에 맞춰 리팩토링)
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
