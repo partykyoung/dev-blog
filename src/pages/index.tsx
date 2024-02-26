@@ -1,6 +1,7 @@
 import type { HeadFC, PageProps } from 'gatsby';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { DefaultLayout } from '@/widgets/default-layout';
 
 import { HomePosts } from '@/widgets/home-posts';
@@ -25,6 +26,12 @@ const IndexPage: React.FC<PageProps> = () => {
     </>
 >>>>>>> 4704d73 (refactor: fsd 아키텍처 구조에 맞게 레이아웃 재작업)
   );
+=======
+import { DefaultLayout } from "../widgets/default-layout";
+
+const IndexPage: React.FC<PageProps> = () => {
+  return <DefaultLayout>블로그에용</DefaultLayout>;
+>>>>>>> 7c4c06c (refactor: 공통 컴포넌트 fsd 아키텍처로 재작업)
 };
 
 export default IndexPage;
