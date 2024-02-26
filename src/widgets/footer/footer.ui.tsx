@@ -1,12 +1,16 @@
-import styles from "./footer.module.css";
+import { footerRoot } from "./footer.module.css";
 
 function Footer() {
   return (
-    <footer className={styles.footerRoot}>
+    <footer className={footerRoot}>
       <span>Powered by Gatsby, Hosted by GitHub Pages.</span>
       <span>
         ©
-        <a href="https://github.com/partykyoung" rel="noopener" target="_blank">
+        <a
+          href="https://github.com/partykyoung"
+          rel="noreferrer"
+          target="_blank"
+        >
           KyoungAh
         </a>
         , All rights reserved.

@@ -1,10 +1,15 @@
 import { Link } from "gatsby";
+import { clsx } from "clsx";
 
 import {
+  about,
   headerRoot,
   headerLogo,
   headerNavigation,
+  headerNavigationList,
   headerNavigationItem,
+  headerNavigationItemLink,
+  tags,
 } from "./header.module.css";
 
 function Header() {
@@ -20,15 +25,21 @@ function Header() {
         />
       </Link>
       <nav className={headerNavigation}>
-        <ul className={headerNavigationItem}>
-          <li>
+        <ul className={headerNavigationList}>
+          <li className={headerNavigationItem}>
             <Link to="/tags">
-              {/* <span className={[cssProps.page, cssProps.tags]} /> */}
+              <span
+                aria-label="tags"
+                className={clsx(headerNavigationItemLink, tags)}
+              />
             </Link>
           </li>
-          <li>
+          <li className={headerNavigationItem}>
             <a href="/about" rel="noopener" target="_blank">
-              {/* <span className={[cssProps.page, cssProps.about]} /> */}
+              <span
+                aria-label="about"
+                className={clsx(headerNavigationItemLink, about)}
+              />
             </a>
           </li>
         </ul>
