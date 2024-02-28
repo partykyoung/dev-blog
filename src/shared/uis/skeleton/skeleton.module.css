@@ -1,0 +1,18 @@
+@keyframes skeleton-gradient {
+  0% {
+    background-color: hsla(var(--palette-gray-20), 90%);
+  }
+
+  50% {
+    background-color: hsla(var(--palette-gray-30), 90%);
+  }
+
+  100% {
+    background-color: hsla(var(--palette-gray-20), 90%);
+  }
+}
+
+.skeleton-root {
+  border-radius: 4px;
+  animation: skeleton-gradient 1.8s infinite ease-in-out;
+}
