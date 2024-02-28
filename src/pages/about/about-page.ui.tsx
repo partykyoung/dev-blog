@@ -43,7 +43,11 @@ function AboutPage() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default AboutPage;
 =======
 export { AboutPage };
 >>>>>>> e23180d (refactor: about 페이지 fsd 아키텍처에 맞춰 리팩토링)
+=======
+export default AboutPage;
+>>>>>>> d8737b0 (refactor: fsd 아키텍쳐에 맞춰 posts 컴포넌트 리팩토링)

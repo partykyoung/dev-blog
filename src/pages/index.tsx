@@ -29,9 +29,28 @@ const IndexPage: React.FC<PageProps> = () => {
 =======
 import { DefaultLayout } from "../widgets/default-layout";
 
+import { Posts } from "../entities/posts";
+
 const IndexPage: React.FC<PageProps> = () => {
+<<<<<<< HEAD
   return <DefaultLayout>블로그에용</DefaultLayout>;
 >>>>>>> 7c4c06c (refactor: 공통 컴포넌트 fsd 아키텍처로 재작업)
+=======
+  return (
+    <DefaultLayout>
+      <Posts>
+        <Posts.List>
+          <Posts.ListItem
+            excerpt="ㅎ규링ㄴ루ㅏㅣ눞,ㅡㅌㅇ푸ㅡ,ㄹㅌ"
+            link="2"
+            title="재취업 힘들어요"
+          />
+        </Posts.List>
+        <Posts.Skeleton />
+      </Posts>
+    </DefaultLayout>
+  );
+>>>>>>> d8737b0 (refactor: fsd 아키텍쳐에 맞춰 posts 컴포넌트 리팩토링)
 };
 
 export default IndexPage;

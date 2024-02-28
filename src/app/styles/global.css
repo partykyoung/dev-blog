@@ -38,6 +38,9 @@ html:focus-within {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d8737b0 (refactor: fsd 아키텍쳐에 맞춰 posts 컴포넌트 리팩토링)
 a {
   cursor: pointer;
   text-decoration: none;
@@ -48,10 +51,13 @@ a {
   &:not([class]) {
     text-decoration-skip-ink: auto;
   }
+<<<<<<< HEAD
 =======
 a:not([class]) {
   text-decoration-skip-ink: auto;
 >>>>>>> cf5b257 (feat: global css 적용)
+=======
+>>>>>>> d8737b0 (refactor: fsd 아키텍쳐에 맞춰 posts 컴포넌트 리팩토링)
 }
 
 img,

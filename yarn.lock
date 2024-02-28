@@ -2689,6 +2689,9 @@
     defer-to-connect "^2.0.1"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d8737b0 (refactor: fsd 아키텍쳐에 맞춰 posts 컴포넌트 리팩토링)
 "@tanstack/query-core@5.24.1":
   version "5.24.1"
   resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.24.1.tgz#d40928dec22b47df97fb2648e8c499772e8d7eb2"
@@ -2701,8 +2704,11 @@
   dependencies:
     "@tanstack/query-core" "5.24.1"
 
+<<<<<<< HEAD
 =======
 >>>>>>> 1a4d6f7 (feat: jest 환경 설정, media query 변수 가지고오는 유틸 함수 및 테스트코드 작성)
+=======
+>>>>>>> d8737b0 (refactor: fsd 아키텍쳐에 맞춰 posts 컴포넌트 리팩토링)
 "@testing-library/dom@^9.0.0":
   version "9.3.4"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-9.3.4.tgz#50696ec28376926fec0a1bf87d9dbac5e27f60ce"

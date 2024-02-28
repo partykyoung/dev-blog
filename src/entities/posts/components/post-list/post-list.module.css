@@ -1,10 +1,13 @@
 .post-list-root {
   width: 100%;
   list-style: none;
+<<<<<<< HEAD
 
   li {
     &:not(:last-of-type) {
       margin-bottom: 24px;
     }
   }
+=======
+>>>>>>> d8737b0 (refactor: fsd 아키텍쳐에 맞춰 posts 컴포넌트 리팩토링)
 }
