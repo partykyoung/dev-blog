@@ -36,4 +36,4 @@ function AboutPage() {
   );
 }
 
-export { AboutPage };
+export default AboutPage;

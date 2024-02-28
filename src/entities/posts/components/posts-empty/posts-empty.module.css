@@ -1,0 +1,16 @@
+.posts-empty-root {
+  width: 100%;
+  text-align: center;
+}
+
+.posts-empty-coming-soon {
+  font-size: 24px;
+  font-weight: 600;
+  color: hsla(var(--palette-blue-80), 100%);
+}
+
+.posts-empty-text {
+  font-size: 18px;
+  line-height: 1.5;
+  color: hsla(var(--palette-gray-100), 100%);
+}

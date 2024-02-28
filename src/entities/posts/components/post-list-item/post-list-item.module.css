@@ -1,0 +1,24 @@
+.post-list-item-root {
+  width: 100%;
+  list-style: none;
+
+  &:not(:last-of-type) {
+    margin-bottom: 60px;
+  }
+}
+
+.post-list-item-link {
+  color: hsla(var(--palette-gray-80), 100%);
+}
+
+.post-list-item-title {
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.post-list-item-excerpt {
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 400;
+}
