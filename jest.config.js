@@ -2,11 +2,12 @@ module.exports = {
   verbose: true,
   testEnvironment: "jsdom",
   transform: {
+    "^.+\\.(js|mjs)$": "babel-jest",
     "^.+\\.(ts)$": "ts-jest",
   },
   transformIgnorePatterns: ["<rootDir>/node_modules/"],
   testMatch: [
-    "<rootDir>/src/**/__tests__/**/*.{js,ts}",
-    "<rootDir>/src/**/*.{spec,test}.{js,ts}",
+    "<rootDir>/**/**/__tests__/**/*.{spec,test}.{js,mjs}",
+    "<rootDir>/**/**/__tests__/**/*.{spec,test}.{ts}",
   ],
 };
