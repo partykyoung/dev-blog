@@ -15,6 +15,7 @@ import fs from "fs";
 
 import { createFilePath } from "gatsby-source-filesystem";
 
+<<<<<<< HEAD
 import { PostLayout } from "./src/widgets/post-layout";
 >>>>>>> b564d85 (refactor: fsd 패턴에 맞춰 블로그 레이아웃 생성)
 
@@ -212,16 +213,23 @@ function onCreateWebpackConfig({ actions }: CreateWebpackConfigArgs) {
 
 export { createPages, onCreateNode, onCreateWebpackConfig };
 =======
+=======
+>>>>>>> 0bd1ab0 (feat: react-query 설정)
 function onCreateNode({ node, getNode, actions }) {
   const { createNodeField } = actions;
 
-  if (node.internal.type === `Mdx`) {
+  if (node.internal.mediaType === "text/mdx") {
     const slug = createFilePath({ node, getNode, basePath: "posts" });
 
-    createNodeField({ node, name: "slug", value: slug });
+    createNodeField({
+      node,
+      name: "slug",
+      value: slug,
+    });
   }
 }
 
+<<<<<<< HEAD
 export { createPages, onCreateNode };
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
@@ -246,3 +254,6 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
   });
 };
 >>>>>>> b564d85 (refactor: fsd 패턴에 맞춰 블로그 레이아웃 생성)
+=======
+export { onCreateNode };
+>>>>>>> 0bd1ab0 (feat: react-query 설정)
