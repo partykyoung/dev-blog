@@ -16,7 +16,7 @@
   --palette-blue-90: var(--base-blue), 19%;
   --palette-blue-100: var(--base-blue), 9%;
 
-  --palettle-white: #ffffff;
+  --palette-white: #ffffff;
   --palette-gray-10: var(--base-gray), 98%;
   --palette-gray-20: var(--base-gray), 88%;
   --palette-gray-30: var(--base-gray), 78%;
@@ -29,6 +29,7 @@
   --palette-gray-100: var(--base-gray), 8%;
 
   --primary-color: hsla(var(--palette-blue-50), 100%);
+  --secondary-color: hsla(var(--palette-blue-30), 100%);
   --danger-color: hsla(var(--base-danger), 61%);
   --warning-color: hsla(var(--base-warning), 50%);
   --success-color: hsla(var(--base-success), 41%);
