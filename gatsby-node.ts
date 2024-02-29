@@ -47,10 +47,8 @@ async function createPages({ graphql, actions }: CreatePagesArgs) {
     `
   );
 
-  const POSTS_PER_PAGE = 10;
   const posts = [];
   const { nodes } = result.data.allMdx;
-  const numPages = Math.ceil(nodes.length / POSTS_PER_PAGE);
 
   nodes.forEach((node) => {
     if (node.frontmatter.publish) {
@@ -78,7 +76,8 @@ async function createPages({ graphql, actions }: CreatePagesArgs) {
     });
   });
 
-  console.log(posts);
+  const POSTS_PER_PAGE = 10;
+  const numPages = Math.ceil(posts.length / POSTS_PER_PAGE);
 
   for (let i = 0; i < numPages; i++) {
     const skip = i * POSTS_PER_PAGE;

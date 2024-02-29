@@ -1,0 +1,74 @@
+.fill {
+  &.primary {
+    --color: var(--primary-color);
+    --hover-color: var(--palette-blue-70);
+  }
+
+  &.secondary {
+    --color: var(--secondary-color);
+    --hover-color: var(--primary-color);
+  }
+
+  &.danger {
+    --color: var(--danger-color);
+    --hover-color: hsla(var(--base-danger), 81%);
+  }
+
+  &.warning {
+    --color: var(--warning-color);
+    --hover-color: hsla(var(--base-warning), 70%);
+  }
+
+  &.success {
+    --color: var(--success-color);
+    --hover-color: hsla(var(--base-success), 61%);
+  }
+
+  border-color: var(--color);
+  background-color: var(--color);
+  color: var(--palette-white);
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    border-color: hsla(var(--hover-color), 100%);
+    background-color: hsla(var(--hover-color), 100%);
+  }
+}
+
+.outline {
+  &.primary {
+    --color: var(--primary-color);
+    --hover-color: hsla(var(--palette-blue-30), 100%);
+  }
+
+  &.secondary {
+    --color: var(--secondary-color);
+    --hover-color: hsla(var(--palette-blue-10), 100%);
+  }
+
+  &.danger {
+    --color: var(--danger-color);
+    --hover-color: hsla(var(--base-danger), 41%);
+  }
+
+  &.warning {
+    --color: var(--warning-color);
+    --hover-color: hsla(var(--base-warning), 50%);
+  }
+
+  &.success {
+    --color: var(--success-color);
+    --hover-color: hsla(var(--base-success), 41%);
+  }
+
+  border-color: var(--color);
+  background-color: transparent;
+  color: var(--color);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--palette-white);
+    border-color: var(--hover-color);
+    background-color: var(--hover-color);
+  }
+}
