@@ -1,21 +1,28 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import type { GatsbyConfig } from 'gatsby';
 =======
+=======
+import path from "path";
+>>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
 import fs from "fs";
 
 import type { GatsbyConfig } from "gatsby";
 
-function createFolder(folderName: string) {
-  const dir = `${__dirname}/static/${folderName}`;
-
+function createFolder(dir: string) {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
   }
 }
 
+<<<<<<< HEAD
 createFolder("jsons");
 createFolder("posts");
 >>>>>>> cf5b257 (feat: global css 적용)
+=======
+createFolder(`${__dirname}/posts`);
+createFolder(`${__dirname}/static/jsons`);
+>>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -44,6 +51,20 @@ const config: GatsbyConfig = {
         icon: `${__dirname}/static/images/icon.png`,
       },
     },
+<<<<<<< HEAD
+=======
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          default: path.resolve("./src/widgets/post-layout/post-layout.ui.tsx"),
+        },
+      },
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+>>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
     {
       resolve: 'gatsby-plugin-mdx',
       options: {

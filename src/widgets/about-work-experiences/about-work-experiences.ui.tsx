@@ -1,3 +1,4 @@
+import { Tags } from "../../entities/tags";
 import { WorkExpereince } from "./components/work-expereince";
 import { WorkExpereinceCompany } from "./components/work-expereince-company";
 import { WorkExpereinceHistory } from "./components/work-expereince-history";
@@ -64,13 +65,7 @@ function AboutWorkExpereinces() {
                       text={project}
                     />
                     <WorkExpereinceLogs.Period text={projectPeriod} />
-                    <WorkExpereinceLogs.Tags
-                      className={aboutWorkExpereinceLogTags}
-                    >
-                      {tags.map((tag) => (
-                        <WorkExpereinceLogs.Tag key={tag} text={tag} />
-                      ))}
-                    </WorkExpereinceLogs.Tags>
+                    <Tags className={aboutWorkExpereinceLogTags} tags={tags} />
                     <WorkExpereinceLogs.Descriptions
                       className={aboutWorkExpereinceDescriptions}
                     >

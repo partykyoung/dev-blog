@@ -11,10 +11,12 @@ import type {
 import { createFilePath } from 'gatsby-source-filesystem';
 =======
 import path from "path";
-import fs from "fs";
+
+import type { CreateNodeArgs, CreatePagesArgs } from "gatsby";
 
 import { createFilePath } from "gatsby-source-filesystem";
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 import { PostLayout } from "./src/widgets/post-layout";
 >>>>>>> b564d85 (refactor: fsd 패턴에 맞춰 블로그 레이아웃 생성)
@@ -42,6 +44,8 @@ function createJSON(pageData) {
 }
 
 <<<<<<< HEAD
+=======
+>>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
 async function createPages({ graphql, actions }: CreatePagesArgs) {
   const { createPage } = actions;
 
@@ -51,14 +55,20 @@ async function createPages({ graphql, actions }: CreatePagesArgs) {
         allMdx(sort: { frontmatter: { date: DESC } }) {
           nodes {
             id
+<<<<<<< HEAD
             excerpt
+=======
+>>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
             fields {
               slug
             }
             frontmatter {
               date(formatString: "MMMM D, YYYY")
+<<<<<<< HEAD
               publish
               tags
+=======
+>>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
               title
             }
             internal {
@@ -70,6 +80,7 @@ async function createPages({ graphql, actions }: CreatePagesArgs) {
     `
   );
 
+<<<<<<< HEAD
   const posts = [];
   const { nodes } = result.data.allMdx;
 
@@ -216,9 +227,25 @@ export { createPages, onCreateNode, onCreateWebpackConfig };
 =======
 >>>>>>> 0bd1ab0 (feat: react-query 설정)
 function onCreateNode({ node, getNode, actions }) {
+=======
+  const { nodes } = result.data.allMdx;
+
+  nodes.forEach((node) => {
+    createPage({
+      path: node.fields.slug,
+      component: `${path.resolve(
+        `./src/widgets/post-layout/post-layout.ui.tsx`
+      )}?__contentFilePath=${node.internal.contentFilePath}`,
+      context: { slug: node.fields.slug },
+    });
+  });
+}
+
+function onCreateNode({ node, getNode, actions }: CreateNodeArgs) {
+>>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
   const { createNodeField } = actions;
 
-  if (node.internal.mediaType === "text/mdx") {
+  if (node.internal.type === `MarkdownRemark` || node.internal.type === "Mdx") {
     const slug = createFilePath({ node, getNode, basePath: "posts" });
 
     createNodeField({
@@ -229,6 +256,7 @@ function onCreateNode({ node, getNode, actions }) {
   }
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 export { createPages, onCreateNode };
 
@@ -257,3 +285,6 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
 =======
 export { onCreateNode };
 >>>>>>> 0bd1ab0 (feat: react-query 설정)
+=======
+export { createPages, onCreateNode };
+>>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
