@@ -36,9 +36,6 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [`.mdx`, `.md`],
-        defaultLayouts: {
-          default: path.resolve("./src/widgets/post-layout/post-layout.ui.tsx"),
-        },
       },
     },
     "gatsby-plugin-sharp",

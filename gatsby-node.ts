@@ -1,8 +1,23 @@
+import fs from "fs";
 import path from "path";
 
 import type { CreateNodeArgs, CreatePagesArgs } from "gatsby";
 
 import { createFilePath } from "gatsby-source-filesystem";
+
+// 페이징에 필요한 폴더 및 json 파일을 만든다.
+function createJSON(pageData) {
+  const dir = `${__dirname}/static/jsons`;
+
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
+
+  const filePath = `${dir}/page${pageData.pageSuffix}.json`;
+  const dataToSave = JSON.stringify(pageData.context);
+
+  fs.writeFile(filePath, dataToSave, () => {});
+}
 
 async function createPages({ graphql, actions }: CreatePagesArgs) {
   const { createPage } = actions;
@@ -13,11 +28,14 @@ async function createPages({ graphql, actions }: CreatePagesArgs) {
         allMdx(sort: { frontmatter: { date: DESC } }) {
           nodes {
             id
+            excerpt
             fields {
               slug
             }
             frontmatter {
               date(formatString: "MMMM D, YYYY")
+              publish
+              tags
               title
             }
             internal {
@@ -29,17 +47,56 @@ async function createPages({ graphql, actions }: CreatePagesArgs) {
     `
   );
 
+  const POSTS_PER_PAGE = 10;
+  const posts = [];
   const { nodes } = result.data.allMdx;
+  const numPages = Math.ceil(nodes.length / POSTS_PER_PAGE);
 
   nodes.forEach((node) => {
+    if (node.frontmatter.publish) {
+      posts.push({
+        id: node.id,
+        slug: node.fields.slug,
+        excerpt: node.excerpt,
+        title: node.frontmatter.title,
+        date: node.frontmatter.date,
+      });
+    }
+
     createPage({
       path: node.fields.slug,
       component: `${path.resolve(
-        `./src/widgets/post-layout/post-layout.ui.tsx`
+        `./src/app/templates/post-template/post-layout.ui.tsx`
       )}?__contentFilePath=${node.internal.contentFilePath}`,
-      context: { slug: node.fields.slug },
+      context: {
+        id: node.id,
+        slug: node.fields.slug,
+        excerpt: node.excerpt,
+        title: node.frontmatter.title,
+        date: node.frontmatter.date,
+      },
     });
   });
+
+  console.log(posts);
+
+  for (let i = 0; i < numPages; i++) {
+    const skip = i * POSTS_PER_PAGE;
+    const pagePosts = posts.filter((_, postIndex) => {
+      return postIndex >= skip && postIndex < skip + 10;
+    });
+
+    createJSON({
+      pageSuffix: `${i + 1}`,
+      context: {
+        limit: POSTS_PER_PAGE,
+        skip,
+        numPages,
+        currentPage: i + 1,
+        posts: pagePosts,
+      },
+    });
+  }
 }
 
 function onCreateNode({ node, getNode, actions }: CreateNodeArgs) {
