@@ -7,7 +7,11 @@ function useGetPostsInfiniteQuery() {
     queryKey: ["posts"],
     queryFn: fetchPosts,
     initialPageParam: 1,
-    getNextPageParam: (lastPage) => lastPage.nextCursor,
+    getNextPageParam: (lastPage) => {
+      const { currentPage, limit, posts } = lastPage;
+
+      return posts.length >= limit ? currentPage + 1 : undefined;
+    },
   });
 }
 

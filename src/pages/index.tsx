@@ -1,23 +1,15 @@
 import type { HeadFC, PageProps } from "gatsby";
 
-import { DefaultLayout } from "../widgets/default-layout";
+import { DefaultLayout } from "@/widgets/default-layout";
 
-import { HomePosts } from "../widgets/home-posts";
-import { Container } from "../shared/uis/container";
-import { Button } from "../shared/uis/button";
+import { HomePosts } from "@/widgets/home-posts";
+import { Container } from "@/shared/uis/container";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <DefaultLayout>
       <Container>
         <HomePosts />
-        <Button variant="fill" color="primary">
-          그래
-        </Button>
-        <Button variant="outline" color="primary">
-          사랑은
-        </Button>
-        <Button>돌아오는거야</Button>
       </Container>
     </DefaultLayout>
   );

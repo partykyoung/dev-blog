@@ -1,4 +1,10 @@
 .post-list-root {
   width: 100%;
   list-style: none;
+
+  li {
+    &:not(:last-of-type) {
+      margin-bottom: 24px;
+    }
+  }
 }
