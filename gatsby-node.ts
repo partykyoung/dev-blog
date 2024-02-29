@@ -16,10 +16,15 @@ import fs from "fs";
 >>>>>>> ebf7538 (refactor: fsd 패턴에 맞춰 블로그 목록 리팩토링)
 import path from "path";
 
-import type { CreateNodeArgs, CreatePagesArgs } from "gatsby";
+import type {
+  CreateNodeArgs,
+  CreatePagesArgs,
+  CreateWebpackConfigArgs,
+} from "gatsby";
 
 import { createFilePath } from "gatsby-source-filesystem";
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -51,6 +56,17 @@ function createJSON(pageData) {
 >>>>>>> b564d85 (refactor: fsd 패턴에 맞춰 블로그 레이아웃 생성)
 =======
 >>>>>>> ebf7538 (refactor: fsd 패턴에 맞춰 블로그 목록 리팩토링)
+=======
+function createJSON(pageData) {
+  const dir = `${__dirname}/static/jsons`;
+
+  if (fs.existsSync(dir)) {
+    fs.rmdirSync(dir);
+  }
+
+  fs.mkdirSync(dir);
+
+>>>>>>> cc4cb6c (refactor: about 페이지 정리)
   const filePath = `${dir}/page${pageData.pageSuffix}.json`;
   const dataToSave = JSON.stringify(pageData.context);
 
@@ -275,9 +291,9 @@ function onCreateNode({ node, getNode, actions }) {
 
     createPage({
       path: node.fields.slug,
-      component: `${path.resolve(
+      component: path.resolve(
         `./src/app/templates/post-template/post-layout.ui.tsx`
-      )}?__contentFilePath=${node.internal.contentFilePath}`,
+      ),
       context: {
         id: node.id,
         slug: node.fields.slug,
@@ -326,6 +342,7 @@ function onCreateNode({ node, getNode, actions }: CreateNodeArgs) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 export { createPages, onCreateNode };
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
@@ -356,3 +373,20 @@ export { onCreateNode };
 =======
 export { createPages, onCreateNode };
 >>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
+=======
+function onCreateWebpackConfig({ actions }: CreateWebpackConfigArgs) {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@/shared": path.resolve(__dirname, "src/shared/"),
+        "@/entities": path.resolve(__dirname, "src/entities/"),
+        "@/features": path.resolve(__dirname, "src/features/"),
+        "@/widgets": path.resolve(__dirname, "src/widgets/"),
+        "@/app": path.resolve(__dirname, "src/app/"),
+      },
+    },
+  });
+}
+
+export { createPages, onCreateNode, onCreateWebpackConfig };
+>>>>>>> cc4cb6c (refactor: about 페이지 정리)

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Container } from "@/shared/uis/container";
 import { BasicLayout } from "@/widgets/basic-layout";
 import { AboutWorkExpereinces } from "@/widgets/about-work-expereinces";
@@ -7,6 +8,11 @@ import { Container } from "../../shared/uis/container";
 import { BasicLayout } from "../../widgets/basic-layout";
 import { AboutWorkExpereinces } from "../../widgets/about-work-experiences";
 >>>>>>> e23180d (refactor: about 페이지 fsd 아키텍처에 맞춰 리팩토링)
+=======
+import { Container } from "@/shared/uis/container";
+import { BasicLayout } from "@/widgets/basic-layout";
+import { AboutWorkExpereinces } from "@/widgets/about-work-expereinces";
+>>>>>>> cc4cb6c (refactor: about 페이지 정리)
 
 import {
   aboutContainer,

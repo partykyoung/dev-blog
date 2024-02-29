@@ -25,6 +25,17 @@
   font-size: 14px;
 }
 
+<<<<<<< HEAD
+=======
+.work-expereince-log-tags {
+  display: flex;
+  margin-top: 16px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 8px 6px;
+}
+
+>>>>>>> cc4cb6c (refactor: about 페이지 정리)
 .work-expereince-log-descriptions {
   margin-top: 15px;
   margin-left: 14px;
