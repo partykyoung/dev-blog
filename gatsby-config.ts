@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import fs from 'fs';
 
 import type { GatsbyConfig } from 'gatsby';
@@ -21,21 +22,22 @@ const config: GatsbyConfig = {
     siteUrl: `https://dev.kyoungah.me`,
 =======
 =======
+=======
+import path from "path";
+>>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
 import fs from "fs";
 
 >>>>>>> b6708e4 (chore: 설정 변경)
 import type { GatsbyConfig } from "gatsby";
 
-function createFolder(folderName: string) {
-  const dir = `${__dirname}/static/${folderName}`;
-
+function createFolder(dir: string) {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
   }
 }
 
-createFolder("jsons");
-createFolder("posts");
+createFolder(`${__dirname}/posts`);
+createFolder(`${__dirname}/static/jsons`);
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -152,7 +154,15 @@ const config: GatsbyConfig = {
       },
 >>>>>>> b6708e4 (chore: 설정 변경)
     },
-    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          default: path.resolve("./src/widgets/post-layout/post-layout.ui.tsx"),
+        },
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
