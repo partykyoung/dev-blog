@@ -1,20 +1,10 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import React from 'react';
+import { QueryClientProvider } from './src/app/providers/query-client-provider';
 
+import './static/css/prism-one-dark.css';
 import './src/app/styles/var.css';
 import './src/app/styles/global.css';
 
-export const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: false,
-      refetchOnWindowFocus: false,
-      staleTime: Infinity,
-    },
-  },
-});
-
 export function wrapRootElement({ element }) {
-  return (
-    <QueryClientProvider client={queryClient}>{element}</QueryClientProvider>
-  );
+  return <QueryClientProvider>{element}</QueryClientProvider>;
 }

@@ -1,10 +1,10 @@
 import React from 'react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClientProvider } from './src/app/providers/query-client-provider';
 
-import "./static/styles/prism-one-dark.css";
-
-const queryClient = new QueryClient();
+import './static/css/prism-one-dark.css';
+import './src/app/styles/var.css';
+import './src/app/styles/global.css';
 
 export function wrapRootElement({ element }) {
-  return <QueryClientProvider client={queryClient}>{element}</QueryClientProvider>;
-};
+  return <QueryClientProvider>{element}</QueryClientProvider>;
+}
