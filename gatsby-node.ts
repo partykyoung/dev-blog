@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 
-import { createFilePath} from 'gatsby-source-filesystem';
+import { createFilePath } from 'gatsby-source-filesystem';
 
 import PostTemplate from './src/commons/templates/PostTemplate';
 import TagTemplate from './src/commons/templates/TagTemplate';
@@ -13,7 +13,7 @@ function generatePageDataJsonFile(pageData) {
     fs.mkdirSync(dir);
   }
 
-  const filePath = `${dir}/${pageData}${pageData.pageSuffix}.json`;
+  const filePath = `${dir}/page${pageData.pageSuffix}.json`;
   const dataToSave = JSON.stringify(pageData.context);
 
   fs.writeFile(filePath, dataToSave, () => {});
@@ -23,27 +23,27 @@ function generatePageDataJsonFiles({
   pagePrefix,
   postsPerPageCount,
   totalPageCount,
-  posts
+  posts,
 }) {
-    const numPages = Math.ceil(totalPageCount / postsPerPageCount);
+  const numPages = Math.ceil(totalPageCount / postsPerPageCount);
 
-    for (let i = 0; i < numPages; i++) {
-      const skip = i * postsPerPageCount;
-      const pagePosts = posts.filter((_, j) => {
-        return j >= skip && j < skip + postsPerPageCount;
-      });
+  for (let i = 0; i < numPages; i++) {
+    const skip = i * postsPerPageCount;
+    const pagePosts = posts.filter((_, j) => {
+      return j >= skip && j < skip + postsPerPageCount;
+    });
 
-      generatePageDataJsonFile({
-        pagePrefix,
-        pageSuffix: `${i + 1}`,
-        context: {
-          limit: postsPerPageCount,
-          numPages,
-          currentPage: i + 1,
-          posts: pagePosts,
-        },
-      });
-    }  
+    generatePageDataJsonFile({
+      pagePrefix,
+      pageSuffix: `${i + 1}`,
+      context: {
+        limit: postsPerPageCount,
+        numPages,
+        currentPage: i + 1,
+        posts: pagePosts,
+      },
+    });
+  }
 }
 
 export async function createPages({ actions, graphql, reporter }) {
@@ -82,7 +82,7 @@ export async function createPages({ actions, graphql, reporter }) {
 //   .then((result) => {
 //     if (result.errors) {
 //       reporter.panicOnBuild(`Error while running GraphQL query.`)
-    
+
 //       return
 //     }
 
