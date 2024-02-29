@@ -1,9 +1,16 @@
-import type { PropsWithChildren } from "react";
+import { clsx } from "clsx";
+import { type HTMLAttributes, type PropsWithChildren } from "react";
 
 import { basicLayoutRoot } from "./basic-layout.module.css";
 
-function BasicLayout({ children }: PropsWithChildren) {
-  return <div className={basicLayoutRoot}>{children}</div>;
+type Props = PropsWithChildren & HTMLAttributes<HTMLDivElement>;
+
+function BasicLayout({ children, className, ...props }: Props) {
+  return (
+    <div className={clsx(basicLayoutRoot, className)} {...props}>
+      {children}
+    </div>
+  );
 }
 
 export { BasicLayout };

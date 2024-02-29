@@ -1,17 +1,22 @@
 import fs from "fs";
 import path from "path";
 
-import type { CreateNodeArgs, CreatePagesArgs } from "gatsby";
+import type {
+  CreateNodeArgs,
+  CreatePagesArgs,
+  CreateWebpackConfigArgs,
+} from "gatsby";
 
 import { createFilePath } from "gatsby-source-filesystem";
 
-// 페이징에 필요한 폴더 및 json 파일을 만든다.
 function createJSON(pageData) {
   const dir = `${__dirname}/static/jsons`;
 
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir);
+  if (fs.existsSync(dir)) {
+    fs.rmdirSync(dir);
   }
+
+  fs.mkdirSync(dir);
 
   const filePath = `${dir}/page${pageData.pageSuffix}.json`;
   const dataToSave = JSON.stringify(pageData.context);
@@ -63,9 +68,9 @@ async function createPages({ graphql, actions }: CreatePagesArgs) {
 
     createPage({
       path: node.fields.slug,
-      component: `${path.resolve(
+      component: path.resolve(
         `./src/app/templates/post-template/post-layout.ui.tsx`
-      )}?__contentFilePath=${node.internal.contentFilePath}`,
+      ),
       context: {
         id: node.id,
         slug: node.fields.slug,
@@ -112,4 +117,18 @@ function onCreateNode({ node, getNode, actions }: CreateNodeArgs) {
   }
 }
 
-export { createPages, onCreateNode };
+function onCreateWebpackConfig({ actions }: CreateWebpackConfigArgs) {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@/shared": path.resolve(__dirname, "src/shared/"),
+        "@/entities": path.resolve(__dirname, "src/entities/"),
+        "@/features": path.resolve(__dirname, "src/features/"),
+        "@/widgets": path.resolve(__dirname, "src/widgets/"),
+        "@/app": path.resolve(__dirname, "src/app/"),
+      },
+    },
+  });
+}
+
+export { createPages, onCreateNode, onCreateWebpackConfig };

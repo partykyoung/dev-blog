@@ -1,6 +1,6 @@
-import { Container } from "../../shared/uis/container";
-import { BasicLayout } from "../../widgets/basic-layout";
-import { AboutWorkExpereinces } from "../../widgets/about-work-experiences";
+import { Container } from "@/shared/uis/container";
+import { BasicLayout } from "@/widgets/basic-layout";
+import { AboutWorkExpereinces } from "@/widgets/about-work-expereinces";
 
 import {
   aboutContainer,

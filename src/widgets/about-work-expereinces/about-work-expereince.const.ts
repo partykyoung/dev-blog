@@ -9,7 +9,7 @@ const WORK_EXPEREINCES = [
           "Flutter, React Native 비교 R&D 진행",
         ],
         project: "React Native를 사용하여 채팅앱 프로토타입 개발",
-        period: "2023.06 ~ 2023.11",
+        projectPeriod: "2023.06 ~ 2023.11",
         tags: ["TypeScript", "React Native", "Redux Toolkit", "Protobuf"],
       },
       {
@@ -18,7 +18,7 @@ const WORK_EXPEREINCES = [
           "FE 파트 공통 Eslint Rule 및 Prettier Rule 적용",
         ],
         project: "사내 Plan Management System 웹 애플리케이션 개발",
-        period: "2023.05 ~ 2023.06",
+        projectPeriod: "2023.05 ~ 2023.06",
         tags: ["TypeScript", "React", "Recoil", "Material UI", "Emotion"],
       },
     ],
@@ -40,7 +40,7 @@ const WORK_EXPEREINCES = [
         ],
         project:
           "블록체인 서비스 Fncy 웹, 런처 내 웹뷰 신규 카테고리 개발 및 유지보수",
-        period: "2022.03 ~ 2023.04",
+        projectPeriod: "2022.03 ~ 2023.04",
         tags: ["TypeScript", "Next.js", "Recoil", "Emotion", "Turborepo"],
       },
       {
@@ -50,7 +50,7 @@ const WORK_EXPEREINCES = [
           "AWS S3, CloudFront를 사용하여 정적 웹사이트 호스팅",
         ],
         project: "모바일 게임 내 게시판 개발",
-        period: "2023.04 ~ 2023.04",
+        projectPeriod: "2023.04 ~ 2023.04",
         tags: ["TypeScript", "React", "Emotion", "Turborepo"],
       },
     ],
@@ -70,7 +70,7 @@ const WORK_EXPEREINCES = [
           "버그 수정 및 피드백 반영",
         ],
         project: "번개장터 웹서비스 기존 기능 개편, 신규 기능 추가, 유지보수",
-        period: "2019.05 ~ 2022.03",
+        projectPeriod: "2019.05 ~ 2022.03",
         tags: ["TypeScript", "React", "Redux", "Styled Components"],
       },
       {
@@ -81,7 +81,7 @@ const WORK_EXPEREINCES = [
           "Lottie 애니메이션 적용 시 dynamic import, intersectionobserver를 사용하여 웹성능 최적화",
         ],
         project: "내폰 시세조회 및 내폰 판매 서비스 개발 및 유지보수",
-        period: "2020.04 ~ 2022.03",
+        projectPeriod: "2020.04 ~ 2022.03",
         tags: ["TypeScript", "React", "Styled Components"],
       },
       {
@@ -90,7 +90,7 @@ const WORK_EXPEREINCES = [
           "마케팅팀이 엑셀 시트에 이벤트 데이터를 입력하면 자동으로 해당 정보를 반영한 이벤트 페이지가 생성될 수 있도록 전용 컴포넌트 및 페이지 개발",
         ],
         project: "이벤트 및 프로모션 페이지 개발",
-        period: "2020.11 ~ 2022.03",
+        projectPeriod: "2020.11 ~ 2022.03",
         tags: ["TypeScript", "React", "Redux", "Styled Components"],
       },
       {
@@ -99,7 +99,7 @@ const WORK_EXPEREINCES = [
           "택배 신청 페이지, 배송 현황 페이지를 네이티브 앱 내 웹뷰 페이지로 개발",
         ],
         project: "포장택배 서비스 개발 및 유지보수",
-        period: "2021.11 ~ 2021.12",
+        projectPeriod: "2021.11 ~ 2021.12",
         tags: ["TypeScript", "React", "Mobx", "Styled Components"],
       },
       {
@@ -110,7 +110,7 @@ const WORK_EXPEREINCES = [
           "공통 Eslint Rule 및 Prettier Rule 적용",
         ],
         project: "중고폰 보험 가입 서비스 개발",
-        period: "2019.10 ~ 2019.11",
+        projectPeriod: "2019.10 ~ 2019.11",
         tags: ["TypeScript", "React", "Mobx", "Styled Components"],
       },
     ],
@@ -130,7 +130,7 @@ const WORK_EXPEREINCES = [
           "Node.js로 웹 애플리케이션 미들웨어를 작성하여 Server Side Rendering 적용",
         ],
         project: "커머스 서비스 프롬 개발 및 유지보수",
-        period: "2018.04 ~ 2019.05",
+        projectPeriod: "2018.04 ~ 2019.05",
         tags: [
           "TypeScript",
           "React",
@@ -147,7 +147,7 @@ const WORK_EXPEREINCES = [
           "임플란트 시술 상세 페이지, 마이 페이지를 반응형 웹으로 개발",
         ],
         project: "임플란트 시술 정보 제공 서비스 플랜티 개발",
-        period: "2017.08 ~ 2018.03",
+        projectPeriod: "2017.08 ~ 2018.03",
         tags: [
           "TypeScript",
           "React",
@@ -173,7 +173,7 @@ const WORK_EXPEREINCES = [
         ],
         project:
           "메타부킹 플랫폼 트래블하우 모바일웹, PC웹, 앱 내 웹뷰 페이지 신규 기능 개발 및 유지보수",
-        period: "2016.07 ~ 2017.08",
+        projectPeriod: "2016.07 ~ 2017.08",
         tags: ["React", "Reflux", "Semantic UI", "jQuery", "Node.js"],
       },
       {
@@ -184,7 +184,7 @@ const WORK_EXPEREINCES = [
         ],
         project:
           "메타부킹 플랫폼 트래블하우 운영 어드민 신규 기능 개발 및 유지보수",
-        period: "2016.07 ~ 2017.08",
+        projectPeriod: "2016.07 ~ 2017.08",
         tags: ["React", "Reflux", "Semantic UI", "jQuery", "Node.js"],
       },
     ],

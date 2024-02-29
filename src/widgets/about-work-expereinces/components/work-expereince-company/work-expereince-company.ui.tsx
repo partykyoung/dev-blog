@@ -7,16 +7,21 @@ import {
 } from "./work-expereince-company.module.css";
 
 type Props = {
-  text: string;
-  subText?: string;
+  company: string;
+  description?: string;
 } & HTMLAttributes<HTMLSpanElement>;
 
-function WorkExpereinceCompany({ className, text, subText, ...props }: Props) {
+function WorkExpereinceCompany({
+  className,
+  company,
+  description,
+  ...props
+}: Props) {
   return (
     <h3 className={clsx(workExpereinceCompanyRoot, className)} {...props}>
-      {text}
-      {!!subText && (
-        <span className={workExpereinceCompanySubText}>({subText})</span>
+      {company}
+      {!!description && (
+        <span className={workExpereinceCompanySubText}>({description})</span>
       )}
     </h3>
   );
