@@ -1,0 +1,7 @@
+.work-expereince-log-tags-root {
+  display: flex;
+  margin-top: 16px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 8px 6px;
+}

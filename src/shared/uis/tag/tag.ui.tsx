@@ -5,13 +5,13 @@ import type { HTMLAttributes } from "react";
 import { tagRoot } from "./tag.module.css";
 
 type Props = {
-  text: string;
+  tag: string;
 } & HTMLAttributes<HTMLSpanElement>;
 
-function Tag({ className, text, ...props }: Props) {
+function Tag({ className, tag, ...props }: Props) {
   return (
     <span className={clsx(tagRoot, className)} {...props}>
-      {text}
+      {tag}
     </span>
   );
 }

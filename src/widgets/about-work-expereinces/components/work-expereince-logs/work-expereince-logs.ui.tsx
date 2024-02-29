@@ -1,12 +1,10 @@
-import { Tags } from "@/entities/tags";
-
+import { WorkExperenceTags } from "../work-expereince-tags/work-expereince-tags.ui";
 import {
   workExpereinceLogDescription,
   workExpereinceLogDescriptions,
   workExpereinceLogsRoot,
   workExpereinceLogPeriod,
   workExpereinceLogProject,
-  workExpereinceLogTags,
 } from "./work-expereince-logs.module.css";
 
 type Props = {
@@ -25,7 +23,7 @@ function WorkExpereinceLogs({ logs }: Props) {
         <div key={project} className={workExpereinceLogsRoot}>
           <h4 className={workExpereinceLogProject}>{project}</h4>
           <span className={workExpereinceLogPeriod}>{projectPeriod}</span>
-          <Tags className={workExpereinceLogTags} tags={tags} />
+          <WorkExperenceTags tags={tags} />
           <ul className={workExpereinceLogDescriptions}>
             {descriptions.map((description) => (
               <li key={description} className={workExpereinceLogDescription}>
