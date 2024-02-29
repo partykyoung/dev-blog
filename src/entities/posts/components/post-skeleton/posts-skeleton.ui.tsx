@@ -4,6 +4,8 @@ function PostSkeleton() {
   return (
     <li>
       <Skeleton />
+      <Skeleton />
+      <Skeleton />
     </li>
   );
 }
