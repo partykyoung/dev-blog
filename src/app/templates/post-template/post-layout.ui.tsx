@@ -4,6 +4,7 @@ import { DefaultLayout } from "../../../widgets/default-layout";
 
 import { Tags } from "../../../entities/tags";
 import { PostLayoutDate } from "./components/post-layout-date";
+import { PostLayoutTags } from "./components/post-layout-tags";
 import { PostLayoutTitle } from "./components/post-layout-title";
 
 import {
@@ -21,10 +22,7 @@ function PostLayout({ data, children }: PageProps<any>) {
       <Container className={postLayoutContainer}>
         <PostLayoutTitle className={postLayoutTitle} title={title} />
         <PostLayoutDate date={date} />
-        <Tags
-          className={postLayoutTags}
-          tags={tags?.map((tag) => ({ tag, link: `/tags/${tag}` }))}
-        />
+        <PostLayoutTags className={postLayoutTags} tags={tags} />
         <PostLayoutContent>{children}</PostLayoutContent>
       </Container>
     </DefaultLayout>
