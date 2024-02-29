@@ -1,17 +1,16 @@
+import path from "path";
 import fs from "fs";
 
 import type { GatsbyConfig } from "gatsby";
 
-function createFolder(folderName: string) {
-  const dir = `${__dirname}/static/${folderName}`;
-
+function createFolder(dir: string) {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
   }
 }
 
-createFolder("jsons");
-createFolder("posts");
+createFolder(`${__dirname}/posts`);
+createFolder(`${__dirname}/static/jsons`);
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -33,7 +32,15 @@ const config: GatsbyConfig = {
         icon: `${__dirname}/static/images/icon.png`,
       },
     },
-    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          default: path.resolve("./src/widgets/post-layout/post-layout.ui.tsx"),
+        },
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {

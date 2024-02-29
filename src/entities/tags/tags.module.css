@@ -1,0 +1,5 @@
+.tags-root {
+  display: flex;
+  flexwrap: wrap;
+  gap: 8px 6px;
+}

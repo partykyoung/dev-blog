@@ -1,1 +1,3 @@
-export { PostLayout } from "./post-layout.ui";
+import PostLayout from "./post-layout.ui";
+
+export default PostLayout;
