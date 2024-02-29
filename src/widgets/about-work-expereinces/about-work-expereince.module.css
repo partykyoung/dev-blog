@@ -1,0 +1,15 @@
+.about-work-expereinces-body {
+  width: 100%;
+  margin-bottom: 90px;
+}
+
+.about-work-expereinces-title {
+  margin-bottom: 55px;
+  font-size: 30px;
+}
+
+.about-work-expereince {
+  &:not(:last-of-type) {
+    margin-bottom: 90px;
+  }
+}
