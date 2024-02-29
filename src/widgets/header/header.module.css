@@ -34,23 +34,41 @@
 
 .header-navigation-item-link {
   display: inline-flex;
+  position: relative;
   width: 36px;
   height: 100%;
   border-radius: 100%;
   align-items: center;
   justify-content: center;
   background-color: hsla(var(--palette-gray-20), 100%);
-  background-size: 24px;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: hsla(var(--palette-gray-80), 100%);
+  border-radius: 9999px;
+
+  &:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    background-color: hsla(var(--palette-gray-80), 100%);
+    mask-size: 24px;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+  }
 
   &.tags {
-    background-image: url("/images/tags.svg");
+    &:after {
+      mask-image: url("/images/tag.svg");
+    }
   }
 
   &.about {
-    background-image: url("/images/about.svg");
+    &:after {
+      mask-image: url("/images/person.svg");
+    }
   }
 }
 
@@ -80,19 +98,24 @@
       color: hsla(var(--palette-gray-80), 100%);
     }
 
-    &.tags {
-      background-image: none;
+    &:after {
+      position: relative;
+      background: none;
+      mask: none;
+    }
 
+    &.tags {
       &:after {
+        width: auto;
         content: "Tags";
+        mask-image: none;
       }
     }
 
     &.about {
-      background-image: none;
-
       &:after {
         content: "About";
+        mask-image: none;
       }
     }
   }

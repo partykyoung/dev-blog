@@ -1,18 +1,14 @@
 import { graphql, type PageProps } from "gatsby";
-import { Container } from "../../../shared/uis/container";
-import { DefaultLayout } from "../../../widgets/default-layout";
 
-import { Tags } from "../../../entities/tags";
+import { Container } from "@/shared/uis/container";
+import { DefaultLayout } from "@/widgets/default-layout";
+
+import { PostLayoutContent } from "./components/post-layout-content";
 import { PostLayoutDate } from "./components/post-layout-date";
 import { PostLayoutTags } from "./components/post-layout-tags";
 import { PostLayoutTitle } from "./components/post-layout-title";
 
-import {
-  postLayoutContainer,
-  postLayoutTags,
-  postLayoutTitle,
-} from "./post-layout.module.css";
-import { PostLayoutContent } from "./components/post-layout-content";
+import { postLayoutContainer, postLayoutTitle } from "./post-layout.module.css";
 
 function PostLayout({ data, children }: PageProps<any>) {
   const { date, tags, title } = data?.mdx?.frontmatter ?? {};
@@ -22,7 +18,7 @@ function PostLayout({ data, children }: PageProps<any>) {
       <Container className={postLayoutContainer}>
         <PostLayoutTitle className={postLayoutTitle} title={title} />
         <PostLayoutDate date={date} />
-        <PostLayoutTags className={postLayoutTags} tags={tags} />
+        <PostLayoutTags tags={tags} />
         <PostLayoutContent>{children}</PostLayoutContent>
       </Container>
     </DefaultLayout>
