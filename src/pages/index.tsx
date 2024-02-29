@@ -29,7 +29,8 @@ const IndexPage: React.FC<PageProps> = () => {
 =======
 import { DefaultLayout } from "../widgets/default-layout";
 
-import { Posts } from "../entities/posts";
+import { HomePosts } from "../widgets/home-posts";
+import { Container } from "../shared/uis/container";
 
 const IndexPage: React.FC<PageProps> = () => {
 <<<<<<< HEAD
@@ -38,16 +39,9 @@ const IndexPage: React.FC<PageProps> = () => {
 =======
   return (
     <DefaultLayout>
-      <Posts>
-        <Posts.List>
-          <Posts.ListItem
-            excerpt="ㅎ규링ㄴ루ㅏㅣ눞,ㅡㅌㅇ푸ㅡ,ㄹㅌ"
-            link="2"
-            title="재취업 힘들어요"
-          />
-        </Posts.List>
-        <Posts.Skeleton />
-      </Posts>
+      <Container>
+        <HomePosts />
+      </Container>
     </DefaultLayout>
   );
 >>>>>>> d8737b0 (refactor: fsd 아키텍쳐에 맞춰 posts 컴포넌트 리팩토링)

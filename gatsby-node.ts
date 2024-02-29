@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import fs from 'fs';
 import path from 'path';
 
@@ -10,12 +11,16 @@ import type {
 
 import { createFilePath } from 'gatsby-source-filesystem';
 =======
+=======
+import fs from "fs";
+>>>>>>> ebf7538 (refactor: fsd 패턴에 맞춰 블로그 목록 리팩토링)
 import path from "path";
 
 import type { CreateNodeArgs, CreatePagesArgs } from "gatsby";
 
 import { createFilePath } from "gatsby-source-filesystem";
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 import { PostLayout } from "./src/widgets/post-layout";
@@ -32,11 +37,20 @@ function createJSON(pageData) {
   fs.mkdirSync(dir);
 
 =======
+=======
+// 페이징에 필요한 폴더 및 json 파일을 만든다.
+function createJSON(pageData) {
+  const dir = `${__dirname}/static/jsons`;
+
+>>>>>>> ebf7538 (refactor: fsd 패턴에 맞춰 블로그 목록 리팩토링)
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
   }
 
+<<<<<<< HEAD
 >>>>>>> b564d85 (refactor: fsd 패턴에 맞춰 블로그 레이아웃 생성)
+=======
+>>>>>>> ebf7538 (refactor: fsd 패턴에 맞춰 블로그 목록 리팩토링)
   const filePath = `${dir}/page${pageData.pageSuffix}.json`;
   const dataToSave = JSON.stringify(pageData.context);
 
@@ -44,8 +58,11 @@ function createJSON(pageData) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
+=======
+>>>>>>> ebf7538 (refactor: fsd 패턴에 맞춰 블로그 목록 리팩토링)
 async function createPages({ graphql, actions }: CreatePagesArgs) {
   const { createPage } = actions;
 
@@ -56,19 +73,28 @@ async function createPages({ graphql, actions }: CreatePagesArgs) {
           nodes {
             id
 <<<<<<< HEAD
+<<<<<<< HEAD
             excerpt
 =======
 >>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
+=======
+            excerpt
+>>>>>>> ebf7538 (refactor: fsd 패턴에 맞춰 블로그 목록 리팩토링)
             fields {
               slug
             }
             frontmatter {
               date(formatString: "MMMM D, YYYY")
 <<<<<<< HEAD
+<<<<<<< HEAD
               publish
               tags
 =======
 >>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
+=======
+              publish
+              tags
+>>>>>>> ebf7538 (refactor: fsd 패턴에 맞춰 블로그 목록 리팩토링)
               title
             }
             internal {
@@ -80,6 +106,7 @@ async function createPages({ graphql, actions }: CreatePagesArgs) {
     `
   );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   const posts = [];
   const { nodes } = result.data.allMdx;
@@ -228,17 +255,58 @@ export { createPages, onCreateNode, onCreateWebpackConfig };
 >>>>>>> 0bd1ab0 (feat: react-query 설정)
 function onCreateNode({ node, getNode, actions }) {
 =======
+=======
+  const POSTS_PER_PAGE = 10;
+  const posts = [];
+>>>>>>> ebf7538 (refactor: fsd 패턴에 맞춰 블로그 목록 리팩토링)
   const { nodes } = result.data.allMdx;
+  const numPages = Math.ceil(nodes.length / POSTS_PER_PAGE);
 
   nodes.forEach((node) => {
+    if (node.frontmatter.publish) {
+      posts.push({
+        id: node.id,
+        slug: node.fields.slug,
+        excerpt: node.excerpt,
+        title: node.frontmatter.title,
+        date: node.frontmatter.date,
+      });
+    }
+
     createPage({
       path: node.fields.slug,
       component: `${path.resolve(
-        `./src/widgets/post-layout/post-layout.ui.tsx`
+        `./src/app/templates/post-template/post-layout.ui.tsx`
       )}?__contentFilePath=${node.internal.contentFilePath}`,
-      context: { slug: node.fields.slug },
+      context: {
+        id: node.id,
+        slug: node.fields.slug,
+        excerpt: node.excerpt,
+        title: node.frontmatter.title,
+        date: node.frontmatter.date,
+      },
     });
   });
+
+  console.log(posts);
+
+  for (let i = 0; i < numPages; i++) {
+    const skip = i * POSTS_PER_PAGE;
+    const pagePosts = posts.filter((_, postIndex) => {
+      return postIndex >= skip && postIndex < skip + 10;
+    });
+
+    createJSON({
+      pageSuffix: `${i + 1}`,
+      context: {
+        limit: POSTS_PER_PAGE,
+        skip,
+        numPages,
+        currentPage: i + 1,
+        posts: pagePosts,
+      },
+    });
+  }
 }
 
 function onCreateNode({ node, getNode, actions }: CreateNodeArgs) {
