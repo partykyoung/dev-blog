@@ -1,5 +1,6 @@
 import { graphql, type PageProps } from "gatsby";
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import { Container } from "@/shared/uis/container";
 import { DefaultLayout } from "@/widgets/default-layout";
@@ -13,11 +14,17 @@ import { postLayoutContainer, postLayoutTitle } from "./post-layout.module.css";
 =======
 import { Container } from "../../../shared/uis/container";
 import { DefaultLayout } from "../../../widgets/default-layout";
+=======
+>>>>>>> 011c246 (imp: 포스트 목록 고도화)
 
-import { Tags } from "../../../entities/tags";
+import { Container } from "@/shared/uis/container";
+import { DefaultLayout } from "@/widgets/default-layout";
+
+import { PostLayoutContent } from "./components/post-layout-content";
 import { PostLayoutDate } from "./components/post-layout-date";
 import { PostLayoutTitle } from "./components/post-layout-title";
 
+<<<<<<< HEAD
 import {
   postLayoutContainer,
   postLayoutTags,
@@ -25,6 +32,9 @@ import {
 } from "./post-layout.module.css";
 import { PostLayoutContent } from "./components/post-layout-content";
 >>>>>>> ebf7538 (refactor: fsd 패턴에 맞춰 블로그 목록 리팩토링)
+=======
+import { postLayoutContainer, postLayoutTitle } from "./post-layout.module.css";
+>>>>>>> 011c246 (imp: 포스트 목록 고도화)
 
 function PostLayout({ data, children }: PageProps<any>) {
   const { date, tags, title } = data?.mdx?.frontmatter ?? {};
@@ -35,6 +45,7 @@ function PostLayout({ data, children }: PageProps<any>) {
         <PostLayoutTitle className={postLayoutTitle} title={title} />
         <PostLayoutDate date={date} />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <PostLayoutTags tags={tags} />
 =======
         <Tags
@@ -42,6 +53,9 @@ function PostLayout({ data, children }: PageProps<any>) {
           tags={tags?.map((tag) => ({ tag, link: `/tags/${tag}` }))}
         />
 >>>>>>> ebf7538 (refactor: fsd 패턴에 맞춰 블로그 목록 리팩토링)
+=======
+        <PostLayoutTags tags={tags} />
+>>>>>>> 011c246 (imp: 포스트 목록 고도화)
         <PostLayoutContent>{children}</PostLayoutContent>
       </Container>
     </DefaultLayout>

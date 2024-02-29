@@ -35,9 +35,13 @@
 .header-navigation-item-link {
   display: inline-flex;
 <<<<<<< HEAD
+<<<<<<< HEAD
   position: relative;
 =======
 >>>>>>> 4704d73 (refactor: fsd 아키텍처 구조에 맞게 레이아웃 재작업)
+=======
+  position: relative;
+>>>>>>> 011c246 (imp: 포스트 목록 고도화)
   width: 36px;
   height: 100%;
   border-radius: 100%;
@@ -61,6 +65,7 @@
     left: 0;
     right: 0;
     bottom: 0;
+<<<<<<< HEAD
     content: '';
   }
 
@@ -133,6 +138,10 @@
   background-repeat: no-repeat;
   background-position: center;
   color: hsla(var(--palette-gray-80), 100%);
+=======
+    content: "";
+  }
+>>>>>>> 011c246 (imp: 포스트 목록 고도화)
 
 <<<<<<< HEAD
 @mixin max-width $compactDevice {
@@ -141,11 +150,15 @@
 >>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
 =======
   &.tags {
-    background-image: url("/images/tags.svg");
+    &:after {
+      mask-image: url("/images/tag.svg");
+    }
   }
 
   &.about {
-    background-image: url("/images/about.svg");
+    &:after {
+      mask-image: url("/images/person.svg");
+    }
   }
 }
 
@@ -175,19 +188,24 @@
       color: hsla(var(--palette-gray-80), 100%);
     }
 
-    &.tags {
-      background-image: none;
+    &:after {
+      position: relative;
+      background: none;
+      mask: none;
+    }
 
+    &.tags {
       &:after {
+        width: auto;
         content: "Tags";
+        mask-image: none;
       }
     }
 
     &.about {
-      background-image: none;
-
       &:after {
         content: "About";
+        mask-image: none;
       }
     }
 >>>>>>> 4704d73 (refactor: fsd 아키텍처 구조에 맞게 레이아웃 재작업)

@@ -6,11 +6,16 @@ import { reduceInfinitePagesToList } from "../../shared/utils/reduce-infinite-pa
 
 function HomePosts() {
 <<<<<<< HEAD
+<<<<<<< HEAD
   const { data, hasNextPage, isLoading, fetchNextPage } =
     useGetPostsInfiniteQuery();
 =======
   const { data } = useGetPostsInfiniteQuery();
 >>>>>>> ebf7538 (refactor: fsd 패턴에 맞춰 블로그 목록 리팩토링)
+=======
+  const { data, hasNextPage, isLoading, fetchNextPage } =
+    useGetPostsInfiniteQuery();
+>>>>>>> 011c246 (imp: 포스트 목록 고도화)
   const posts = reduceInfinitePagesToList(data?.pages);
 
   return (
@@ -22,15 +27,21 @@ function HomePosts() {
             <Posts.ListItem excerpt={excerpt} title={title} link={slug} />
           ))}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 011c246 (imp: 포스트 목록 고도화)
           {isLoading && <Posts.Skeleton />}
         </Posts.List>
       )}
 
       {hasNextPage && <Posts.MoreButton onClick={fetchNextPage} />}
+<<<<<<< HEAD
 =======
         </Posts.List>
       )}
 >>>>>>> ebf7538 (refactor: fsd 패턴에 맞춰 블로그 목록 리팩토링)
+=======
+>>>>>>> 011c246 (imp: 포스트 목록 고도화)
     </Posts>
   );
 }

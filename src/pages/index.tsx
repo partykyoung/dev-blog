@@ -2,16 +2,24 @@ import type { HeadFC, PageProps } from 'gatsby';
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { DefaultLayout } from '@/widgets/default-layout';
 
 import { HomePosts } from '@/widgets/home-posts';
 import { Container } from '@/shared/uis/container';
+=======
+import { DefaultLayout } from "@/widgets/default-layout";
+
+import { HomePosts } from "@/widgets/home-posts";
+import { Container } from "@/shared/uis/container";
+>>>>>>> 011c246 (imp: 포스트 목록 고도화)
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <DefaultLayout>
       <Container>
         <HomePosts />
+<<<<<<< HEAD
       </Container>
     </DefaultLayout>
 =======
@@ -41,6 +49,8 @@ const IndexPage: React.FC<PageProps> = () => {
     <DefaultLayout>
       <Container>
         <HomePosts />
+=======
+>>>>>>> 011c246 (imp: 포스트 목록 고도화)
       </Container>
     </DefaultLayout>
   );
