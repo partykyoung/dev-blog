@@ -1,8 +1,8 @@
 import { graphql, type PageProps } from "gatsby";
-import { Container } from "../../shared/uis/container";
-import { DefaultLayout } from "../default-layout";
+import { Container } from "../../../shared/uis/container";
+import { DefaultLayout } from "../../../widgets/default-layout";
 
-import { Tags } from "../../entities/tags";
+import { Tags } from "../../../entities/tags";
 import { PostLayoutDate } from "./components/post-layout-date";
 import { PostLayoutTitle } from "./components/post-layout-title";
 
@@ -23,7 +23,7 @@ function PostLayout({ data, children }: PageProps<any>) {
         <PostLayoutDate date={date} />
         <Tags
           className={postLayoutTags}
-          tags={tags.map((tag) => ({ tag, link: `/tags/${tag}` }))}
+          tags={tags?.map((tag) => ({ tag, link: `/tags/${tag}` }))}
         />
         <PostLayoutContent>{children}</PostLayoutContent>
       </Container>
