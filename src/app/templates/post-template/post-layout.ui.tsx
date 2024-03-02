@@ -1,6 +1,10 @@
 import { graphql, type PageProps } from "gatsby";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import { MDXProvider } from "@mdx-js/react";
+>>>>>>> 08d1838 (fix: 버그 수정)
 
 import { Container } from "@/shared/uis/container";
 import { DefaultLayout } from "@/widgets/default-layout";
@@ -39,6 +43,8 @@ import { postLayoutContainer, postLayoutTitle } from "./post-layout.module.css";
 function PostLayout({ data, children }: PageProps<any>) {
   const { date, tags, title } = data?.mdx?.frontmatter ?? {};
 
+  console.log(data, children);
+
   return (
     <DefaultLayout>
       <Container className={postLayoutContainer}>
@@ -47,6 +53,7 @@ function PostLayout({ data, children }: PageProps<any>) {
 <<<<<<< HEAD
 <<<<<<< HEAD
         <PostLayoutTags tags={tags} />
+<<<<<<< HEAD
 =======
         <Tags
           className={postLayoutTags}
@@ -57,6 +64,11 @@ function PostLayout({ data, children }: PageProps<any>) {
         <PostLayoutTags tags={tags} />
 >>>>>>> 011c246 (imp: 포스트 목록 고도화)
         <PostLayoutContent>{children}</PostLayoutContent>
+=======
+        <PostLayoutContent>
+          <MDXProvider>{children}</MDXProvider>
+        </PostLayoutContent>
+>>>>>>> 08d1838 (fix: 버그 수정)
       </Container>
     </DefaultLayout>
   );

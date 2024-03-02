@@ -60,13 +60,16 @@ function createJSON(pageData) {
 function createJSON(pageData) {
   const dir = `${__dirname}/static/jsons`;
 
-  if (fs.existsSync(dir)) {
-    fs.rmdirSync(dir);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
   }
 
+<<<<<<< HEAD
   fs.mkdirSync(dir);
 
 >>>>>>> cc4cb6c (refactor: about 페이지 정리)
+=======
+>>>>>>> 08d1838 (fix: 버그 수정)
   const filePath = `${dir}/page${pageData.pageSuffix}.json`;
   const dataToSave = JSON.stringify(pageData.context);
 
@@ -291,9 +294,9 @@ function onCreateNode({ node, getNode, actions }) {
 
     createPage({
       path: node.fields.slug,
-      component: path.resolve(
+      component: `${path.resolve(
         `./src/app/templates/post-template/post-layout.ui.tsx`
-      ),
+      )}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         id: node.id,
         slug: node.fields.slug,

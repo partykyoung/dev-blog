@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import type { GatsbyConfig } from 'gatsby';
 =======
 =======
@@ -24,6 +25,10 @@ createFolder(`${__dirname}/posts`);
 createFolder(`${__dirname}/static/jsons`);
 >>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
 
+=======
+import type { GatsbyConfig } from "gatsby";
+
+>>>>>>> 08d1838 (fix: 버그 수정)
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Kyoungah Dev Blog`,
