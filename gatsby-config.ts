@@ -1,16 +1,4 @@
-import path from "path";
-import fs from "fs";
-
 import type { GatsbyConfig } from "gatsby";
-
-function createFolder(dir: string) {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir);
-  }
-}
-
-createFolder(`${__dirname}/posts`);
-createFolder(`${__dirname}/static/jsons`);
 
 const config: GatsbyConfig = {
   siteMetadata: {

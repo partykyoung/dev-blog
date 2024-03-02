@@ -8,9 +8,11 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
+    "setting": "node ./scripts/create-required-folders.mjs",
+    "develop": "yarn setting && gatsby develop",
+    "start": "yarn setting && gatsby develop",
+    "build": "yarn setting && gatsby clean && gatsby build",
+    "deploy": "gh-pages -d public -b main -r https://github.com/partykyoung/partykyoung.github.io",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",

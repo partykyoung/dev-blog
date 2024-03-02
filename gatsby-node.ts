@@ -12,11 +12,9 @@ import { createFilePath } from "gatsby-source-filesystem";
 function createJSON(pageData) {
   const dir = `${__dirname}/static/jsons`;
 
-  if (fs.existsSync(dir)) {
-    fs.rmdirSync(dir);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
   }
-
-  fs.mkdirSync(dir);
 
   const filePath = `${dir}/page${pageData.pageSuffix}.json`;
   const dataToSave = JSON.stringify(pageData.context);
@@ -68,9 +66,9 @@ async function createPages({ graphql, actions }: CreatePagesArgs) {
 
     createPage({
       path: node.fields.slug,
-      component: path.resolve(
+      component: `${path.resolve(
         `./src/app/templates/post-template/post-layout.ui.tsx`
-      ),
+      )}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         id: node.id,
         slug: node.fields.slug,
