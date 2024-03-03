@@ -2,7 +2,6 @@ import fs from "fs";
 import input from "@inquirer/input";
 import checkbox, { Separator } from "@inquirer/checkbox";
 import dayjs from "dayjs";
-import matter from "gray-matter";
 
 const cwd = process.cwd();
 const POSTS_DERECTORY = `${cwd}/posts`;
@@ -13,17 +12,26 @@ function getTags() {
       withFileTypes: true,
     })
     .reduce((acc, post) => {
-      const {
-        data: { tags },
-      } = matter.read(`${POSTS_DERECTORY}/${post.name}`);
+      try {
+        const file = fs.readFileSync(`${POSTS_DERECTORY}/${post.name}`, "utf8");
+        const tagRegex = /tags:\s*\[([^\]]+)\]/;
+        const match = file.match(tagRegex);
 
-      if (!tags || tags.length <= 0) return acc;
+        if (!match || match.length <= 1) return acc;
 
-      tags.forEach((tag) => {
-        acc.add(tag);
-      });
+        const tagsString = match[1];
+        const tags = tagsString.split(",").map((tag) => tag.trim());
 
-      return acc;
+        if (!tags || tags.length <= 0) return acc;
+
+        tags.forEach((tag) => {
+          acc.add(tag);
+        });
+
+        return acc;
+      } catch {
+        return acc;
+      }
     }, new Set());
 
   return Array.from(extistTags);
@@ -82,12 +90,11 @@ async function fetchPostTags() {
   ];
 }
 function refinePostContent({ title, tags }) {
-  const date = dayjs().format("YYYY-MM-DD hh:mm:ss");
+  const postTitle = `title: ${title}\n`;
+  const postDate = `${dayjs().format("YYYY-MM-DD hh:mm:ss")}\n`;
+  const postTags = tags && tags.length >= 0 ? `tags: ${tags}` : "";
 
-  return matter
-    .stringify("", { title, date, tags, publish: false })
-    .split("'")
-    .join("");
+  return `---\n${postTitle}${postDate}${postTags}\n---`;
 }
 
 function setPostFileName(postTitle) {
