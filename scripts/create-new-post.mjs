@@ -14,13 +14,13 @@ function getTags() {
     .reduce((acc, post) => {
       try {
         const file = fs.readFileSync(`${POSTS_DERECTORY}/${post.name}`, "utf8");
-        const tagRegex = /tags:\s*\[([^\]]+)\]/;
+        const tagRegex = /tags:\s*\[([^\]]+)\]/g;
         const match = file.match(tagRegex);
 
-        if (!match || match.length <= 1) return acc;
+        if (!match || match.length <= 0) return acc;
 
-        const tagsString = match[1];
-        const tags = tagsString.split(",").map((tag) => tag.trim());
+        const tagsString = match[0].replace(/tags:\s*/g, "");
+        const tags = JSON.parse(tagsString);
 
         if (!tags || tags.length <= 0) return acc;
 
@@ -77,24 +77,25 @@ async function fetchPostTags() {
   });
 
   const newIndex = selectedTags.findIndex((tag) => tag === "new");
+  const hasNewTag = newIndex >= 0;
 
-  if (newIndex >= 0) {
+  if (hasNewTag) {
     const newTags = await fetchNewTags([], extistTags);
 
     selectedTags.push(...newTags);
   }
 
-  return [
-    ...selectedTags.slice(0, newIndex),
-    ...selectedTags.slice(newIndex + 1),
-  ];
+  return hasNewTag
+    ? [...selectedTags.slice(0, newIndex), ...selectedTags.slice(newIndex + 1)]
+    : selectedTags;
 }
 function refinePostContent({ title, tags }) {
-  const postTitle = `title: ${title}\n`;
-  const postDate = `${dayjs().format("YYYY-MM-DD hh:mm:ss")}\n`;
-  const postTags = tags && tags.length >= 0 ? `tags: ${tags}` : "";
+  const postTitle = `\ntitle: ${title}`;
+  const postDate = `\ndate: ${dayjs().format("YYYY-MM-DD HH:mm:ss")}\n`;
+  const postTags =
+    tags && tags.length > 0 ? `\ntags: ${JSON.stringify(tags)}\n` : "";
 
-  return `---\n${postTitle}${postDate}${postTags}\n---`;
+  return `---${postTitle}${postDate}${postTags}---`;
 }
 
 function setPostFileName(postTitle) {
