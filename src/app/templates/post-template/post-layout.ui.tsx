@@ -14,8 +14,6 @@ import { postLayoutContainer, postLayoutTitle } from "./post-layout.module.css";
 function PostLayout({ data, children }: PageProps<any>) {
   const { date, tags, title } = data?.mdx?.frontmatter ?? {};
 
-  console.log(data, children);
-
   return (
     <DefaultLayout>
       <Container className={postLayoutContainer}>

@@ -36,6 +36,7 @@
     "gatsby-plugin-sitemap": "^6.13.1",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.34",
     "postcss-mixins": "^9.0.4",
     "postcss-nested": "^6.0.1",
