@@ -20,6 +20,7 @@ function HomePosts() {
 
   return (
     <Posts>
+<<<<<<< HEAD
       {posts.length <= 0 && <Posts.Empty />}
       {posts.length > 0 && (
         <Posts.List>
@@ -32,8 +33,21 @@ function HomePosts() {
 >>>>>>> 011c246 (imp: 포스트 목록 고도화)
           {isLoading && <Posts.Skeleton />}
         </Posts.List>
+=======
+      {data && (
+        <>
+          {posts.length <= 0 && <Posts.Empty />}
+          {posts.length > 0 && (
+            <Posts.List>
+              {posts.map(({ excerpt, title, slug }) => (
+                <Posts.ListItem excerpt={excerpt} title={title} link={slug} />
+              ))}
+              {isLoading && <Posts.Skeleton />}
+            </Posts.List>
+          )}
+        </>
+>>>>>>> c84ca6c (feat: 블로그 리팩토링 하면서 고려한 것들 포스팅 작성 완료, github 정적 호스팅 세팅)
       )}
-
       {hasNextPage && <Posts.MoreButton onClick={fetchNextPage} />}
 <<<<<<< HEAD
 =======
