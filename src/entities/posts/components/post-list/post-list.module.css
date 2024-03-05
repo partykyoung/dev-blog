@@ -1,5 +1,6 @@
 .post-list-root {
   width: 100%;
+<<<<<<< HEAD
   list-style: none;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -16,4 +17,6 @@
 >>>>>>> d8737b0 (refactor: fsd 아키텍쳐에 맞춰 posts 컴포넌트 리팩토링)
 =======
 >>>>>>> 011c246 (imp: 포스트 목록 고도화)
+=======
+>>>>>>> 57c8fdc (chore: 이전 블로그에 있던 글들 마이그레이션)
 }
