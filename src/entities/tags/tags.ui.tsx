@@ -1,7 +1,7 @@
-import { PropsWithChildren, type HTMLAttributes } from "react";
-import { clsx } from "clsx";
+import { PropsWithChildren, type HTMLAttributes } from 'react';
+import { clsx } from 'clsx';
 
-import { tagsRoot } from "./tags.module.css";
+import { tagsRoot } from './tags.module.css';
 
 type Props = PropsWithChildren & HTMLAttributes<HTMLDivElement>;
 

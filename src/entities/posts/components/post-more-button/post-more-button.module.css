@@ -1,4 +1,5 @@
 .post-more-button-root {
+  margin-top: 64px;
   padding: 0px;
 
   &:after {

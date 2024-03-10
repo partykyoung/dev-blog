@@ -1,10 +1,10 @@
-import { useInfiniteQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from '@tanstack/react-query';
 
-import { fetchPosts } from "./home-posts.api";
+import { fetchPosts } from './home-posts.api';
 
 function useGetPostsInfiniteQuery() {
   return useInfiniteQuery({
-    queryKey: ["posts"],
+    queryKey: ['posts'],
     queryFn: fetchPosts,
     initialPageParam: 1,
     getNextPageParam: (lastPage) => {

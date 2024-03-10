@@ -1,9 +1,9 @@
-import { Skeleton } from "@/shared/uis/skeleton";
+import { Skeleton } from '@/shared/uis/skeleton';
 
 import {
   postsSkeletonTitle,
   postsSkeletonContent,
-} from "./posts-skeleton.module.css";
+} from './posts-skeleton.module.css';
 
 function PostSkeleton() {
   return (

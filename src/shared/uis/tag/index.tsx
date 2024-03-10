@@ -1,1 +1,1 @@
-export * from "./tag.ui";
+export * from './tag.ui';

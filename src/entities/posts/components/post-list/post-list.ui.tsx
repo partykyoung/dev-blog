@@ -1,8 +1,8 @@
-import { clsx } from "clsx";
+import { clsx } from 'clsx';
 
-import type { HTMLAttributes, PropsWithChildren } from "react";
+import type { HTMLAttributes, PropsWithChildren } from 'react';
 
-import { postListRoot } from "./post-list.module.css";
+import { postListRoot } from './post-list.module.css';
 
 type Props = PropsWithChildren & HTMLAttributes<HTMLUListElement>;
 

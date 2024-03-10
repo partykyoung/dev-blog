@@ -10,11 +10,11 @@
 }
 
 body {
-  font-family: "Nanum Gothic", Arial, Helvetica, sans-serif;
+  font-family: 'Nanum Gothic', Arial, Helvetica, sans-serif;
 }
 
-ul[role="list"],
-ol[role="list"] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 

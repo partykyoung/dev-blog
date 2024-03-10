@@ -1,11 +1,11 @@
-import { WorkExperenceTags } from "../work-expereince-tags/work-expereince-tags.ui";
+import { WorkExperenceTags } from '../work-expereince-tags/work-expereince-tags.ui';
 import {
   workExpereinceLogDescription,
   workExpereinceLogDescriptions,
   workExpereinceLogsRoot,
   workExpereinceLogPeriod,
   workExpereinceLogProject,
-} from "./work-expereince-logs.module.css";
+} from './work-expereince-logs.module.css';
 
 type Props = {
   logs: {

@@ -2,7 +2,6 @@ import fs from "fs";
 import input from "@inquirer/input";
 import checkbox, { Separator } from "@inquirer/checkbox";
 import dayjs from "dayjs";
-import matter from "gray-matter";
 
 const cwd = process.cwd();
 const POSTS_DERECTORY = `${cwd}/posts`;
@@ -13,17 +12,26 @@ function getTags() {
       withFileTypes: true,
     })
     .reduce((acc, post) => {
-      const {
-        data: { tags },
-      } = matter.read(`${POSTS_DERECTORY}/${post.name}`);
+      try {
+        const file = fs.readFileSync(`${POSTS_DERECTORY}/${post.name}`, "utf8");
+        const tagRegex = /tags:\s*\[([^\]]+)\]/g;
+        const match = file.match(tagRegex);
 
-      if (!tags || tags.length <= 0) return acc;
+        if (!match || match.length <= 0) return acc;
 
-      tags.forEach((tag) => {
-        acc.add(tag);
-      });
+        const tagsString = match[0].replace(/tags:\s*/g, "");
+        const tags = JSON.parse(tagsString);
 
-      return acc;
+        if (!tags || tags.length <= 0) return acc;
+
+        tags.forEach((tag) => {
+          acc.add(tag);
+        });
+
+        return acc;
+      } catch {
+        return acc;
+      }
     }, new Set());
 
   return Array.from(extistTags);
@@ -69,25 +77,25 @@ async function fetchPostTags() {
   });
 
   const newIndex = selectedTags.findIndex((tag) => tag === "new");
+  const hasNewTag = newIndex >= 0;
 
-  if (newIndex >= 0) {
+  if (hasNewTag) {
     const newTags = await fetchNewTags([], extistTags);
 
     selectedTags.push(...newTags);
   }
 
-  return [
-    ...selectedTags.slice(0, newIndex),
-    ...selectedTags.slice(newIndex + 1),
-  ];
+  return hasNewTag
+    ? [...selectedTags.slice(0, newIndex), ...selectedTags.slice(newIndex + 1)]
+    : selectedTags;
 }
 function refinePostContent({ title, tags }) {
-  const date = dayjs().format("YYYY-MM-DD hh:mm:ss");
+  const postTitle = `\ntitle: ${title}`;
+  const postDate = `\ndate: ${dayjs().format("YYYY-MM-DD HH:mm:ss")}\n`;
+  const postTags =
+    tags && tags.length > 0 ? `\ntags: ${JSON.stringify(tags)}\n` : "";
 
-  return matter
-    .stringify("", { title, date, tags, publish: false })
-    .split("'")
-    .join("");
+  return `---${postTitle}${postDate}${postTags}---`;
 }
 
 function setPostFileName(postTitle) {

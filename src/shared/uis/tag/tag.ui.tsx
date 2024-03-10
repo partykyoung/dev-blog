@@ -1,8 +1,8 @@
-import { clsx } from "clsx";
+import { clsx } from 'clsx';
 
-import type { HTMLAttributes } from "react";
+import type { HTMLAttributes } from 'react';
 
-import { tagRoot } from "./tag.module.css";
+import { tagRoot } from './tag.module.css';
 
 type Props = {
   tag: string;

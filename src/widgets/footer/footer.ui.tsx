@@ -1,4 +1,4 @@
-import { footerRoot } from "./footer.module.css";
+import { footerRoot } from './footer.module.css';
 
 function Footer() {
   return (
@@ -9,8 +9,7 @@ function Footer() {
         <a
           href="https://github.com/partykyoung"
           rel="noreferrer"
-          target="_blank"
-        >
+          target="_blank">
           KyoungAh
         </a>
         , All rights reserved.

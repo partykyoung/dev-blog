@@ -1,7 +1,7 @@
-import { clsx } from "clsx";
-import { type HTMLAttributes, type PropsWithChildren } from "react";
+import { clsx } from 'clsx';
+import { type HTMLAttributes, type PropsWithChildren } from 'react';
 
-import { basicLayoutRoot } from "./basic-layout.module.css";
+import { basicLayoutRoot } from './basic-layout.module.css';
 
 type Props = PropsWithChildren & HTMLAttributes<HTMLDivElement>;
 

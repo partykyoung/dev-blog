@@ -1,7 +1,7 @@
-import { clsx } from "clsx";
-import type { PropsWithChildren, HTMLAttributes } from "react";
+import { clsx } from 'clsx';
+import type { PropsWithChildren, HTMLAttributes } from 'react';
 
-import { containerRoot } from "./container.module.css";
+import { containerRoot } from './container.module.css';
 
 type Props = PropsWithChildren & HTMLAttributes<HTMLSpanElement>;
 

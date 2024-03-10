@@ -1,12 +1,12 @@
-import { Container } from "@/shared/uis/container";
-import { BasicLayout } from "@/widgets/basic-layout";
-import { AboutWorkExpereinces } from "@/widgets/about-work-expereinces";
+import { Container } from '@/shared/uis/container';
+import { BasicLayout } from '@/widgets/basic-layout';
+import { AboutWorkExpereinces } from '@/widgets/about-work-expereinces';
 
 import {
   aboutContainer,
   aboutMe,
   aboutMeIntroduce,
-} from "./about-page.module.css";
+} from './about-page.module.css';
 
 function AboutPage() {
   return (
