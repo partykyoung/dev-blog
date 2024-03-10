@@ -9,8 +9,6 @@
   padding: 0;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 body {
   font-family: 'Nanum Gothic', Arial, Helvetica, sans-serif;
 }
@@ -20,27 +18,10 @@ ol[role='list'] {
   list-style: none;
 }
 
-=======
-=======
-body {
-  font-family: "Nanum Gothic", Arial, Helvetica, sans-serif;
-}
-
->>>>>>> e23180d (refactor: about 페이지 fsd 아키텍처에 맞춰 리팩토링)
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
-}
-
->>>>>>> cf5b257 (feat: global css 적용)
 html:focus-within {
   scroll-behavior: smooth;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> d8737b0 (refactor: fsd 아키텍쳐에 맞춰 posts 컴포넌트 리팩토링)
 a {
   cursor: pointer;
   text-decoration: none;
@@ -51,13 +32,6 @@ a {
   &:not([class]) {
     text-decoration-skip-ink: auto;
   }
-<<<<<<< HEAD
-=======
-a:not([class]) {
-  text-decoration-skip-ink: auto;
->>>>>>> cf5b257 (feat: global css 적용)
-=======
->>>>>>> d8737b0 (refactor: fsd 아키텍쳐에 맞춰 posts 컴포넌트 리팩토링)
 }
 
 img,
@@ -80,28 +54,16 @@ select {
   font: inherit;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> e23180d (refactor: about 페이지 fsd 아키텍처에 맞춰 리팩토링)
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> cf5b257 (feat: global css 적용)
-=======
->>>>>>> e23180d (refactor: about 페이지 fsd 아키텍처에 맞춰 리팩토링)
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
   }
-<<<<<<< HEAD
 
-=======
->>>>>>> cf5b257 (feat: global css 적용)
   *,
   *::before,
   *::after {

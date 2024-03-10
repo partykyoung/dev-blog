@@ -1,34 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-import type { GatsbyConfig } from 'gatsby';
-=======
-=======
-import path from "path";
->>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
-import fs from "fs";
-
 import type { GatsbyConfig } from "gatsby";
 
-function createFolder(dir: string) {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir);
-  }
-}
-
-<<<<<<< HEAD
-createFolder("jsons");
-createFolder("posts");
->>>>>>> cf5b257 (feat: global css 적용)
-=======
-createFolder(`${__dirname}/posts`);
-createFolder(`${__dirname}/static/jsons`);
->>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
-
-=======
-import type { GatsbyConfig } from "gatsby";
-
->>>>>>> 08d1838 (fix: 버그 수정)
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Kyoungah Dev Blog`,
@@ -39,25 +10,16 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
-<<<<<<< HEAD
-    'gatsby-plugin-postcss',
-    // "gatsby-plugin-google-gtag", FIXME: 리팩토링 끝나고 나서 애널리틱스 계정 생성 후 연동 필요
-    'gatsby-plugin-image',
-    'gatsby-plugin-sitemap',
-=======
     "gatsby-plugin-postcss",
     // "gatsby-plugin-google-gtag", FIXME: 리팩토링 끝나고 나서 애널리틱스 계정 생성 후 연동 필요
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
->>>>>>> cf5b257 (feat: global css 적용)
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
         icon: `${__dirname}/static/images/icon.png`,
       },
     },
-<<<<<<< HEAD
-=======
     {
       resolve: "gatsby-plugin-mdx",
       options: {
@@ -80,80 +42,37 @@ const config: GatsbyConfig = {
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
->>>>>>> a7f252a (refactor: 블로그 게시글 상세 페이지 fsd 아키텍처에 맞춰 리팩토링)
     {
-      resolve: 'gatsby-plugin-mdx',
+      resolve: "gatsby-source-filesystem",
       options: {
-        extensions: [`.mdx`, `.md`],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              showCaptions: true,
-            },
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              classPrefix: 'language-',
-            },
-          },
-        ],
+        name: "pages",
+        path: "./src/pages/",
       },
-    },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages',
-        path: './src/pages/',
-      },
-      __key: 'pages',
+      __key: "pages",
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'posts',
+        name: "posts",
         path: `${__dirname}/posts/`,
       },
-      __key: 'posts',
+      __key: "posts",
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'images',
+        name: "images",
         path: `${__dirname}/static/images/`,
       },
-      __key: 'images',
+      __key: "images",
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'jsons',
+        name: "jsons",
         path: `${__dirname}/static/jsons/`,
       },
-      __key: 'jsons',
-    },
-    {
-      resolve: 'gatsby-omni-font-loader',
-      options: {
-        enableListener: '',
-        preconnect: [
-          `https://fonts.googleapis.com`,
-          `https://fonts.gstatic.com`,
-        ],
-        web: [
-          {
-            name: `Nanum Gothic`,
-            file: `https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap`,
-          },
-          {
-            name: 'Fira Code',
-            file: 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap',
-          },
-        ],
-      },
+      __key: "jsons",
     },
     {
       resolve: "gatsby-omni-font-loader",

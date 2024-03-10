@@ -16,12 +16,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-<<<<<<< HEAD
     "test": "NODE_ENV=test jest",
     "create-new-post": "node ./scripts/create-new-post.mjs"
-=======
-    "test": "jest"
->>>>>>> 1a4d6f7 (feat: jest 환경 설정, media query 변수 가지고오는 유틸 함수 및 테스트코드 작성)
   },
   "dependencies": {
     "@mdx-js/react": "^3.0.0",
@@ -48,31 +44,17 @@
     "postcss-nested": "^6.0.1",
     "postcss-preset-env": "^9.3.0",
     "postcss-simple-vars": "^7.0.1",
-<<<<<<< HEAD
-<<<<<<< HEAD
     "prismjs": "^1.29.0",
-=======
->>>>>>> 9b90dc6 (feat: postcss를 사용하여  반응형 퍼블리싱 환경 작업)
-=======
-    "prismjs": "^1.29.0",
->>>>>>> 57c8fdc (chore: 이전 블로그에 있던 글들 마이그레이션)
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
     "react-helmet": "^6.1.0",
     "zustand": "^4.5.1"
-=======
-    "react-helmet": "^6.1.0"
->>>>>>> d8737b0 (refactor: fsd 아키텍쳐에 맞춰 posts 컴포넌트 리팩토링)
   },
   "devDependencies": {
-<<<<<<< HEAD
     "@babel/plugin-transform-modules-commonjs": "^7.23.3",
     "@babel/preset-env": "^7.23.9",
     "@inquirer/checkbox": "^2.1.0",
     "@inquirer/input": "^2.0.0",
-=======
->>>>>>> 1a4d6f7 (feat: jest 환경 설정, media query 변수 가지고오는 유틸 함수 및 테스트코드 작성)
     "@testing-library/react": "^14.2.1",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.5",

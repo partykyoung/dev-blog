@@ -1,24 +1,12 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { Container } from "@/shared/uis/container";
-import { BasicLayout } from "@/widgets/basic-layout";
-import { AboutWorkExpereinces } from "@/widgets/about-work-expereinces";
-=======
-import { Container } from "../../shared/uis/container";
-import { BasicLayout } from "../../widgets/basic-layout";
-import { AboutWorkExpereinces } from "../../widgets/about-work-experiences";
->>>>>>> e23180d (refactor: about 페이지 fsd 아키텍처에 맞춰 리팩토링)
-=======
-import { Container } from "@/shared/uis/container";
-import { BasicLayout } from "@/widgets/basic-layout";
-import { AboutWorkExpereinces } from "@/widgets/about-work-expereinces";
->>>>>>> cc4cb6c (refactor: about 페이지 정리)
+import { Container } from '@/shared/uis/container';
+import { BasicLayout } from '@/widgets/basic-layout';
+import { AboutWorkExpereinces } from '@/widgets/about-work-expereinces';
 
 import {
   aboutContainer,
   aboutMe,
   aboutMeIntroduce,
-} from "./about-page.module.css";
+} from './about-page.module.css';
 
 function AboutPage() {
   return (
@@ -48,12 +36,4 @@ function AboutPage() {
   );
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 export default AboutPage;
-=======
-export { AboutPage };
->>>>>>> e23180d (refactor: about 페이지 fsd 아키텍처에 맞춰 리팩토링)
-=======
-export default AboutPage;
->>>>>>> d8737b0 (refactor: fsd 아키텍쳐에 맞춰 posts 컴포넌트 리팩토링)
