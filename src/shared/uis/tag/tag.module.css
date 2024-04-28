@@ -1,8 +1,14 @@
 .tag-root {
   display: inline-block;
   padding: 4px 16px;
-  background-color: hsla(var(--palette-blue-20), 100%);
+  background-color: hsla(var(--palette-blue-20), 70%);
   border-radius: 4px;
   font-size: 14px;
-  color: hsla(var(--palette-gray-70), 100%);
+  color: hsla(var(--palette-blue-70), 100%);
+  transition: all 0.2s ease-in-out;
+
+  a:hover & {
+    background-color: hsla(var(--palette-blue-30), 100%);
+    color: hsla(var(--palette-blue-90), 100%);
+  }
 }

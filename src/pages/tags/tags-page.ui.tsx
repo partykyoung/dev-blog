@@ -1,27 +1,18 @@
-import { graphql } from 'gatsby';
+import { Container } from '@/shared/uis/container';
+import { TagsTags } from '@/widgets/tags-tags';
+import { DefaultLayout } from '@/widgets/default-layout';
 
-function TagsPage({ data }) {
-  console.log(data);
+import { tagsTitle } from './tags-page.module.css';
 
-  return <div>태그 페이지에용 됐냐????? 나이스ㅡㅡㅡㅡ 됐냐?? </div>;
+function TagsPage() {
+  return (
+    <DefaultLayout>
+      <Container>
+        <h2 className={tagsTitle}>태그</h2>
+        <TagsTags />
+      </Container>
+    </DefaultLayout>
+  );
 }
-
-export const query = graphql`
-  query ($tag: String) {
-    allMdx(filter: { frontmatter: { tags: { in: [$tag] } } }) {
-      totalCount
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
-        }
-      }
-    }
-  }
-`;
 
 export default TagsPage;
