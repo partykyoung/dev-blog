@@ -1,5 +1,9 @@
 .tags-root {
-  gap: 12px;
+  justify-content: space-between;
+}
+
+.tag-link {
+  margin: 0 auto 0 0;
 }
 
 .tag {

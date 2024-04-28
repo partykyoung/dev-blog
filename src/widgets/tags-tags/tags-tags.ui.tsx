@@ -3,7 +3,7 @@ import { Tags } from '@/entities/tags';
 
 import { useAllTagsQuery } from './tags-tags.queries';
 
-import { tagsRoot, tag as tagStyle } from './tags-tags.module.css';
+import { tagsRoot, tag as tagStyle, tagLink } from './tags-tags.module.css';
 
 function TagsTags() {
   const data = useAllTagsQuery();
@@ -11,7 +11,7 @@ function TagsTags() {
   return (
     <Tags className={tagsRoot}>
       {(data?.allMdx?.group ?? []).map(({ tag, totalCount }) => (
-        <Link key={tag} to={`/tags/${tag}`}>
+        <Link key={tag} to={`/tags/${tag}`} className={tagLink}>
           <Tags.Tag tag={`${tag} (${totalCount})`} className={tagStyle} />
         </Link>
       ))}
