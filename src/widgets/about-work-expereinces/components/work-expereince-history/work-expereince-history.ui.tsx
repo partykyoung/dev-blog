@@ -1,12 +1,12 @@
-import { clsx } from "clsx";
+import { clsx } from 'clsx';
 
-import type { TableHTMLAttributes } from "react";
+import type { TableHTMLAttributes } from 'react';
 
 import {
   workExpereinceHistory,
   workExpereinceHistoryTh,
   workExpereinceHistorySlash,
-} from "./work-expereince-history.module.css";
+} from './work-expereince-history.module.css';
 
 type WorkExpereinceHistoryProps = {
   period: string;
