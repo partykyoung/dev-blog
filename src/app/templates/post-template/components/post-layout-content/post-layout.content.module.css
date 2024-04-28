@@ -83,16 +83,17 @@
 
   a {
     padding-bottom: 1px;
-    border-bottom: 1px solid transparent;
-    color: var(--primary-color);
-    transition: border-bottom 0.3s ease;
+    border-bottom: 1px dashed;
+    border-color: transparent;
+    color: hsla(var(--palette-blue-70), 100%);
+    transition: border-color 0.2s ease;
 
     &:hover {
-      border-bottom: 1px solid var(--primary-color);
+      border-color: hsla(var(--palette-blue-70), 100%);
     }
   }
 
-  pre[class*="language-"] {
+  pre[class*='language-'] {
     font-size: 14px;
     margintop: 28px;
     marginbottom: 28px;
