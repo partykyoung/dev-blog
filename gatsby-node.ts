@@ -1,20 +1,26 @@
-import fs from "fs";
-import path from "path";
+import fs from 'fs';
+import path from 'path';
 
 import type {
   CreateNodeArgs,
   CreatePagesArgs,
   CreateWebpackConfigArgs,
-} from "gatsby";
+} from 'gatsby';
 
-import { createFilePath } from "gatsby-source-filesystem";
+import { createFilePath } from 'gatsby-source-filesystem';
+
+function createStaticJsonsFolder() {
+  const dir = `${__dirname}/static/jsons`;
+
+  if (fs.existsSync(dir)) {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+
+  fs.mkdirSync(dir);
+}
 
 function createJSON(pageData) {
   const dir = `${__dirname}/static/jsons`;
-
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir);
-  }
 
   const filePath = `${dir}/page${pageData.pageSuffix}.json`;
   const dataToSave = JSON.stringify(pageData.context);
@@ -52,6 +58,8 @@ async function createPages({ graphql, actions }: CreatePagesArgs) {
 
   const posts = [];
   const { nodes } = result.data.allMdx;
+
+  createStaticJsonsFolder();
 
   nodes.forEach((node) => {
     if (node.frontmatter.publish) {
@@ -104,12 +112,12 @@ async function createPages({ graphql, actions }: CreatePagesArgs) {
 function onCreateNode({ node, getNode, actions }: CreateNodeArgs) {
   const { createNodeField } = actions;
 
-  if (node.internal.type === `MarkdownRemark` || node.internal.type === "Mdx") {
-    const slug = createFilePath({ node, getNode, basePath: "posts" });
+  if (node.internal.type === `MarkdownRemark` || node.internal.type === 'Mdx') {
+    const slug = createFilePath({ node, getNode, basePath: 'posts' });
 
     createNodeField({
       node,
-      name: "slug",
+      name: 'slug',
       value: slug,
     });
   }
@@ -119,11 +127,11 @@ function onCreateWebpackConfig({ actions }: CreateWebpackConfigArgs) {
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        "@/shared": path.resolve(__dirname, "src/shared/"),
-        "@/entities": path.resolve(__dirname, "src/entities/"),
-        "@/features": path.resolve(__dirname, "src/features/"),
-        "@/widgets": path.resolve(__dirname, "src/widgets/"),
-        "@/app": path.resolve(__dirname, "src/app/"),
+        '@/shared': path.resolve(__dirname, 'src/shared/'),
+        '@/entities': path.resolve(__dirname, 'src/entities/'),
+        '@/features': path.resolve(__dirname, 'src/features/'),
+        '@/widgets': path.resolve(__dirname, 'src/widgets/'),
+        '@/app': path.resolve(__dirname, 'src/app/'),
       },
     },
   });

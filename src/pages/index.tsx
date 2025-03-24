@@ -1,7 +1,6 @@
 import type { HeadFC, PageProps } from 'gatsby';
 
 import { DefaultLayout } from '@/widgets/default-layout';
-
 import { HomePosts } from '@/widgets/home-posts';
 import { Container } from '@/shared/uis/container';
 

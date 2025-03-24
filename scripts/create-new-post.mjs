@@ -1,10 +1,14 @@
-import fs from "fs";
-import input from "@inquirer/input";
-import checkbox, { Separator } from "@inquirer/checkbox";
-import dayjs from "dayjs";
+import fs from 'fs';
+import input from '@inquirer/input';
+import checkbox, { Separator } from '@inquirer/checkbox';
+import dayjs from 'dayjs';
 
 const cwd = process.cwd();
 const POSTS_DERECTORY = `${cwd}/posts`;
+
+function setPostFileName(postTitle) {
+  return postTitle.split(' ').join('-');
+}
 
 function getTags() {
   const extistTags = fs
@@ -13,13 +17,13 @@ function getTags() {
     })
     .reduce((acc, post) => {
       try {
-        const file = fs.readFileSync(`${POSTS_DERECTORY}/${post.name}`, "utf8");
+        const file = fs.readFileSync(`${POSTS_DERECTORY}/${post.name}`, 'utf8');
         const tagRegex = /tags:\s*\[([^\]]+)\]/g;
         const match = file.match(tagRegex);
 
         if (!match || match.length <= 0) return acc;
 
-        const tagsString = match[0].replace(/tags:\s*/g, "");
+        const tagsString = match[0].replace(/tags:\s*/g, '');
         const tags = JSON.parse(tagsString);
 
         if (!tags || tags.length <= 0) return acc;
@@ -38,13 +42,13 @@ function getTags() {
 }
 
 async function fetchPostTitle() {
-  const postTitle = await input({ message: "포스트명을 입력해주세요" });
+  const postTitle = await input({ message: '포스트명을 입력해주세요' });
   const postFileName = setPostFileName(postTitle);
 
   const existFile = fs.existsSync(`${POSTS_DERECTORY}/${postFileName}.md`);
 
   if (existFile) {
-    // TODO: 예외처리
+    throw new Error('동일한 제목의 포스트가 존재합니다');
   }
 
   return { postTitle, postFileName };
@@ -52,10 +56,10 @@ async function fetchPostTitle() {
 
 async function fetchNewTags(newTags = [], extistTags = []) {
   const newTag = await input({
-    message: "태그를 입력해주세요 (n을 입력하면 종료합니다)",
+    message: '태그를 입력해주세요 (n을 입력하면 종료합니다)',
   });
 
-  if (!newTag || newTag === "n" || newTag === "N") {
+  if (!newTag || newTag === 'n' || newTag === 'N') {
     return newTags;
   }
 
@@ -68,15 +72,16 @@ async function fetchPostTags() {
   const extistTags = getTags();
   const choicesTags = extistTags.map((tag) => ({ name: tag, value: tag }));
   const selectedTags = await checkbox({
-    message: "태그를 선택해주세요",
+    message: '태그를 선택해주세요',
     choices: [
       ...choicesTags,
       new Separator(),
-      { name: "태그 입력하기", value: "new" },
+      { name: '태그 입력하기', value: 'new' },
     ],
+    loop: false,
   });
 
-  const newIndex = selectedTags.findIndex((tag) => tag === "new");
+  const newIndex = selectedTags.findIndex((tag) => tag === 'new');
   const hasNewTag = newIndex >= 0;
 
   if (hasNewTag) {
@@ -90,34 +95,31 @@ async function fetchPostTags() {
     : selectedTags;
 }
 function refinePostContent({ title, tags }) {
-  const postTitle = `\ntitle: ${title}`;
-  const postDate = `\ndate: ${dayjs().format("YYYY-MM-DD HH:mm:ss")}\n`;
+  const postTitle = `\ntitle: ${title}\n`;
+  const postDate = `date: ${dayjs().format('YYYY-MM-DD HH:mm:ss')}\n`;
   const postTags =
-    tags && tags.length > 0 ? `\ntags: ${JSON.stringify(tags)}\n` : "";
+    tags && tags.length > 0 ? `tags: ${JSON.stringify(tags)}\n` : '';
+  const publish = `publish: false\n`;
 
-  return `---${postTitle}${postDate}${postTags}---`;
-}
-
-function setPostFileName(postTitle) {
-  return postTitle.split(" ").join("-").toLowerCase();
+  return `---${postTitle}${postDate}${postTags}${publish}---`;
 }
 
 async function createNewPost() {
   const { postFileName, postTitle } = await fetchPostTitle();
   const postTags = await fetchPostTags();
   const postContent = refinePostContent({
-    tags: postTags,
     title: postTitle,
+    tags: postTags,
   });
 
   fs.writeFile(`${cwd}/posts/${postFileName}.md`, postContent, (err) => {
     if (err) {
-      console.log(err, "Error: 포스트 생성에 실패하였습니다");
+      console.log(err, 'Error: 포스트 생성에 실패하였습니다');
 
       return;
     }
 
-    console.log("포스트 생성 완료!");
+    console.log('포스트 생성 완료!');
   });
 }
 

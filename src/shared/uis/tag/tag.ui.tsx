@@ -1,11 +1,11 @@
 import { clsx } from 'clsx';
 
-import type { HTMLAttributes } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 import { tagRoot } from './tag.module.css';
 
 type Props = {
-  tag: string;
+  tag: ReactNode;
 } & HTMLAttributes<HTMLSpanElement>;
 
 function Tag({ className, tag, ...props }: Props) {
